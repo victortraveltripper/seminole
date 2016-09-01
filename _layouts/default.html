@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
-  <head></head>
-  <body>
-    <div>
-      
-        {{ content }}
-      
-    </div>
+<html ng-app="protarasApp">
+
+  {% include head.html %} 
+  
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+   
+	{{ content }}
+  
+  
+    {% include scripts.html %}
   </body>
+
 </html>
