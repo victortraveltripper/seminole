@@ -1,0 +1,48 @@
+
+<div class="booking-widget" ng-controller="bookingWidget as widget" my-directive rt3-rooms-browser="browser" rt3-search-form="search" on-search-changed="browser.search()" ng-cloak>
+
+  <form id="booking-form" action="#"  method="get">
+    <input type="hidden" id="inArea" name="area" value="">
+    <div class="booking-widget_header">
+      <div class="booking-widget_close">&times;</div>
+      <h3 class="booking-widget_title">Your Booking</h3>
+    </div>
+    <div class="booking-widget_content">
+
+
+
+      <div class="bookin-widget_parameters">
+        <div class="bookin-widget_parameters_content">
+
+          <div class="bookin-widget_parameters_select-group">
+            <span class="bookin-widget_parameters_lable">GUESTS:</span>
+
+            <select name="adults[]" id="adults" ng-model="browser.params.adults">
+              <option value="1" >1 Adult</option>
+              <option value="2" ng-selected="true" selected>2 Adults</option>
+              <option value="3">3 Adults</option>
+            </select>
+
+            <select name="children[]" id="children" ng-model="browser.params.children">
+              <option value="0" ng-selected="true">0 Children</option>
+              <option value="1">1 Children</option>
+              <option value="2">2 Children</option>
+            </select>
+            <span class="bookin-widget_parameters_description">*under the age of 12</span>
+          </div>
+
+        </div>
+      </div>
+      <a href="#" class="booking-widget_flexible-dates">
+        SELECT CHECK-IN
+
+      </a>
+
+      <div class="booking-widget_accord_content">
+        <div ui-date="[[widget.departureOptions]]" ng-model="search.params.departure_date" ui-date-format="yy-mm-dd"></div>
+      </div>
+    </div>
+
+
+  </form>
+</div>

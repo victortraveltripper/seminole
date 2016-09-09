@@ -1,4 +1,4 @@
-/* 
+/*
  * 	Core Owl Carousel CSS File
  *	v1.3.3
  */
@@ -11,7 +11,7 @@
 		}
 }
 
-#GallerySlider.owl-carousel.owl-item{
+#GallerySlider .owl-item{
 	img{
 		display: block;
 		width: 100%;
@@ -64,14 +64,14 @@ background:#FFF;
 	-o-transition: height 500ms ease-in-out;
 	transition: height 500ms ease-in-out;
 }
-	
+
 .owl-carousel .owl-item{
 	float: left;
 }
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{
 	cursor: pointer;
-	
+
 }
 
 
@@ -86,7 +86,7 @@ background:#FFF;
 }
 
 /* mouse grab icon */
-.grabbing { 
+.grabbing {
     cursor:url(grabbing.png) 8 8, move;
 }
 
@@ -101,7 +101,6 @@ background:#FFF;
   -ms-transform: translate3d(0,0,0);
 }
 
-.owl-social-icons{ 
+.owl-social-icons{
 a{color:#FFF;}
 }
-
