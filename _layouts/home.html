@@ -1,92 +1,16 @@
 ---
 layout: default
 ---
-
-
-<!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-               
-
-                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse" >
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar top-bar"></span>
-          <span class="icon-bar middle-bar"></span>
-          <span class="icon-bar bottom-bar"></span>
-        </button>
-         
-                <a class="navbar-brand page-scroll" href="#page-top">
-                <img src="images/logo.jpg" alt=""/>
-                 </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#About">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#Rooms">Rooms</a>
-                    </li>
-					<li>
-						<a class="page-scroll" href="#Facilities">Facilities</a>
-					</li>      
-					<li>
-						<a class="page-scroll" href="#Amenities">Amenities</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#Location">Location</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#Gallery">Gallery</a>
-					</li>  
-                    <li>
-                        <a class="page-scroll" href="#Contact">Contact</a>
-                    </li>
-
-                    <ul class="nav-social pull-right">
-		
-						<a class="fa fa-facebook" aria-hidden="true"></a>
-
-						<a class="fa fa-twitter" aria-hidden="true"></a>
-
-						<a class="fa fa-google-plus" aria-hidden="true"></a>
-
-						<a class="fa fa-instagram" aria-hidden="true"></a>
-
-						<a class="fa fa-pinterest-p" aria-hidden="true"></a>
-					</ul>
-                    <div class="booking pull-right">
-                    <a href="#">BOOK NOW</a>
-                    </div>
-
-                </ul>
-                
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-       
-    </nav>
-
-
-
- <!--Banner Part-->
-
-
+{% include nav.html %}
+<!--Banner Part-->
 <section class="clearfix">
 <div class="owl-carousel" id="Slider">
-  <div class="item">  
-  <h1 class="owl-heading  text-center">THE HUGO HOTEL</h1> 
+  <div class="item">
+  <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">HUGO HOTEL</h1>
   <h4 class="owl-sub-heading  text-center">Boutique Hotel New York </h4>
 
    <div class="owl-social-icons">
-    
+
             <a class="fa fa-facebook" aria-hidden="true"></a>
 
             <a class="fa fa-twitter" aria-hidden="true"></a>
@@ -97,15 +21,15 @@ layout: default
 
             <a class="fa fa-pinterest-p" aria-hidden="true"></a>
           </div>
-          
+
  			<img src="images/banners/slide1.jpg" alt=""/>
   </div>
-  
-  <div class="item">  
-  <h1 class="owl-heading  text-center">THE HUGO HOTEL</h1> 
+
+  <div class="item">
+  <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">HUGO HOTEL</h1>
   <h4 class="owl-sub-heading  text-center">Boutique Hotel New York </h4>
   <div class="owl-social-icons">
-    
+
             <a class="fa fa-facebook" aria-hidden="true"></a>
 
             <a class="fa fa-twitter" aria-hidden="true"></a>
@@ -116,16 +40,16 @@ layout: default
 
             <a class="fa fa-pinterest-p" aria-hidden="true"></a>
           </div>
-          
-          
+
+
   <img src="images/banners/slide1.jpg" alt=""/>
   </div>
-  
-  <div class="item">  
-  <h1 class="owl-heading  text-center">THE HUGO HOTEL</h1> 
+
+  <div class="item">
+  <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">HUGO HOTEL</h1>
   <h4 class="owl-sub-heading  text-center">Boutique Hotel New York </h4>
  <div class="owl-social-icons">
-    
+
             <a class="fa fa-facebook" aria-hidden="true"></a>
 
             <a class="fa fa-twitter" aria-hidden="true"></a>
@@ -136,7 +60,7 @@ layout: default
 
             <a class="fa fa-pinterest-p" aria-hidden="true"></a>
           </div>
-          
+
   <img src="images/banners/slide1.jpg" alt=""/>
   </div>
 </div>
@@ -157,9 +81,10 @@ layout: default
   <h6 class="text-center">ABOUT US</h6>
   <h2 class="text-center">Cum sociis natoque penatibus</h2>
 
-
-<p  class="gap text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo<br>
+<div class="col-sm-11">
+<p  class="gap text-center ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
 ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
+</div>
 <div class="col-sm-offset-2">
 
 <div class="col-sm-5"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p></div>
@@ -194,14 +119,14 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
   <div class="col-sm-12">
   <div class="row">
   <img src="images/about-1.jpg" alt=""/>
- 
+
   </div>
   </div>
 
   <div class="col-sm-12">
   <div class="row">
   <img src="images/about-2.jpg" alt=""/>
-  
+
   </div>
   </div>
 </div>
@@ -210,7 +135,7 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
 <div class="col-sm-8 ">
 <div class="row">
 <img src="images/about-3.jpg" alt=""/>
-  
+
 
 </div>
 </div>
@@ -241,10 +166,10 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
   <ul class="contTabs">
     <li class="active"><a data-toggle="pill" href="#home">View All</a></li>
     <li><a data-toggle="pill" href="#menu1">Room Name</a></li>
-   
+
   </ul>
   </div>
-  
+
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active text-center container-a1">
       <div class="rooms-type">
@@ -253,12 +178,12 @@ ligula eget dolor. Aenean massa. Cum sociis natoque penatibus.</p>
    <div class="view view-first">
     <h3>INSERT ROOM NAME</h3>
    <img src="images/room1.jpg" alt="">
-     
+
     <a class="readon" data-id="0" data-toggle="pill" href="#menu1"><div class="mask">
       <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div>
     </a>
@@ -269,12 +194,12 @@ Room</h2>
    <div class="view view-first">
     <h3>INSERT ROOM NAME</h3>
    <img src="images/room2.jpg" alt="">
-    
+
     <a class="readon" data-id="1" data-toggle="pill" href="#menu1"><div class="mask">
      <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div>
     </a>
@@ -285,12 +210,12 @@ Room</h2>
    <div class="view view-first">
    <h3>INSERT ROOM NAME</h3>
     <img src="images/room3.jpg" alt="">
-     
+
    <a class="readon" data-id="2" data-toggle="pill" href="#menu1"><div class="mask">
      <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div>
     </a>
@@ -307,7 +232,7 @@ Room</h2>
      <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div></a >
   </div>
@@ -321,7 +246,7 @@ Room</h2>
      <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div></a>
   </div>
@@ -335,7 +260,7 @@ Room</h2>
      <h2>View
 This
 Room</h2>
-    
+
       <!--a href="#" class="info">Read More</a-->
     </div></a>
   </div>
@@ -345,7 +270,7 @@ Room</h2>
 </div>
 
 
-  
+
 
 
 
@@ -354,91 +279,13 @@ Room</h2>
     </div>
     <div id="menu1" class="tab-pane fade">
 
- 
+
 
 
 <div class="container">
 	<div class="row">
 
 <div class="owl-carousel" id="rooms">
-  
-	<div class="item">
-	<div class=" col-md-6 col-md-push-5">
-    <div  class="room-info">
-	<h5>One king bed</h5>
-	<h3>Standard King Room</h3>
-	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-	<div class=" btn-book">
-	<a href="#" >BOOK NOW</a>
-	
-	</div>
-      </div>
-    </div>
-    <div class="col-md-5 col-md-pull-6">
-    <img src="images/rooms-details.jpg" alt=""/>
-    <div class="rates">TONIGHT’S RATE $ 380</div>
-    </div>
-	</div>
-    
- 	
-	<div class="item">
-	<div class=" col-md-6 col-md-push-5">
-    <div  class="room-info">
-	<h5>One king bed</h5>
-	<h3>Standard King Room</h3>
-	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-	<div class=" btn-book">
-	<a href="#" >BOOK NOW</a>
-	
-	</div>
-      </div>
-    </div>
-    <div class="col-md-5 col-md-pull-6">
-    <img src="images/rooms-details.jpg" alt=""/>
-    <div class="rates">TONIGHT’S RATE $ 380</div>
-    </div>
-	</div>
-    
-
-	
-	<div class="item">
-	<div class=" col-md-6 col-md-push-5">
-    <div  class="room-info">
-	<h5>One king bed</h5>
-	<h3>Standard King Room</h3>
-	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-	<div class=" btn-book">
-	<a href="#" >BOOK NOW</a>
-	
-	</div>
-      </div>
-    </div>
-    <div class="col-md-5 col-md-pull-6">
-    <img src="images/rooms-details.jpg" alt=""/>
-    <div class="rates">TONIGHT’S RATE $ 380</div>
-    </div>
-	</div>
-    
-
-	
-	<div class="item">
-	<div class=" col-md-6 col-md-push-5">
-    <div  class="room-info">
-	<h5>One king bed</h5>
-	<h3>Standard King Room</h3>
-	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-	<div class=" btn-book">
-	<a href="#" >BOOK NOW</a>
-	
-	</div>
-      </div>
-    </div>
-    <div class="col-md-5 col-md-pull-6">
-    <img src="images/rooms-details.jpg" alt=""/>
-    <div class="rates">TONIGHT’S RATE $ 380</div>
-    </div>
-	</div>
-    
 
 	<div class="item">
 	<div class=" col-md-6 col-md-push-5">
@@ -448,7 +295,8 @@ Room</h2>
 	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 	<div class=" btn-book">
 	<a href="#" >BOOK NOW</a>
-	
+
+
 	</div>
       </div>
     </div>
@@ -457,7 +305,7 @@ Room</h2>
     <div class="rates">TONIGHT’S RATE $ 380</div>
     </div>
 	</div>
-    
+
 
 	<div class="item">
 	<div class=" col-md-6 col-md-push-5">
@@ -467,7 +315,7 @@ Room</h2>
 	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 	<div class=" btn-book">
 	<a href="#" >BOOK NOW</a>
-	
+
 	</div>
       </div>
     </div>
@@ -476,9 +324,87 @@ Room</h2>
     <div class="rates">TONIGHT’S RATE $ 380</div>
     </div>
 	</div>
-    
 
-	
+
+
+	<div class="item">
+	<div class=" col-md-6 col-md-push-5">
+    <div  class="room-info">
+	<h5>One king bed</h5>
+	<h3>Standard King Room</h3>
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+	<div class=" btn-book">
+	<a href="#" >BOOK NOW</a>
+
+	</div>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-pull-6">
+    <img src="images/rooms-details.jpg" alt=""/>
+    <div class="rates">TONIGHT’S RATE $ 380</div>
+    </div>
+	</div>
+
+
+
+	<div class="item">
+	<div class=" col-md-6 col-md-push-5">
+    <div  class="room-info">
+	<h5>One king bed</h5>
+	<h3>Standard King Room</h3>
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+	<div class=" btn-book">
+	<a href="#" >BOOK NOW</a>
+
+	</div>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-pull-6">
+    <img src="images/rooms-details.jpg" alt=""/>
+    <div class="rates">TONIGHT’S RATE $ 380</div>
+    </div>
+	</div>
+
+
+	<div class="item">
+	<div class=" col-md-6 col-md-push-5">
+    <div  class="room-info">
+	<h5>One king bed</h5>
+	<h3>Standard King Room</h3>
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+	<div class=" btn-book">
+	<a href="#" >BOOK NOW</a>
+
+	</div>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-pull-6">
+    <img src="images/rooms-details.jpg" alt=""/>
+    <div class="rates">TONIGHT’S RATE $ 380</div>
+    </div>
+	</div>
+
+
+	<div class="item">
+	<div class=" col-md-6 col-md-push-5">
+    <div  class="room-info">
+	<h5>One king bed</h5>
+	<h3>Standard King Room</h3>
+	<p class="text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+	<div class=" btn-book">
+	<a href="#" >BOOK NOW</a>
+
+	</div>
+      </div>
+    </div>
+    <div class="col-md-5 col-md-pull-6">
+    <img src="images/rooms-details.jpg" alt=""/>
+    <div class="rates">TONIGHT’S RATE $ 380</div>
+    </div>
+	</div>
+
+
+
 
 
 	</div>
@@ -505,7 +431,7 @@ Room</h2>
     <li>Lorem ipsum dolor sit ametmus</li>
     <li>Cum sociis natoque penatibus</li>
     <li>Magnis dis parturient montes</li>
-    
+
   </ul>
   </div>
 
@@ -514,18 +440,18 @@ Room</h2>
     <li>Lorem ipsum dolor sit ametmus</li>
     <li>Cum sociis natoque penatibus</li>
     <li>Magnis dis parturient montes</li>
-    
+
   </ul>
-  
+
   </div>
 
   <div class="col-xs-12  col-sm-4">
   <ul>
     <li>Lorem ipsum dolor sit ametmus</li>
     <li>Cum sociis natoque penatibus</li>
-   
+
   </ul>
-  
+
   </div>
   <div class="clearfix"></div>
 
@@ -553,11 +479,11 @@ Room</h2>
 
      <div class="facility-pics-bottom">
     Quae quidem sapien<br>
-    sequuntur duce 
+    sequuntur duce
     </div>
     </div>
     <div class="col-sm-6 Feature-list">
-    
+
     <ul>
     <li>
     <h6>Feature 1</h6>
@@ -574,7 +500,7 @@ Room</h2>
     <p>Mea veri persius ea. Nec alia assum ei, labitur deserunt voluptatum pro te. Te duis constituto mnesarchum vel. Ius in docendi convenire. Impedit officiis euripidis eos ut. Ex ius mutat facete  </p>
     </li>
 
-    
+
     </ul>
     </div>
 
@@ -585,10 +511,10 @@ Room</h2>
   <div class="col-sm-6">
     <div class="row">
     <img src="images/Facility1.jpg" alt=""/>
-    
+
     <div class="facility-pics-info">
     Quae quidem sapien<br>
-    sequuntur duce 
+    sequuntur duce
     </div>
     </div>
   </div>
@@ -596,15 +522,15 @@ Room</h2>
   <div class="col-sm-6">
     <div class="row">
     <img src="images/Facility3.jpg" alt=""/>
-    
+
     <div class="facility-pics-info">
     Quae quidem sapien<br>
-    sequuntur duce 
+    sequuntur duce
     </div>
     </div>
   </div>
 
-</article>  
+</article>
 
 </section>
 
@@ -683,9 +609,9 @@ Room</h2>
 </div>
 
 </div>
-  
+
   <div class="more-link ">
-  
+
   <span href="#collapse1" class="nav-toggle button-link">View More</span >
   </div>
 
@@ -698,7 +624,7 @@ Room</h2>
 <article class="Location-bg clearfix">
   <h6 >LOCATION</h6>
    <h2 >An eos posse fabellas consectetuer</h2>
-  
+
 </article>
 
 <section>
@@ -761,65 +687,65 @@ Room</h2>
   <h6 class="text-center">GALLERY</h6>
   <h2 class="text-center">Vim ad nominavi menandri</h2>
 <div class="owl-carousel owl-theme  slide" id="GallerySlider">
-  
- 
-    <div class="item ">  
- 
+
+
+    <div class="item ">
+
   <a href="images/galleryimgBig-1.jpg" data-lightbox="image-1" >
-  <img src="images/galleryimg-1.jpg"  alt="" /> 
+  <img src="images/galleryimg-1.jpg"  alt="" />
   </a>
   </div>
-  
-  <div class="item ">  
-  
-  <a href="images/galleryimgBig-2.jpg"  data-lightbox="image-1"  > 
-  <img src="images/galleryimg-2.jpg" alt="" /> 
+
+  <div class="item ">
+
+  <a href="images/galleryimgBig-2.jpg"  data-lightbox="image-1"  >
+  <img src="images/galleryimg-2.jpg" alt="" />
  	</a>
   </div>
-  
-  <div class="item ">  
+
+  <div class="item ">
 
   <a href="images/galleryimgBig-3.jpg" data-lightbox="image-1" >
-  <img src="images/galleryimg-3.jpg" alt="" /> 
+  <img src="images/galleryimg-3.jpg" alt="" />
   </a>
   </div>
 
-   <div class="item ">  
-  
+   <div class="item ">
+
    <a href="images/galleryimgBig-4.jpg"  data-lightbox="image-1" >
-   <img src="images/galleryimg-4.jpg" alt="" /> 
+   <img src="images/galleryimg-4.jpg" alt="" />
    </a>
   </div>
-   
 
-    <div class="item ">  
- 
+
+    <div class="item ">
+
   <a href="images/galleryimgBig-1.jpg" data-lightbox="image-1" >
-  <img src="images/galleryimg-1.jpg" alt="" /> 
+  <img src="images/galleryimg-1.jpg" alt="" />
   </a>
   </div>
-  
-  <div class="item ">  
-  
-  <a href="images/galleryimgBig-2.jpg" alt="" data-lightbox="image-1"  > 
-  <img src="images/galleryimg-2.jpg" alt="" /> 
+
+  <div class="item ">
+
+  <a href="images/galleryimgBig-2.jpg" alt="" data-lightbox="image-1"  >
+  <img src="images/galleryimg-2.jpg" alt="" />
  	</a>
   </div>
-  
-  <div class="item ">  
+
+  <div class="item ">
 
   <a href="images/galleryimgBig-3.jpg" alt="" data-lightbox="image-1" >
-  <img src="images/galleryimg-3.jpg" alt="" /> 
+  <img src="images/galleryimg-3.jpg" alt="" />
   </a>
   </div>
 
-   <div class="item ">  
-  
+   <div class="item ">
+
    <a href="images/galleryimgBig-4.jpg"  data-lightbox="image-1" >
-   <img src="images/galleryimg-4.jpg" alt="" /> 
+   <img src="images/galleryimg-4.jpg" alt="" />
    </a>
   </div>
-   
+
   </div>
 
 </div>
@@ -828,56 +754,4 @@ Room</h2>
 </section>
 
 
-
-
- <!--Contact us Part-->
-
-
-<!--Footer Part-->
-<footer id="Contact">
-
-  <div class="container">
-  <div class="row">
-  <div class="inner-content">
-  <div class="col-sm-3">
-  <div class="footer-logo">
-  <img src="../images/footer-logo.jpg" alt=" " title=" ">
-  
-  </div>
-  </div>
-
-  <div class="col-sm-3 f-social-links">
-  <h3>Follow Us</h3>
-  <a class="fa fa-facebook" aria-hidden="true"></a>
-
-  <a class="fa fa-twitter" aria-hidden="true"></a>
-
-  <a class="fa fa-google-plus" aria-hidden="true"></a>
-
-  <a class="fa fa-instagram" aria-hidden="true"></a>
-
-  <a class="fa fa-pinterest-p" aria-hidden="true"></a>
-
-  </div>
-
-  <div class="col-sm-3">
-  <h3>Contact</h3>
-<a href="callto:(207)363-5112">(207)363-5112</a><br>
-<a href="callto:(207)363-5113">(207)363-5113</a><br>
-<a href="mailto:info@hotelhugo.com">info@hotelhugo.com</a>
-  </div>
-
-  <div class="col-sm-3">
-  <h3>Address</h3>
-<p>118 West 18th Street<br> New York NY 10001 <br>GPS 41°24'12.2"N</p>
-  </div>
-  <div class="clearfix"></div>
-  </div>
-  </div>
-  </div>
-</footer>
-<section class="copyrights"> 
-
-&copy 2016 Lorem ipsum dolor sit amet, in sanctus detraxit qui, usu ut feugait minimum
-</section>
-
+  {% include footer.html %}
