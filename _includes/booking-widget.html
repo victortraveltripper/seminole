@@ -17,7 +17,7 @@
           <div class="bookin-widget_parameters_select-group">
             <span class="bookin-widget_parameters_lable">GUESTS:</span>
 
-            <select name="adults[]" id="adults" ng-model="browser.params.adults">
+            <!--select name="adults[]" id="adults" ng-model="browser.params.adults">
               <option value="1" >1 Adult</option>
               <option value="2" ng-selected="true" selected>2 Adults</option>
               <option value="3">3 Adults</option>
@@ -27,7 +27,45 @@
               <option value="0" ng-selected="true">0 Children</option>
               <option value="1">1 Children</option>
               <option value="2">2 Children</option>
-            </select>
+            </select-->
+
+
+
+
+<div class="bookin-widget_parameters_adualt">
+                      <input type="text" name="quant[1]" class="input-number" value="0" min="0" max="5">
+                    <span class="bookin-widget_parameters-text">Adults</span>
+                      <span class="bookin-widget_parameters-icons">
+                        <a role="button" class=" btn-number" data-type="plus" data-field="quant[1]" value="-">
+                          <img src="images/plus.png">
+                        </a>
+                        <a role="button" class=" btn-number" disabled="disabled" data-type="minus" value="+" data-field="quant[1]">
+                          <img src="images/mini.png">
+                        </a>
+
+                      </span>
+
+                        </div>
+
+                <div class="bookin-widget_parameters_children">
+                  <input type="text" name="quant[2]" class=" input-number" value="0" min="0" max="5">
+                    <span class="bookin-widget_parameters-text">Children</span>
+
+                      <span class="bookin-widget_parameters-icons">
+                        <a  role="button" class="btn-number" data-type="plus" data-field="quant[2]" value="-">
+                          <img src="images/plus.png">
+                        </a>
+
+                      <a role="button" class="btn-number"  data-type="minus" data-field="quant[2]" value="+">
+                        <img src="images/mini.png">
+                      </a>
+
+
+                      </span>
+                  </div>
+
+
+
             <span class="bookin-widget_parameters_description">*under the age of 12</span>
           </div>
 
@@ -38,11 +76,20 @@
 
       </a>
 
-      <div class="booking-widget_accord_content">
-        <div ui-date="[[widget.departureOptions]]" ng-model="search.params.departure_date" ui-date-format="yy-mm-dd"></div>
-      </div>
+
+
+      <div class="3-calendars"></div>
+
+
+
+
+
+
     </div>
 
-
+    <div class="booking-widget_buttons">
+      <button type="submit" class="booking-widget_reset_date_button">RESET DATES</button>
+      <button type="submit" class="booking-widget_select_rooms_button ">SELECT ROOMS</button>
+    </div>
   </form>
 </div>
