@@ -4,7 +4,7 @@
   top: 0;
   right: -400px;
   width: 370px;
-  min-height: 450px;
+  min-height:546px;
   height: auto;
   background: #FFF;
   -webkit-transition: right 0.4s;
@@ -65,7 +65,7 @@
   right: 0;
   left: 0;
   height: auto;
-  max-height: calc(100% - 58px);
+  max-height: calc(100%);
   overflow-x: hidden;
   overflow-y: auto;
   background: #E6E4E5;
@@ -82,7 +82,7 @@
 .booking-widget_flexible-dates {
   display: block;
 
-  padding: 30px 0px;
+  padding: 15px 0px;
   color: #322c2c;
   text-decoration: none;
   text-transform: uppercase;
@@ -315,37 +315,49 @@
 // Rooms, Adults, Children -----------------------------------------------------
 .bookin-widget_parameters {
   margin: 26px 0;
-  padding: 0 20px;
+  padding: 0 10px;
   text-align:right;
 }
 
 .bookin-widget_parameters_select-group {
+input{ background: none;
+width:15px;
+border: none;
+float: left;
+color:#2378bc;
+margin-left:10px;
+}
+}
+.bookin-widget_parameters-text{
+  font-size: 13px;
+      padding: 2px 0px;
+  float: left;
+}
 
-  font-size: 0;
-  margin: 0 -10px;
+.bookin-widget_parameters_adualt{
+float:left;
+width:32%;
 
-  select {
-    display: inline-block;
-    min-width: 28%;
-    margin: 0 5px;
-    border: 0px solid #ACACAC;
-    border-radius: 0;
-    font-size: 14px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            background: none;
-    &:first-child {
-      margin-left: 0;
+padding-right: 5px;
+border-right: 1px solid #ccc;
+}
 
-      border-right:1px solid #acacac;
-    }
+.bookin-widget_parameters_children{
+width:37%;
+float:left;
 
-    &:last-child {
-      margin-right: 0;
-    }
+}
+
+.bookin-widget_parameters-icons{
+  width:40%;
+  float:right;
+  margin-top: -10px;
+  img
+  {
+    border: none;
+    width:41px;
   }
+
 }
 
 
@@ -360,62 +372,65 @@
   font-family: 'Lato', sans-serif;
 }
 .bookin-widget_parameters_description {
-  font-size:9px;
+  font-size:6px;
 
   text-align: right;
   color: #7a7878;
   margin: 5px 0 0;
 }
 
-// Rate -----------------------------------------------------------------------
-.booking-widget_rate {
-  padding: 20px 20px 0;
+// Buttons -----------------------------------------------------------------------
+.booking-widget_buttons{
+padding: 2%;
+  @extend .clearfix;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  background: #e6e4e5;
 }
 
-.booking-widget_rate_content {
+.booking-widget_buttons_content {
   @extend .clearfix;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.booking-widget_rate_col {
-  float: left;
-  font-family: 'Lato', sans-serif;
-  width: 50%;
-  height: 46px;
-
-  &.-title {
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #322c2c;
-		padding-top:12px;
-  }
-
-  &.-count {
-    font-size: 48px;
-    font-weight: lighter;
-    text-align: left;
-    color: #b4975a;
-    line-height: 46px;
-  }
-}
-
-.booking-widget_rate_button {
+.booking-widget_reset_date_button {
   display: block;
-  width: 100%;
+  width: 48%;
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-  margin: 0;
+  margin: 0px 10px 0px 0px;
   padding: 12px 30px;
-  border: 1px solid #000;
-  background: #000;
-  color: #fff;
+  border: 1px solid #b8b6b7;
+  background:none;
+  color: #b8b6b7;
   outline: none;
+  float: left;
+}
+
+
+.booking-widget_select_rooms_button {
+  display: block;
+  width: 49%;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 0px 0px 0px 0px;
+  padding: 12px 24px;
+  border: 1px solid #b8b6b7;
+  background: #b8b6b7;
+  color: #292929;
+  outline: none;
+  float: left;
 }
 
 
