@@ -1,4 +1,4 @@
-input[type=checkbox].css-checkbox {
+.booking-wigget input[type=checkbox].css-checkbox {
 							position:absolute;
 							z-index:-1000; left:-1000px;
 							overflow: hidden; clip: rect(0 0 0 0);
@@ -6,7 +6,7 @@ input[type=checkbox].css-checkbox {
 							margin:-1px; padding:0; border:0;
 						}
 
-						input[type=checkbox].css-checkbox + label.css-label {
+						.booking-wigget input[type=checkbox].css-checkbox + label.css-label {
 							padding-left:28px;
 							height:15px;
 							display:inline-block;
@@ -19,7 +19,7 @@ input[type=checkbox].css-checkbox {
 
 						}
 
-						input[type=checkbox].css-checkbox:checked + label.css-label {
+						.booking-wigget input[type=checkbox].css-checkbox:checked + label.css-label {
 							background-position: 0 -15px;
 						}
 						label.css-label {
