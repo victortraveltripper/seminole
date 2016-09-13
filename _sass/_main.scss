@@ -127,11 +127,11 @@ body{
 			}
 
 			@media( max-width:980px){
-				display:block;
+				display:none;
 				padding:0px;
 				}
 				@media (max-width:769px){
-					display:none;
+					display:block;;
 					padding:0px;
 					}
 	}
@@ -166,6 +166,10 @@ display: none;
 	width:133px;
 
 	 float:right;
+
+	 @media (max-width:1021px){
+ 			width:125px;
+ 			}
 	@media (max-width:767px){
 		display:none;
 			}
