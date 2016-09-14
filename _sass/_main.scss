@@ -108,11 +108,22 @@ body{
 			font-size: 12px;
 			}
 		@media (max-width:737px){
-			padding:15px 20px;
+			padding:6px 20px;
 			font-size:22px;
 			font-family:'bill corporate narrow W00mediu';
 			}
 
+	}
+
+	.navbar-brand {
+
+		@media (max-width:320px){
+			width:130px;
+			margin-top:2px;
+			img{width:100%;
+			}
+
+		}
 	}
 	.nav-social {
 		display:none;
@@ -130,9 +141,9 @@ body{
 				display:none;
 				padding:0px;
 				}
-				@media (max-width:769px){
+				@media (max-width:766px){
 					display:block;;
-					padding:0px;
+					padding:10px;
 					}
 	}
 	}
@@ -880,8 +891,14 @@ width:60%;
 			width:65%;
 			margin:auto;
 			@media (max-width:980px){
-				width:100%;
+				width:80%;
 				}
+				@media (max-width:767px){
+									width:63%;
+									}
+				@media (max-width:668px){
+					width:70%;
+					}
 			}
 			.btn-book{
 				background:$color;
