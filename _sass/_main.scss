@@ -99,6 +99,7 @@ body{
 }
 
 .navbar-nav > li > a{
+	line-height: 14px;
 		color:$color-blue;
 		text-transform: uppercase;
 		font-family:'NeueHaasGroteskDisp W01';
@@ -117,7 +118,7 @@ body{
 
 	.navbar-brand {
 
-		@media (max-width:320px){
+		@media (max-width:360px){
 			width:130px;
 			margin-top:2px;
 			img{width:100%;
@@ -147,7 +148,12 @@ body{
 					}
 	}
 	}
-
+	.hiddenbrk1{
+		display:block;
+	@media (max-width:766px){
+		display:none;
+		}
+	}
 	.hiddenbrk{ display:none;
 	@media (max-width:766px){
 		display:block;
@@ -156,11 +162,11 @@ body{
 /*Book Now*/
 
 .mobile{
-background:$color-booking;
+background:#04082f;
 display: none;
 
 @media (max-width:766px){
-	padding:15px;
+	padding:12px;
 	text-align:center;
 	width:133px;
 	display: block;
@@ -171,8 +177,8 @@ display: none;
 
 }
 .booking{
-	background:$color-booking;
-	padding:15px;
+	background:#04082f;
+	padding:12px;
 	text-align:center;
 	width:133px;
 

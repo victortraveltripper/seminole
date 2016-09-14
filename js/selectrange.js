@@ -19,8 +19,8 @@ $(function () {
 		mode		: 'range',
 		calendars	: 3
 	});
-	$('input').pickmeup({
-		position		: 'right',
-		hide_on_select	: true
-	});
+	//$('input').pickmeup({
+	//	position		: 'right',
+	//	hide_on_select	: true
+//	});
 });
