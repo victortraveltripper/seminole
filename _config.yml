@@ -1,2 +1,3 @@
 default_lang: 'en'
 languages: ['en']
+permalink: pretty
