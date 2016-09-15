@@ -360,6 +360,13 @@ table{
     font-size: 16px;
     text-transform: uppercase;
     padding: 10px 0px;
+
+    .creditcard{
+      text-align: right;
+      width:210px;
+    float: right;
+      img{width:70%;}
+    }
   }
   label{
 
@@ -379,10 +386,22 @@ table{
       /* padding: 6px 12px; */
       float: right;
 
-    select{
+
+      .select-control-inner{
+
+        width:48%; float: left;
+
+      }
+
+      .select-control-inner-right{
+
+        width:48%; float: right;
+
+      }
+      select{
       border-radius:0px;
-      width: 47.6%;
-    margin-left: 5px;
+      width: 100%;
+
     float: left;
   }
   }
@@ -398,11 +417,15 @@ table{
       /* padding: 6px 12px; */
         float: left;
 
+
+
     select{
       border-radius:0px;
-      width:60%;
+      width:100%;
     margin-left: 0px;
     float: left;
+
+
   }
 
   input{  width:38%;
@@ -410,10 +433,16 @@ table{
   float: right;}
   }
 
-
+  .select-control-state-inner{   width: 60%; float: left;}
   .cards{
     width:50%; float: left;
     margin:10px 0px;
+
+  label{
+    padding-top: 8px;
+    margin-bottom: 6px;
+
+    }
 
   }
 
@@ -455,14 +484,18 @@ table{
   }
 
   .booking-widget_booknow{
-    background: #2378bc;
-    padding:20px;
-    text-align:center;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 10px 0px;
 
+    a{
+  background: #2378bc;
+  padding:20px;
+  text-align:center;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+  display: block;
+
+  }
   }
 
 }
@@ -532,7 +565,9 @@ table{
         }
     }
 
-    .booking-widget_booknow{
+    .booking-widget_booknow
+
+    a {
       background: #2378bc;
       width: 90%;
       padding: 20px;
@@ -541,6 +576,7 @@ table{
       text-transform: uppercase;
       letter-spacing: 1px;
       margin: 10px auto;
+      display: block;
 
     }
 
@@ -570,7 +606,7 @@ table{
 .control {
   display: block;
   position: relative;
-  padding-left: 30px;
+  padding-left: 40px;
   margin-bottom: 15px;
   cursor: pointer;
   font-size: 18px;
@@ -584,23 +620,24 @@ table{
   position: absolute;
   top: 2px;
   left: 0;
-  height: 20px;
-  width: 20px;
-  background: #e6e6e6;
+  height: 30px;
+  width: 30px;
+  background: #FFF;
+  border:1px solid #cecece;
 }
 .control--radio .control__indicator {
-  border-radius: 50%;
+  border-radius: 0%;
 }
 .control:hover input ~ .control__indicator,
 .control input:focus ~ .control__indicator {
-  background: #ccc;
+  background: #FFF;
 }
 .control input:checked ~ .control__indicator {
-  background: #2aa1c0;
+  background: #FFF;
 }
 .control:hover input:not([disabled]):checked ~ .control__indicator,
 .control input:checked:focus ~ .control__indicator {
-  background: #0e647d;
+  background: #FFF;
 }
 .control input:disabled ~ .control__indicator {
   background: #e6e6e6;
@@ -616,43 +653,45 @@ table{
   display: block;
 }
 .control--checkbox .control__indicator:after {
-  left: 8px;
-  top: 4px;
-  width: 3px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  left: 6px;
+  top: 6px;
+  height: 16px;
+  width: 16px;
+  background:#b2b2b2;
+
+
 }
 .control--checkbox input:disabled ~ .control__indicator:after {
-  border-color: #7b7b7b;
+  border-color: #fff;
 }
 .control--radio .control__indicator:after {
   left: 7px;
-  top: 7px;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background: #fff;
+    top: 7px;
+    height: 14px;
+    width: 14px;
+    border-radius: 0%;
+    background: #b2b2b2;
 }
 .control--radio input:disabled ~ .control__indicator:after {
-  background: #7b7b7b;
+  background: #FFF;
 }
 .select {
   position: relative;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-top: 5px;
   width: 100%;
+  border: 1px solid #cecece;
+  background: #FFF;
 }
 .select select {
   display: inline-block;
   width: 100%;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 8px 15px;
   outline: 0;
   border: 0;
   border-radius: 0;
-  background: #e6e6e6;
+  background: #FFF;
   color: #7b7b7b;
   appearance: none;
   -webkit-appearance: none;
@@ -664,12 +703,9 @@ table{
 .select select:hover,
 .select select:focus {
   color: #000;
-  background: #ccc;
+  background: #FFF;
 }
-.select select:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
+
 .select__arrow {
   position: absolute;
   top: 16px;
@@ -678,13 +714,10 @@ table{
   height: 0;
   pointer-events: none;
   border-style: solid;
-  border-width: 8px 5px 0 5px;
-  border-color: #7b7b7b transparent transparent transparent;
+  border-width: 5px 4px 0 4px;
+  border-color: #7f7f7f transparent transparent transparent;
 }
 .select select:hover ~ .select__arrow,
 .select select:focus ~ .select__arrow {
   border-top-color: #000;
-}
-.select select:disabled ~ .select__arrow {
-  border-top-color: #ccc;
 }
