@@ -15,9 +15,8 @@
     display: none;
     position: absolute;
     height: auto;
-    width: 370px;
-    overflow-y: scroll;
-    overflow-x:hidden;
+    width: 100%;
+
 }
   .pickmeup * {
      }
@@ -28,7 +27,7 @@
     text-align: center;
      }
     .pickmeup .pmu-instance .pmu-button {
-      color: #666666;
+      color: #b9b9b9;
       cursor: pointer;
       outline: none;
       text-decoration: none; }
@@ -50,10 +49,19 @@
       background: #136a9f;
       color: #eeeeee;
     border-radius: 2px;}
+
+    .pickmeup .pmu-instance .pmu-selected ::after{
+
+      background: #000;
+
+      border-radius: 2px 2px 0px 0px;
+    }
+
+
     .pickmeup .pmu-instance .pmu-not-in-month.pmu-selected {
       background:none; }
     .pickmeup .pmu-instance nav {
-      color: #666666;
+      color: #b9b9b9;
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
@@ -83,15 +91,29 @@
     .pickmeup .pmu-instance .pmu-day-of-week {
       color: #999999;
       cursor: default;
-    border-bottom:1px solid #eaeaea;}
-    .pickmeup .pmu-instance .pmu-day-of-week *,
-    .pickmeup .pmu-instance .pmu-days * {
+    border-bottom:1px solid #eaeaea;
+    padding:10px;
+
+  }
+    .pickmeup .pmu-instance .pmu-day-of-week *{
+
+      width:3.40em;
+        text-transform:uppercase;
+        text-align: center;
+          font-size:16px;
+            margin:1px;
+              font-family: 'Lato', sans-serif;
+              font-weight: 100;
+    }
+    .pickmeup .pmu-instance .pmu-days *{
       display: inline-block;
-      line-height: 3.1em;
-      width: 3.45em;
+      line-height: 2.80em;
+      width: 2.80em;
       margin:1px;
       font-family: 'Lato', sans-serif;
       font-weight: 100;
+      font-size:19px;
+      text-transform:uppercase;
 
 
     }

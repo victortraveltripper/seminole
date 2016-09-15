@@ -8,8 +8,14 @@ $color-booking:#1a24a7;
 
 body{
 	background:$color-white;
+	background-image:url("../images/Checkout-07.jpg") right;
+	background-repeat: no-repeat;
+	margin: auto;
 }
+@media (min-width:1200px){
 
+	.container{width:1160px;}
+}
 @media(max-width:980px){
 	.container{width:100%;}
 	}

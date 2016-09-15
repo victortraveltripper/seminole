@@ -19,11 +19,11 @@
                     <input type="text" name="quant[1]" class="input-number" value="0" min="0" max="5">
                   <span class="bookin-widget_parameters-text">Adults</span>
                     <span class="bookin-widget_parameters-icons">
-                      <a role="button" class=" btn-number" data-type="plus" data-field="quant[1]" value="-">
-                        <img src="../images/plus.png">
+                      <a role="button" class="btn-pls btn-number" data-type="plus" data-field="quant[1]" value="-">
++
                       </a>
-                      <a role="button" class=" btn-number" disabled="disabled" data-type="minus" value="+" data-field="quant[1]">
-                        <img src="../images/mini.png">
+                      <a role="button" class="btn-min btn-number" disabled="disabled" data-type="minus" value="+" data-field="quant[1]">
+-
                       </a>
 
                     </span>
@@ -35,12 +35,12 @@
                   <span class="bookin-widget_parameters-text">Children</span>
 
                     <span class="bookin-widget_parameters-icons">
-                      <a  role="button" class="btn-number" data-type="plus" data-field="quant[2]" value="-">
-                        <img src="../images/plus.png">
+                      <a  role="button" class="btn-pls btn-number" data-type="plus" data-field="quant[2]" value="-">
++
                       </a>
 
-                    <a role="button" class="btn-number"  data-type="minus" data-field="quant[2]" value="+">
-                      <img src="../images/mini.png">
+                    <a role="button" class="btn-min btn-number"  data-type="minus" data-field="quant[2]" value="+">
+-
                     </a>
 
 
@@ -253,6 +253,9 @@
   <input type="email" class="form-control"  placeholder="Email    ">
 
   <h3>Payment Method</h3>
+
+  <input type="radio" name="radio"/>
+  <div class="control__indicator"></div>
   <div class="cards booking-wigget-check">
   <input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" /><label for="checkboxG2" class="css-label">Credit Card</label>
   </div>
@@ -332,32 +335,50 @@
   <input type="text"   class="form-control" placeholder="Card Number   ">
   <label class="exp-date-lable" >Expiration date</label>
 
-  <div class="select-control">
-  <select class="form-control">
-  <option>Month</option>
-  </select>
 
-  <select class="form-control">
-  <option>Year</option>
-  </select>
+  <div class="select-control">
+    <div class="select">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+
+    <div class="select">
+      <select>
+        <option>First select</option>
+        <option>Option</option>
+        <option>Option</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
 </div>
 
   <input type="text" class="form-control"  placeholder="CVV number   ">
 
 
   <h3>Billing Address </h3>
-  <select class="form-control" >
-  <option>Country</option>
-
-  </select>
+  <div class="select">
+    <select>
+      <option>First select</option>
+      <option>Option</option>
+      <option>Option</option>
+    </select>
+    <div class="select__arrow"></div>
+  </div>
   <input type="text" class="form-control"  placeholder="Address  ">
   <input type="text" class="form-control"  placeholder="City   ">
 <div class="select-control-state">
-  <select class="form-control">
-  <option>State</option>
-
-
-  </select>
+  <div class="select">
+    <select>
+      <option>First select</option>
+      <option>Option</option>
+      <option>Option</option>
+    </select>
+    <div class="select__arrow"></div>
+  </div>
 
     <input type="text" class="form-control"  placeholder="Zip Code  "-->
 </div>
