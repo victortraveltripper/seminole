@@ -31,6 +31,8 @@
     }
 }
 
+.error{display:black; color:#de3235; }
+
 .booking-widget_header {
   background: #2378bc;
   @extend .clearfix;
@@ -224,6 +226,8 @@ color: #acacac !important;
   margin: 5px 0 0;
   font-style: italic;
 }
+
+
 
 // Buttons -----------------------------------------------------------------------
 .booking-widget_buttons{
@@ -485,7 +489,7 @@ table{
 
   .booking-widget_booknow{
 
-    a{
+    input{
   background: #2378bc;
   padding:20px;
   text-align:center;
@@ -494,6 +498,9 @@ table{
   letter-spacing: 1px;
   margin: 10px 0px;
   display: block;
+  width:100%;
+  border: none;
+  color: #FFF;
 
   }
   }

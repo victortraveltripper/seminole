@@ -246,11 +246,20 @@
   <div class="bookin-widget_form">
   <h3>GUEST details</h3>
 
+
+
+  <form action="" method="post" id="register-form"  novalidate="novalidate">
+
+
+
+
+
   <label >Primary Guest</label>
-  <input type="text"  class="form-control" placeholder="First Name">
-  <input type="text"  class="form-control"  placeholder="Last Name    ">
-  <input type="text"  class="form-control" placeholder="Mobile    ">
-  <input type="email" class="form-control"  placeholder="Email    ">
+  <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">
+  <input type="text" id="lastname" name="lastname"  class="form-control"  placeholder="Last Name    ">
+  <input type="text" id="mobile" name="mobile"   class="form-control" placeholder="Mobile    ">
+  <input type="text" id="email" name="email" class="form-control"  placeholder="Email    ">
+
 
   <h3>Payment Method  <span class="pull-right creditcard"><img src="../images/creditcards.png" alt=""/></span></h3>
 
@@ -279,16 +288,16 @@
 
 
 
-  <input type="text"  class="form-control" placeholder="Name on the card    ">
-  <input type="text"   class="form-control" placeholder="Card Number   ">
-  <label class="exp-date-lable" >Expiration date</label>
+  <input type="text" id="nameonthecard" name="nameonthecard"  class="form-control" placeholder="Name on the card    ">
+  <input type="text"  id="cardnumber" name="cardnumber"    class="form-control" placeholder="Card Number   ">
+  <br><label class="exp-date-lable" >Expiration date</label>
 
 
   <div class="select-control">
     <div class="select-control-inner">
     <div class="select">
       <select>
-        <option>First select</option>
+        <option>Month</option>
         <option>Option</option>
         <option>Option</option>
       </select>
@@ -298,7 +307,7 @@
 <div class="select-control-inner-right">
     <div class="select">
       <select>
-        <option>First select</option>
+        <option>Year</option>
         <option>Option</option>
         <option>Option</option>
       </select>
@@ -307,15 +316,14 @@
   </div>
 </div>
 
-  <input type="text" class="form-control"  placeholder="CVV number   ">
+  <input type="text" id="cvv" name="cvv"  class="form-control"  placeholder="CVV number   ">
 
 
   <h3>Billing Address </h3>
   <div class="select">
     <select>
-      <option>First select</option>
-      <option>Option</option>
-      <option>Option</option>
+      <option>Country</option>
+
     </select>
     <div class="select__arrow"></div>
   </div>
@@ -326,7 +334,7 @@
 
   <div class="select">
     <select>
-      <option>First select</option>
+      <option>Select State </option>
       <option>Option</option>
       <option>Option</option>
     </select>
@@ -334,7 +342,7 @@
   </div>
 
 </div>
-    <input type="text" class="form-control"  placeholder="Zip Code  "-->
+    <input type="text" id="zipcode" name="zipcode" class="form-control"  placeholder="Zip Code  "-->
 </div>
 
 
@@ -353,11 +361,14 @@
   <p class="font-small">Unless otherwise noted, the rates shown here do not include (if applicable) extra person fees, child fees, resort fees, additional mandatory hotel charges or optional incidentals like parking, room service or movies.
 </p>
 </div>
+
+
 <div class="clearfix"></div>
   <div class="booking-widget_booknow">
-    <a href="#" class="bookin-widget_booknow">Booknow</a>
+    <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
+    <input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" />
   </div>
-
+</form>
   </div>
 
 
@@ -380,7 +391,7 @@
 
           <div class="bookin-widget_avalible-rooms">
             <div class="bookin-widget_avalible-room-details">
-              <a href="#">
+
                 <img src="../images/booking-pics/Select_room-1.png " alt=""/>
               <div class="room-name_price">
                 <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
@@ -392,7 +403,7 @@
                   <span class="lightfont-dash">$203</span>/night
                 </span>
               </div>
-            </a>
+
 
             </div>
             </div>
