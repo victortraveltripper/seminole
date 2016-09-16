@@ -1,12 +1,12 @@
 .booking-widget {
+  font-family: 'Lato', sans-serif;
   position: fixed;
   z-index: 1000000000;
   top: 0;
-  right: -400px;
-  width: 370px;
-  min-height: 450px;
-  height: auto;
-  background: #FFF;
+  right: -500px;
+  width: 415px;
+  height: 93%;
+  background: #e6e4e5;
   -webkit-transition: right 0.4s;
   transition: right 0.4s;
   -webkit-box-shadow: -11px 11px 45px -11px rgba(0,0,0,0.75);
@@ -17,6 +17,8 @@
 
   &.-show {
     right: 0;
+    height: 99%;
+
   }
 
 #selecthotel{
@@ -28,6 +30,8 @@
 
     }
 }
+
+.error{display:black; color:#de3235; }
 
 .booking-widget_header {
   background: #2378bc;
@@ -45,27 +49,52 @@
   color: #fff;
   cursor: pointer;
 }
+.booking-widget_back {
+  float: left;
+
+  font-weight: lighter;
+  text-align: center;
+  width: 58px;
+  height: 58px;
+  line-height: 58px;
+  color: #fff;
+  cursor: pointer;
+}
+
 
 .booking-widget_title {
   font-family: 'Lato', sans-serif;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: lighter;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   height: 58px;
-  margin: 0 58px 0 0;
+  margin: 0 58px 0 20px;
   line-height: 58px;
   color: #fff;
 }
 
+#step1 .booking-widget_content {
+
+  top:127px;
+}
+#step4 .booking-widget_content {
+
+  top:58px;
+}
+
+
 .booking-widget_content {
+  font-family: 'Lato', sans-serif;
   position: absolute;
-  top: 58px;
+  top:105px;
   right: 0;
   left: 0;
+  bottom:0;
+  width:100%;
   height: auto;
-  max-height: calc(100% - 58px);
+  max-height: calc(99%);
   overflow-x: hidden;
   overflow-y: auto;
   background: #E6E4E5;
@@ -82,7 +111,7 @@
 .booking-widget_flexible-dates {
   display: block;
 
-  padding: 30px 0px;
+  padding: 15px 0px;
   color: #322c2c;
   text-decoration: none;
   text-transform: uppercase;
@@ -92,6 +121,19 @@
   text-align: center;
   background: #FFF;
   font-family: 'Lato', sans-serif;
+
+
+}
+
+.booking-widget_selected-rooms{
+float:right;
+width:95px;
+
+span{
+   color:#2378bc;
+   padding: 5px;
+}
+
 }
 
 .booking-widget_flexible-dates_icon {
@@ -103,249 +145,79 @@
   background-size: 11px 11px;
 }
 
-// Footer ----------------------------------------------------------------------
-.booking-widget_footer {
-  padding: 20px;
-  color: #7a7878;
-
-  p {
-    margin: 0;
-  }
-}
-
-.booking-widget_footer_links {
-  position: relative;
-}
-
-.booking-widget_footer_links_item {
-  position: relative;
-  display: inline-block;
-  font-size: 12px;
-  text-decoration: none;
-  color: #7a7878;
-  margin-right: 26px;
-  margin-top: 10px;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &.-email::after {
-    width: 17px;
-    height: 13px;
-    background: url('../images/booking-widget/footer-email.svg') no-repeat;
-    background-size: 17px 13px;
-    vertical-align: middle;
-  }
- &.-email::before {
-    margin-right: 0px;
- }
-  &.-contacts::before {
-    width: 17px;
-    height: 16px;
-    background: url('../images/booking-widget/footer-contacts.svg') no-repeat;
-    background-size: 17px 16px;
-    vertical-align: bottom;
-  }
-
-  &.-reservation::before {
-    width: 14px;
-    height: 18px;
-    background: url('../images/booking-widget/footer-reservation.svg') no-repeat;
-    background-size: 14px 18px;
-    vertical-align: bottom;
-  }
-
-  &:before {
-    content: '';
-    display: inline-block;
-    margin-right: 10px;
-  }
-	 &:after {
-    content: '';
-    display: inline-block;
-    margin-left: 10px;
-  }
-}
-
-// View Special Rate -----------------------------------------------------------
-.booking-widget_special-rates {
-  padding: 0 20px;
-  @extend .clearfix;
-}
-
-.booking-widget__special-rates_title {
-  font-size: 14px;
-  height: 40px;
-  line-height: 40px;
-  margin: 0;
-  text-align: center;
-  cursor: pointer;
-  color: #7a7878;
-  text-transform: none;
-  letter-spacing: 0;
-}
-
-.booking-widget_special-rates_button {
-  display: block;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
-  margin: 20px 0;
-  padding: 12px 30px;
-  border: 1px solid #7a7878;
-  background: #7a7878;
-  color: #fff;
-}
-
-.booking-widget_special-rates_iata {
-  display: block;
-  padding: 10px 0;
-  margin: 10px 0;
-  border-top: 1px solid #e6e5e5;
-  border-bottom: 1px solid #e6e5e5;
-
-  span {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    float: left;
-    width: 86px;
-    height: 30px;
-    line-height: 30px;
-    color: #322c2c;
-  }
-}
-
-.booking-widget_special-rates_iata_input {
-  padding-left: 96px;
-
-  input {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    width: calc(100% - 20px);
-    height: 30px;
-    margin: 0;
-    padding: 0 10px;
-    border: 0;
-    background: #f7f7f7;
-    outline: none;
-    color: #322c2c;
-  }
-}
-
-.booking-widget_special-rates_list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  @extend .clearfix;
-
-  li {
-    position: relative;
-    float: left;
-    width: 100%;
-    margin: 5px 0;
-  }
-}
-
-.booking-widget_special-rates_radio {
-  position: relative;
-
-  input[type="radio"] {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-
-    &:checked {
-      & + .booking-widget_special-rates_radio-icon {
-        &:before {
-          visibility: visible;
-        }
-      }
-    }
-  }
-
-  input[type="text"] {
-    float: right;
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    height: 30px;
-    margin: 0;
-    padding: 0 10px;
-    border: 0;
-    background: #f7f7f7;
-    outline: none;
-    color: #322c2c;
-  }
-}
-
-.booking-widget_special-rates_radio-icon {
-  position: relative;
-  top: 4px;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border: 1px solid #000;
-
-  &:before {
-    visibility: hidden;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -5px;
-    margin-left: -5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #b4975a;
-  }
-}
-
-.booking-widget_special-rates_radio_title {
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  margin-left: 10px;
-  color: #322c2c;
-}
-
 
 // Rooms, Adults, Children -----------------------------------------------------
 .bookin-widget_parameters {
-  margin: 26px 0;
-  padding: 0 20px;
+  margin: 20px 0;
+  padding: 0 10px;
   text-align:right;
 }
 
 .bookin-widget_parameters_select-group {
+input{ background: none;
+width:15px;
+border: none;
+float: left;
+color:#2378bc;
+margin-left:6px;
+}
+}
+.bookin-widget_parameters-text{
+  font-size: 13px;
+      padding: 2px 0px;
+  float: left;
+}
 
-  font-size: 0;
-  margin: 0 -10px;
+.bookin-widget_parameters_adualt{
+float:left;
+width:31%;
 
-  select {
-    display: inline-block;
-    min-width: 28%;
-    margin: 0 5px;
-    border: 0px solid #ACACAC;
-    border-radius: 0;
-    font-size: 14px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-            background: none;
-    &:first-child {
-      margin-left: 0;
+padding-right: 15px;
+border-right: 1px solid #ccc;
+}
 
-      border-right:1px solid #acacac;
-    }
+.bookin-widget_parameters_children{
+width: 32%;
+float:left;
 
-    &:last-child {
-      margin-right: 0;
-    }
+}
+
+.bookin-widget_parameters-icons{
+  width:38%;
+  float:right;
+  margin-top: -10px;
+a{
+   display:block;
+ }
+  .btn-min{
+    border-top: 0px solid #adadad;
+border-radius: 0px 0px 22px 22px;
+padding: 0px 19px 0px 16px;
+background: #e9e9e9;
+height: 22px;
+border-left: 2px solid #adadad;
+border-right: 2px solid #adadad;
+border-bottom: 2px solid #adadad;
+width: 42px;
+float: left;
+font-size: 18px;
+color: #acacac !important;
   }
+.btn-pls{
+  border-top: 2px solid #adadad;
+    border-radius: 22px 22px 0px 0px;
+    padding: 0px 19px 0px 13px;
+    background: #f8f8f8;
+    border-left: 2px solid #adadad;
+    border-right: 2px solid #adadad;
+    border-bottom: 0px;
+    width: 42px;
+    float: left;
+    height: 22px;
+    font-size: 18px;
+    color: #7c7c7c !important;
+
+}
 }
 
 
@@ -356,7 +228,7 @@
   margin: 0px 0 0;
   text-transform:uppercase;
   float:left;
-  font-weight: 500;
+  font-weight: 700;
   font-family: 'Lato', sans-serif;
 }
 .bookin-widget_parameters_description {
@@ -365,185 +237,521 @@
   text-align: right;
   color: #7a7878;
   margin: 5px 0 0;
+  font-style: italic;
 }
 
-// Rate -----------------------------------------------------------------------
-.booking-widget_rate {
-  padding: 20px 20px 0;
+
+
+// Buttons -----------------------------------------------------------------------
+.booking-widget_buttons{
+padding: 2%;
+  @extend .clearfix;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  background: #e6e4e5;
 }
 
-.booking-widget_rate_content {
+.booking-widget_buttons-active{
+padding: 2%;
+  @extend .clearfix;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  background: #2378bc;
+}
+
+.booking-widget_buttons_content {
   @extend .clearfix;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.booking-widget_rate_col {
-  float: left;
-  font-family: 'Lato', sans-serif;
-  width: 50%;
-  height: 46px;
-
-  &.-title {
-    font-size: 18px;
-    text-transform: uppercase;
-    text-align: center;
-    color: #322c2c;
-		padding-top:12px;
-  }
-
-  &.-count {
-    font-size: 48px;
-    font-weight: lighter;
-    text-align: left;
-    color: #b4975a;
-    line-height: 46px;
-  }
-}
-
-.booking-widget_rate_button {
+.booking-widget_reset_date_button {
   display: block;
-  width: 100%;
+  width: 48%;
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-  margin: 0;
+  margin: 0px 10px 0px 0px;
   padding: 12px 30px;
-  border: 1px solid #000;
-  background: #000;
-  color: #fff;
+  border: 1px solid #b8b6b7;
+  background:none;
+  color: #b8b6b7;
   outline: none;
+  float: left;
 }
 
 
-
-// TODO
-.booking-widget_accord {
-  background: #fff;
-  margin: 10px 0;
-
-  &.-first {
-    margin-top: 0;
-  }
-
-  &.-unindents {
-    margin: 0;
-  }
-}
-
-.booking-widget_accord_title {
-  font-size: 14px;
-  height: 40px;
-  line-height: 40px;
-  margin: 0;
+.booking-widget_select_rooms_button {
+  display: block;
+  width: 49%;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
   text-align: center;
-  cursor: pointer;
-  color: #7a7878;
-  text-transform: none;
-  letter-spacing: 0;
+  letter-spacing: 2px;
+  margin: 0px 0px 0px 0px;
+  padding: 12px 24px;
+  border: 1px solid #b8b6b7;
+  background: #b8b6b7;
+  color: #292929;
+  outline: none;
+  float: left;
+}
+.bookin-widget_selected-date{
+  background: #FFF;
+  @extend .clearfix;
+  padding: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+.bookin-widget-backdate {
+  width: 32px;
+  height: 18px;
+  background-size: 32px 22px;
+  vertical-align: bottom;
+  display: inline-block;;
 }
 
-.booking-widget_accord_toggler {
-  position: relative;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 
-  &.-show {
-    &:after {
-      -webkit-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-              transform: rotate(180deg);
+
+.bookin-widget_avalible-room-details{
+  position: relative;
+  margin-bottom: 2px;
+img {
+  width:100%;
+}
+.room-name_price{
+  font-family: 'Lato', sans-serif;
+position: absolute;
+bottom:0px;
+  padding: 40px 20px 20px 20px ;
+
+  background: url('../images/background.png')repeat-x;
+  text-transform: uppercase;
+  color: #FFF;
+  width:100%;
+  font-weight: 500;
+
+.lightfont{
+  font-size:10px;
+}
+.room-price{
+  font-weight:200;
+  text-transform: none;
+  }
+  .regular-price{
+    color:#939393;
+  }
+.lightfont{
+
+  .lightfont-dash{
+    text-decoration: line-through;
+
+    color: #939393;
+  }
+}
+}
+}
+
+.bookin-widget_prices-info{
+  width:100%;
+table{
+    font-family: 'Lato', sans-serif;
+    width:90%;
+
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFF;
+    td{width:50%;
+      padding:5px;
+    }
+      .bolder{font-weight: 600;}
+
+  }
+}
+
+.bookin-widget_form{
+  width:90%;
+  font-family: 'Lato', sans-serif;
+  margin: auto;
+  padding-bottom: 10px;
+  h3{
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 10px 0px;
+
+    .creditcard{
+      text-align: right;
+      width:210px;
+    float: right;
+      img{width:70%;}
     }
   }
+  label{
 
-  &:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    right: 25px;
-    top: 50%;
-    width: 11px;
-    height: 9px;
-    margin-top: -4px;
-    background: url('../images/booking-widget/arrow-bottom.svg') no-repeat;
-    background-size: 11px 9px;
+    font-weight: 300;
+    font-size: 12px;
+
   }
+  .exp-date-lable{ margin-top: 14px;}
+
+  .select-control{
+    border-radius: 0px !important;
+      margin: 0px 0px 5px;
+      font-size: 12px;
+      box-shadow: none;
+      /* height: 25px; */
+      width: 70%;
+      /* padding: 6px 12px; */
+      float: right;
+
+
+      .select-control-inner{
+
+        width:48%; float: left;
+
+      }
+
+      .select-control-inner-right{
+
+        width:48%; float: right;
+
+      }
+      select{
+      border-radius:0px;
+      width: 100%;
+
+    float: left;
+  }
+  }
+
+
+  .select-control-state{
+      border-radius: 0px !important;
+      margin: 0px 0px 5px;
+      font-size: 12px;
+      box-shadow: none;
+      /* height: 25px; */
+      width: 100%;
+      /* padding: 6px 12px; */
+        float: left;
+
+
+
+    select{
+      border-radius:0px;
+      width:100%;
+    margin-left: 0px;
+    float: left;
+
+
+  }
+
+  input{  width:38%;
+  margin-left: 0px;
+  float: right;}
+  }
+
+  .select-control-state-inner{   width: 60%; float: left;}
+  .cards{
+    width:50%; float: left;
+    margin:10px 0px;
+
+  label{
+    padding-top: 8px;
+    margin-bottom: 6px;
+
+    }
+
+  }
+
+  .form-control {
+    border-radius: 0px;
+    margin:5px 0px;
+    font-size:12px;
+    box-shadow:none;
+    width: 100%;
+    transition:none;
+    border:1px solid #cecece;
+
+  }
+.termcheckbox{
+
+  width:10%;
+  float: left;
+
+
+}
+  .booking-widget_terms{
+    width:90%;
+    float: right;
+    a{
+      color:#000;
+      text-decoration:underline;
+    }
+    p
+    {font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      color: #292929;
+      line-height: normal;
+    }
+    .font-small{
+      font-family: 'Lato', sans-serif;
+      font-size: 8px;
+      line-height: normal;
+      font-style: italic;
+      color: #292929;
+    }
+
+
+  }
+
+  .booking-widget_booknow{
+
+    input{
+  background: #2378bc;
+  padding:20px;
+  text-align:center;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+  display: block;
+  width:100%;
+  border: none;
+  color: #FFF;
+
+  }
+  }
+
 }
 
-.booking-widget_accord_content {
-  display: none;
-  @extend .clearfix;
+
+
+.bookin-widget_conform{
+  width:100%;
+  font-family: 'Lato', sans-serif;
+  margin: auto;
+  padding-bottom: 10px;
+  h3{
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 0px 20px;
+    color: #4dbad4;
+  }
+
+  .bookin-widget_conform_room-info{
+    font-size:17px;
+    padding: 5px 20px 16px 20px;
+    p{
+      font-family: 'Lato', sans-serif;
+      margin: 0px;
+      line-height: 20px;
+      color:#949494;
+      font-weight: 300;
+      padding-top:26px;
+      letter-spacing: 0px;
+    }
+      .labledata{
+        font-weight: 400;
+
+
+
+      }
+  }
+  .confir{font-weight: 600;
+    text-transform: uppercase;
+    color:#2378bc;
+  }
+.GuestDetails{
+    background: #FFF;
+    padding:20px;
+
+      h3{
+        padding:0px 0px 0px;
+        margin: 0px;
+
+      }
+
+
+      p{
+        font-family: 'Lato', sans-serif;
+        margin: 0px;
+        line-height: 20px;
+        color:#949494;
+        font-weight: 300;
+        padding-top:13px;
+        letter-spacing: 0px;
+      }
+        .labledata{
+          font-weight: 400;
+
+
+
+        }
+    }
+
+    .booking-widget_booknow
+
+    a {
+      background: #2378bc;
+      width: 90%;
+      padding: 20px;
+      text-align:center;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 10px auto;
+      display: block;
+
+    }
+
+}
+
+
 }
 
 
 
 
+/*example*/
 
 
-// Check In, Check Out Calendars -----------------------------------------------
-.booking-widget_calendar {
+
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  text-align: left;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 200px;
+  height: 210px;
+  margin: 10px;
+}
+.control {
+  display: block;
   position: relative;
-  height: 46px;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-
-  &.-error {
-    border-top: 1px solid #b4975a;
-    border-bottom: 1px solid #b4975a;
-  }
+  padding-left: 40px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
 }
-
-.booking-widget_calendar_input {
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
   position: absolute;
   top: 2px;
-  right: 50px;
-  bottom: 2px;
-  left: 185px;
-
-  input {
-    font-family: 'Lato', sans-serif;
-    font-size: 14px;
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    color: #b4975a;
-  }
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background: #FFF;
+  border:1px solid #cecece;
 }
-
-.booking-widget_calendar_icon {
-  position: relative;
-  top: 13px;
-  padding-left: 50px;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #7a7878;
-
-  &:before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    width: 17px;
-    height: 17px;
-    margin-top: -10px;
-    background: url('../images/booking-widget/calendar.svg') no-repeat;
-    background-size: 17px 17px;
-  }
+.control--radio .control__indicator {
+  border-radius: 0%;
 }
-
-.booking-widget_calendar_error-text {
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #FFF;
+}
+.control input:checked ~ .control__indicator {
+  background: #FFF;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #FFF;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
   display: none;
-  color: #b4975a;
-  margin: 5px 0;
-  padding: 0 20px;
 }
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 6px;
+  top: 6px;
+  height: 16px;
+  width: 16px;
+  background:#b2b2b2;
+
+
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #fff;
+}
+.control--radio .control__indicator:after {
+  left: 7px;
+    top: 7px;
+    height: 14px;
+    width: 14px;
+    border-radius: 0%;
+    background: #b2b2b2;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #FFF;
+}
+.select {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  width: 100%;
+  border: 1px solid #cecece;
+  background: #FFF;
+}
+.select select {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 8px 15px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #FFF;
+  color: #7b7b7b;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #000;
+  background: #FFF;
+}
+
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #7f7f7f transparent transparent transparent;
+}
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow {
+  border-top-color: #000;
 }

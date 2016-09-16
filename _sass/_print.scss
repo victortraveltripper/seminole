@@ -1,0 +1,212 @@
+$color-background:#f6f5f5;
+
+.print{
+  background-image:url('../images/checkout.jpg');
+  background-repeat: no-repeat;
+  /*margin-top: 100px;*/
+  padding-top:90px;
+  font-family: 'Lato', sans-serif;
+  background: $color-background;
+  font-weight:400;
+
+h4{
+color:#00a32e ;
+text-transform:uppercase;
+font-weight: 900;
+padding: 20px 0px;
+letter-spacing: 1px;
+.fa{
+color:#00a32e;
+padding: 0px 10px;
+}
+
+}
+
+
+.checkout-details{
+  width: 82%;
+  margin:auto auto 20px auto;
+  padding:38px;
+  background: #FFF;
+  -webkit-box-shadow: -5px 4px 48px -12px rgba(0,0,0,0.41);
+-moz-box-shadow: -5px 4px 48px -12px rgba(0,0,0,0.41);
+box-shadow: -5px 4px 48px -12px rgba(0,0,0,0.41);
+
+  h2{
+    font-size: 27px;
+    color: #4dbad4;
+    padding: 0px 0px 28px 0px;
+    border-bottom: 4px solid #ebebeb;
+    margin: 6px 0px;
+a{
+  display: block;
+color: #4dbad4;
+
+}
+    .print-invoice{
+
+      font-weight: 900;
+      font-size: 15px;
+      padding-top: 9px;
+    }
+  }
+  .hotel_details{
+    margin: 26px 0px
+
+  }
+  .checkout-details-logo{
+
+    vertical-align:middle;
+    padding-top: 10px;
+  }
+  .hotel-location{
+    font-size: 16px;
+    color: #949494;
+
+    .hotel-name{
+
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+
+.checkout-heading{
+
+  color:#949494;
+  font-size: 16px;
+  margin-top: 28px;
+}
+
+  .checkout-details-room-details{
+    position: relative;
+    margin-bottom: 2px;
+  img {
+    width:100%;
+  }
+  .checkout-details-room-name_price{
+    font-family: 'Lato', sans-serif;
+  position: absolute;
+  bottom:0px;
+    padding: 40px 20px 20px 20px ;
+
+    background: url('../images/background.png')repeat-x;
+    text-transform: uppercase;
+    color: #FFF;
+    width:100%;
+    font-weight: 500;
+
+  .checkout-details-lightfont{
+    font-size:10px;
+  }
+  .checkout-details-room-price{
+    font-weight:200;
+    text-transform: none;
+    }
+    .checkout-details-regular-price{
+      color:#939393;
+    }
+  .checkout-details-lightfont{
+
+    .checkout-details-lightfont-dash{
+      text-decoration: line-through;
+
+      color: #939393;
+    }
+  }
+  }
+  }
+
+
+
+
+  h3{
+    font-size: 20px;
+    border-bottom: 3px solid #ebebeb;
+    margin-bottom: 20px;
+    color: #4dbad4;
+    padding: 10px 0px;
+
+
+  }
+  table{
+    width:100%;
+    font-size: 16px;
+
+    td{
+      padding:4px 0px;
+
+    }
+    .checkout-details_bolder{
+      font-weight: 700;
+    }
+    .checkout-details-confrom{
+      text-transform: uppercase;
+      color: #01a601;
+      font-weight: 700;
+
+    }
+  }
+
+  .hotel-free-activites{
+    background: #efefef;
+    padding: 9px 0px;
+    font-size: 14px;
+    margin-top: 9px;
+
+    .activites-left{
+
+      background:url('../images/breakfast.svg') left;
+      background-repeat: no-repeat;
+      padding: 15px 0px 15px 40px;
+      line-height: 30px;
+      background-size:36px;
+
+    }
+    .activites-center{
+        text-align: center;
+          background:url('../images/wifi.svg') left ;
+          background-repeat: no-repeat;
+          padding: 15px 0px 15px 48px;
+          line-height: 30px;
+          background-size:34px;
+
+    }
+    .activites-right{
+
+        text-align: right;
+          background:url('../images/car.svg')  left ;
+          background-size:34px;
+          background-repeat: no-repeat;
+          padding: 15px 0px 15px 48px;
+          line-height: 30px;
+    }
+  }
+
+  .bottom-address{  margin-top: 137px; padding: 7px 0px; color:#949494;}
+  .bootom-location-address{
+    background: #FFF;
+    padding: 10px;
+    position: absolute;
+    left: 25%;
+    font-size: 16px;
+    .bootom-location-hotel-name{
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .print_cancellation-policy{
+      p{
+      font-weight: 400;
+      font-size:13px;
+      text-align: justify;
+      line-height:22px;
+      font-family: 'Lato', sans-serif;
+
+      }
+    }
+}
+
+
+}
