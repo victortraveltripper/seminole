@@ -49,7 +49,7 @@
 		next			: '&#9654;',
 		mode			: 'single',
 		select_year		: false,
-		select_month	: true,
+		select_month	: false,
 		select_day		: true,
 		view			: 'days',
 		calendars		: 1,
@@ -224,7 +224,7 @@
 							options.mode == 'multiple' &&
 							actual_date.reduce(function (prev, current) {
 								current	= new Date(current);
-								prev.push(current.getFullYear() + '-' + current.getMonth());
+								prev.push(current.getFullYear() + '-' + current.getMonth(1));
 								return prev;
 							}, []).indexOf(year + '-' + month) !== -1
 						) ||
