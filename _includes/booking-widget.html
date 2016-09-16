@@ -79,6 +79,8 @@
     <div class="bookin-widget_selected-date">
       <a href="#" class="backdate back"><img src="../images/calender.svg" alt=""/></a>
       Tue, Aug 26 - Fri, Aug 30
+
+      <div class="booking-widget_selected-rooms"><span class="">2</span> Rooms  <span class="fa fa-angle-down"><span/> </div>
     </div>
   <div class="booking-widget_content">
 
@@ -248,7 +250,7 @@
 
 
 
-  <form action="" method="post" id="register-form"  novalidate="novalidate">
+  <form action="/payment-process/" method="post" id="register-form"  novalidate="novalidate">
 
 
 
@@ -290,16 +292,27 @@
 
   <input type="text" id="nameonthecard" name="nameonthecard"  class="form-control" placeholder="Name on the card    ">
   <input type="text"  id="cardnumber" name="cardnumber"    class="form-control" placeholder="Card Number   ">
-  <br><label class="exp-date-lable" >Expiration date</label>
+  <div class="clearfix"></div>
+  <label class="exp-date-lable" >Expiration date</label>
 
 
   <div class="select-control">
     <div class="select-control-inner">
     <div class="select">
-      <select>
-        <option>Month</option>
-        <option>Option</option>
-        <option>Option</option>
+      <select id="month" name="month">
+        <option value="0">January</option>
+        <option value="1">January</option>
+        <option value="2" >February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option><
+        option value="11">November</option>
+        <option value="12">December</option>
       </select>
       <div class="select__arrow"></div>
     </div>
@@ -308,8 +321,11 @@
     <div class="select">
       <select>
         <option>Year</option>
-        <option>Option</option>
-        <option>Option</option>
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
       </select>
       <div class="select__arrow"></div>
     </div>

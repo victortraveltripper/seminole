@@ -4,7 +4,7 @@ $(function() {
   $("#register-form").validate({
 
       // Specify the validation rules
-      rules: {
+       rules: {
           firstname: "required",
           lastname: "required",
           email: {
@@ -18,7 +18,8 @@ $(function() {
           nameonthecard:"required",
           cardnumber:"required",
           cvv:"required",
-          agree: "required"
+          agree: "required",
+          month:"required"
       },
 
       // Specify the validation error messages
@@ -28,12 +29,14 @@ $(function() {
           nameonthecard: "Please enter your Card Name",
           cardnumber:"Please enter your Card Number",
           cvv:"Please enter your Card Number",
+          month:"Select Month",
           mobile: {
               required: "Please enter your Moble Number",
               minlength: "Your Enter must be at least 10 Number"
           },
           email: "Please enter a valid email address",
           agree: "Please accept our policy"
+
           },
 
 

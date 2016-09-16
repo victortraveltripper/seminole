@@ -20,10 +20,16 @@
 }
   .pickmeup * {
      }
+     .pickmeup .pmu-instance:nth-child(5n+1),.pickmeup .pmu-instance:nth-child(5n+2){
+       display: none;
+     }
   .pickmeup .pmu-instance {
-    display: inline-block;
-    height: 22.8em;
-    padding: .0em;
+    display: block;
+    width:408px;
+
+
+
+
     text-align: center;
      }
     .pickmeup .pmu-instance .pmu-button {
