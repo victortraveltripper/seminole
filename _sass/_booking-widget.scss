@@ -121,6 +121,19 @@
   text-align: center;
   background: #FFF;
   font-family: 'Lato', sans-serif;
+
+
+}
+
+.booking-widget_selected-rooms{
+float:right;
+width:95px;
+
+span{
+   color:#2378bc;
+   padding: 5px;
+}
+
 }
 
 .booking-widget_flexible-dates_icon {
@@ -215,7 +228,7 @@ color: #acacac !important;
   margin: 0px 0 0;
   text-transform:uppercase;
   float:left;
-  font-weight: 500;
+  font-weight: 700;
   font-family: 'Lato', sans-serif;
 }
 .bookin-widget_parameters_description {
@@ -238,6 +251,16 @@ padding: 2%;
   z-index: 1;
   width: 100%;
   background: #e6e4e5;
+}
+
+.booking-widget_buttons-active{
+padding: 2%;
+  @extend .clearfix;
+  position: absolute;
+  bottom: 0px;
+  z-index: 1;
+  width: 100%;
+  background: #2378bc;
 }
 
 .booking-widget_buttons_content {
@@ -470,6 +493,10 @@ table{
   .booking-widget_terms{
     width:90%;
     float: right;
+    a{
+      color:#000;
+      text-decoration:underline;
+    }
     p
     {font-family: 'Lato', sans-serif;
       font-size: 11px;
