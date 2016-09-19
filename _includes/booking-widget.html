@@ -58,12 +58,23 @@
 
 
       <a href="#" class="booking-widget_flexible-dates">SELECT CHECK-IN  </a>
-      <div class="3-calendars"></div>
+      <!--div class="3-calendars"></div-->
+      <!--div id='sandbox-container'><div></div></div-->
+
+      <p style="display:none;">
+      Dates:
+        <label><b>To:</b></label>
+      <input type="text" id="input1" size="10">
+          <label><b>From:</b></label>
+      <input type="text" id="input2" size="10">
+    </p>
+     <div class="datepicker"></div>
+
     </div>
 
     <div class="booking-widget_buttons">
-      <button type="submit" class="booking-widget_reset_date_button">RESET DATES</button>
-      <button type="submit" class="booking-widget_select_rooms_button ">SELECT ROOMS</button>
+      <button type="reset" class="booking-widget_reset_date_button" >RESET DATES</button>
+      <button type="submit" class="booking-widget_select_rooms_button  disabled">SELECT ROOMS</button>
     </div>
   </div>
 
