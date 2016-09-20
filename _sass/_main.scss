@@ -8,19 +8,24 @@ $color-booking:#1a24a7;
 
 body{
 	background:$color-white;
-	background-image:url("../images/Checkout-07.jpg") right;
-	background-repeat: no-repeat;
-	margin: auto;
 }
-@media (min-width:1200px){
 
-	.container{width:1160px;}
-}
 @media(max-width:980px){
 	.container{width:100%;}
 	}
 
+.navbar-nav{
+	margin-left:205px;
+	@media(max-width:1026px ){
+		margin-left:59px;
 
+	}
+	@media(max-width:770px ){
+		margin-left:0px;
+		float: none;
+
+	}
+}
 .navbar-toggle {
   border: none;
   background:#f7f7f7;
@@ -94,7 +99,6 @@ body{
 }
 
 .navbar-nav > li > a{
-	line-height: 14px;
 		color:$color-blue;
 		text-transform: uppercase;
 		font-family:'NeueHaasGroteskDisp W01';
@@ -103,23 +107,12 @@ body{
 			padding: 15px 6px;
 			font-size: 12px;
 			}
-		@media (max-width:766px){
-			padding:6px 20px;
+		@media (max-width:737px){
+			padding:15px 20px;
 			font-size:22px;
 			font-family:'bill corporate narrow W00mediu';
 			}
 
-	}
-
-	.navbar-brand {
-
-		@media (max-width:360px){
-			width:130px;
-			margin-top:2px;
-			img{width:100%;
-			}
-
-		}
 	}
 	.nav-social {
 		display:none;
@@ -134,21 +127,16 @@ body{
 			}
 
 			@media( max-width:980px){
-				display:none;
+				display:block;
 				padding:0px;
 				}
-				@media (max-width:766px){
-					display:block;;
-					padding:10px;
+				@media (max-width:769px){
+					display:none;
+					padding:0px;
 					}
 	}
 	}
-	.hiddenbrk1{
-		display:block;
-	@media (max-width:766px){
-		display:none;
-		}
-	}
+
 	.hiddenbrk{ display:none;
 	@media (max-width:766px){
 		display:block;
@@ -157,11 +145,11 @@ body{
 /*Book Now*/
 
 .mobile{
-background:#04082f;
+background:$color-booking;
 display: none;
 
 @media (max-width:766px){
-	padding:12px;
+	padding:15px;
 	text-align:center;
 	width:133px;
 	display: block;
@@ -172,16 +160,12 @@ display: none;
 
 }
 .booking{
-	background:#04082f;
-	padding:12px;
+	background:$color-booking;
+	padding:15px;
 	text-align:center;
 	width:133px;
 
 	 float:right;
-
-	 @media (max-width:1021px){
- 			width:125px;
- 			}
 	@media (max-width:767px){
 		display:none;
 			}
@@ -892,14 +876,8 @@ width:60%;
 			width:65%;
 			margin:auto;
 			@media (max-width:980px){
-				width:80%;
+				width:100%;
 				}
-				@media (max-width:767px){
-									width:63%;
-									}
-				@media (max-width:668px){
-					width:70%;
-					}
 			}
 			.btn-book{
 				background:$color;
