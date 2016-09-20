@@ -99,6 +99,9 @@ margin-bottom:25px;
         color: #fff;
         background: #2378bc;
         border-radius: 3px;
+        ::before{
+            border-radius: 0px 0px 0px 0px;
+        }
       }
     }
   }
