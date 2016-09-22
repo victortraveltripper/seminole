@@ -277,7 +277,7 @@
   <label >Primary Guest</label>
   <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">
   <input type="text" id="lastname" name="lastname"  class="form-control"  placeholder="Last Name    ">
-  <input type="text" id="mobile" name="mobile"   class="form-control" placeholder="Mobile    ">
+  <input type="text" id="mobile" name="mobile" inputmode="numeric"  maxValue="10"  class="form-control" placeholder="Mobile    ">
   <input type="text" id="email" name="email" class="form-control"  placeholder="Email ">
 
 
@@ -313,7 +313,7 @@
   <div>
     <span class="field">
       <label for="ccnum">Card Number</label>
-      <input placeholder="card number" type="tel" size="19" class="form-control"  name="ccnum" value="" id="ccnum">
+      <input placeholder="Card number" type="tel" size="19" class="form-control"  name="ccnum" value="" id="ccnum">
     </span>
     <div><small>type: <strong id="ccnum-type">invalid</strong></small></div>
   </div>
@@ -330,7 +330,7 @@
 </div>
     <span class="cvc field">
       <label for="cvc">CVC</label>
-      <input placeholder="cvv"  size="4" type="tel" class="form-control" name="cvc" value="" id="cvc">
+      <input placeholder="CVV"  size="4" type="tel" class="form-control" name="cvc" value="" id="cvc">
     </span>
 
 
