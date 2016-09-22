@@ -268,7 +268,7 @@
 
 
 
-  <form action="/payment-process/" method="post" id="register-form"  novalidate="novalidate">
+  <form action="#" method="post" id="register-form"  novalidate="novalidate">
 
 
 
@@ -278,7 +278,7 @@
   <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">
   <input type="text" id="lastname" name="lastname"  class="form-control"  placeholder="Last Name    ">
   <input type="text" id="mobile" name="mobile"   class="form-control" placeholder="Mobile    ">
-  <input type="text" id="email" name="email" class="form-control"  placeholder="Email    ">
+  <input type="text" id="email" name="email" class="form-control"  placeholder="Email ">
 
 
   <h3>Payment Method  <span class="pull-right creditcard"><img src="../images/creditcards.png" alt=""/></span></h3>
@@ -308,49 +308,30 @@
 
 
 
-  <input type="text" id="nameonthecard" name="nameonthecard"  class="form-control" placeholder="Name on the card    ">
-  <input type="text"  id="cardnumber" name="cardnumber"    class="form-control" placeholder="Card Number   ">
-  <div class="clearfix"></div>
+  <input type="text" id="nameonthecard" name="nameonthecard"  class="form-control" placeholder="Name on the card">
+
+  <div>
+    <span class="field">
+      <label for="ccnum">Card Number</label>
+      <input placeholder="card number" type="tel" size="19" class="form-control"  name="ccnum" value="" id="ccnum">
+    </span>
+    <div><small>type: <strong id="ccnum-type">invalid</strong></small></div>
+  </div>
+
+
   <label class="exp-date-lable" >Expiration date</label>
 
 
   <div class="select-control">
-    <div class="select-control-inner">
-    <div class="select">
-      <select id="month" name="month">
-        <option value="0">January</option>
-        <option value="1">January</option>
-        <option value="2" >February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option><
-        option value="11">November</option>
-        <option value="12">December</option>
-      </select>
-      <div class="select__arrow"></div>
-    </div>
+    <span class="field">
+      <label for="expiry">Expiration</label>
+      <input placeholder="Mo/Year" size="7" type="tel" class="form-control" name="expiry" value="" id="expiry">
+    </span>
 </div>
-<div class="select-control-inner-right">
-    <div class="select">
-      <select>
-        <option>Year</option>
-        <option>2015</option>
-        <option>2016</option>
-        <option>2017</option>
-        <option>2018</option>
-        <option>2019</option>
-      </select>
-      <div class="select__arrow"></div>
-    </div>
-  </div>
-</div>
-
-  <input type="text" id="cvv" name="cvv"  class="form-control"  placeholder="CVV number   ">
+    <span class="cvc field">
+      <label for="cvc">CVC</label>
+      <input placeholder="cvv"  size="4" type="tel" class="form-control" name="cvc" value="" id="cvc">
+    </span>
 
 
   <h3>Billing Address </h3>
@@ -361,8 +342,8 @@
     </select>
     <div class="select__arrow"></div>
   </div>
-  <input type="text" class="form-control"  placeholder="Address  ">
-  <input type="text" class="form-control"  placeholder="City   ">
+  <input type="text" class="form-control" name="address" id="address"  placeholder="Address  ">
+  <input type="text" class="form-control"  placeholder="City " name="city" id="city"  >
 <div class="select-control-state">
   <div class="select-control-state-inner">
 
@@ -376,7 +357,7 @@
   </div>
 
 </div>
-    <input type="text" id="zipcode" name="zipcode" class="form-control"  placeholder="Zip Code  "-->
+    <input type="text" id="zipcode" name="zipcode" class="form-control" id="zipcode" name="zipcode" placeholder="Zip Code  "-->
 </div>
 
 
@@ -387,7 +368,7 @@
       <div class="control__indicator"></div>
     </label>
       </div>
-<div class="booking-widget_terms  ">
+<div class="booking-widget_terms ">
 
   <p>I accept the <a href="#">Terms & Conditions</a> and the applicable
   <a href="#">Cancellation Policy</a></p>
@@ -400,7 +381,9 @@
 <div class="clearfix"></div>
   <div class="booking-widget_booknow">
     <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
-    <input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" />
+
+    <button class="booking-widget_booknow" id="submit">BOOKNOW</button>
+    <!--input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" -->
   </div>
 </form>
   </div>
