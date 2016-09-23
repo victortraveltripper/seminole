@@ -1,6 +1,7 @@
 <div class="booking-widget" ng-controller="bookingWidget as widget">
 
-
+<!--<input type="hidden" id="api_key_name" value="{{ site.api_header_key }}" />
+<input type="hidden" id="api_key_val" value="{{ site.api_headerkey_value }}" /> -->
     <div id="step1">
     <div class="booking-widget_header">
       <div class="booking-widget_close">&times;</div>
@@ -22,7 +23,7 @@
 
 
             </span>
-                    <input type="text" name="quant[1]" class="input-number" value="1" min="1" max="5">
+                    <input type="text" name="quant[1]" id="numAdults" class="input-number" value="1" min="1" max="5">
                   <span class="bookin-widget_parameters-text">Adults</span>
 
                     <span class="bookin-widget_parameters-icons">
@@ -37,7 +38,7 @@
                   <span class="bookin-widget_parameters-icons">
                                     <a role="button" class="btn-min btn-number"  data-type="minus" data-field="quant[2]" value="+"><p>-</p></a>
                                   </span>
-                <input type="text" name="quant[2]" class=" input-number" value="1" min="1" max="5">
+                <input type="text" name="quant[2]" id="numChild" class=" input-number" value="1" min="1" max="5">
                   <span class="bookin-widget_parameters-text">Children</span>
 
                     <span class="bookin-widget_parameters-icons">
@@ -81,7 +82,7 @@
     <div class="booking-widget_buttons-active" style="display:none;">
       <p>  Best Price, per night: <span class="regular-rate">$225</span> <span class="special-rate">$220<span></p>
       <button type="reset" class="booking-widget_reset_date_button" >RESET DATES</button>
-      <button type="submit" class="booking-widget_select_rooms_button  ">SELECT ROOMS</button>
+      <button type="submit" class="booking-widget_select_rooms_button">SELECT ROOMS</button>
     </div>
   </div>
 
@@ -96,116 +97,18 @@
 
     <div class="bookin-widget_selected-date">
       <a href="#" class="backdate back"><img src="../images/calender.svg" alt=""/></a>
-      Tue, Aug 26 - Fri, Aug 30
+      <span id="dateRange"> </span>
 
-      <div class="booking-widget_selected-rooms"><span class="">2</span> Rooms  <span class="fa fa-angle-down"><span/> </div>
+      <div class="booking-widget_selected-rooms"><span class="roomcount"></span> Rooms  <span class="fa fa-angle-down"><span/> </div>
     </div>
   <div class="booking-widget_content">
 
-
-    <div class="bookin-widget_avalible-rooms">
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/booking-pics/Select_room-1.png " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/booking-pics/Select_room-2.png " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/booking-pics/Select_room-3.png " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
+<!-- Start - Div that display the available Rooms on api call --->
+    <div class="bookin-widget_avalible-rooms" id="availableRoomsDiv">
 
 
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/booking-pics/Select_room-4.png " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/booking-pics/Select_room-5.png " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
     </div>
+<!-- End - Div that display the available Rooms on api call --->
   </div>
 
 </div>
@@ -220,43 +123,25 @@
 
   <div class="bookin-widget_selected-date">
     <a href="#" class="backdate back1" ><img src="../images/calender.svg" alt=""/></a>
-      Tue, Aug 26 - Fri, Aug 30
+      <span id="dateRange1"> </span>
     </div>
-  <div class="booking-widget_content">
+  <div class="booking-widget_content" >
+          <div class="bookin-widget_avalible-rooms" id="roomDetailsWidget">
 
-
-          <div class="bookin-widget_avalible-rooms">
-            <div class="bookin-widget_avalible-room-details">
-              <a href="#">
-                <img src="../images/booking-pics/Select_room-1.png " alt=""/>
-              <div class="room-name_price">
-                <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-                1 Queen Bed
-                </div>
-
-                <div class="pull-right room-price">$196<br>
-                  <span class="regular-price">
-                  <span class="lightfont-dash">$203</span>/night
-                </span>
-              </div>
-            </a>
-
-            </div>
-            </div>
           </div>
   <div class="bookin-widget_prices-info">
     <table>
       <tr>
         <td>Room Charges :</td>
-          <td class="text-right">$ 198.00</td>
+          <td class="text-right">$ <span id="charges"></span></td>
       </tr>
       <tr>
         <td>  Taxes & Fees :</td>
-          <td class="text-right">$ 2.00</td>
+          <td class="text-right">$ <span id="taxfees"></span></td>
       </tr>
       <tr>
-        <td class="bolder">   Total Price  :</td>
-          <td class="text-right bolder">$ 200.00</td>
+        <td class="bolder">Total Price  :</td>
+          <td class="text-right bolder">$ <span id="totalprice"></span></td>
       </tr>
 
     </table>
@@ -514,4 +399,9 @@ Naveen</label>
 </div>
 
 
+</div>
+<div class="loader">
+   <center>
+       <img class="loading-image" src="images/loading.gif" alt="loading..">
+   </center>
 </div>
