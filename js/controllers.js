@@ -16,16 +16,16 @@ angular.module('ean')
 
         var styles = [{
                 "featureType": "landscape.man_made",
-                "stylers": [{ "color": "#a8dcd3" }]
+                "stylers": [{ "color": "#f0ede5" }]
             },{
                 "featureType": "water",
-                "stylers": [{ "color": "#519dc3" }]
+                "stylers": [{ "color": "#a3ccff" }]
             },{
                 "featureType": "landscape.natural",
-                "stylers": [{ "color": "#fbe4bc" }]
+                "stylers": [{ "color": "#cbe6a3" }]
             },{
                 "featureType": "road.highway",
-                "stylers": [{ "color": "#333" }]
+                "stylers": [{ "color": "#fdedb1" }]
             },{
                 "featureType": "poi",
                 "stylers": [{ "visibility": "off" }]
@@ -43,8 +43,9 @@ angular.module('ean')
         $scope.map = map
         var marker = new google.maps.Marker({
             position: latlng,
+            icon: '../images/map-icon.svg',
             map: map,
-  		    title: $scope.hotelInfo.name
+  		        title: $scope.hotelInfo.name
         });
 
         $(map.getDiv()).click(function(map) {
@@ -214,7 +215,7 @@ angular.module('ean')
                         }
                     } else {
                         $scope.roomInfo.push({
-                            owlPic:'/images/dummy.jpg', 
+                            owlPic:'/images/dummy.jpg',
                             roomHead: roomHeader[0],
                             roomCaption:roomHeader[1],
                             roomFeature:roomHeader[2],

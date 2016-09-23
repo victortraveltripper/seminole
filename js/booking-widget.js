@@ -57,7 +57,6 @@ else
 //  });
 
 
-
 $('#step2, #step3, #step4').fadeOut(500);
 $('.booking-widget_select_rooms_button').click(function(){
    $('#step1').fadeOut(500);

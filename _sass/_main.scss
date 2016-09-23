@@ -833,6 +833,25 @@ width:60%;
 
 	}
 
+
+
+	.maps{
+	  width: 100%;
+	  margin: 0 auto;
+		height: 550px;
+
+	}
+	#map_container{
+	  position: relative;
+	}
+	#map{
+	    height:550px;
+	    overflow: hidden;
+
+	    position: relative;
+	}
+
+
 	}
 
 /*Gallery*/

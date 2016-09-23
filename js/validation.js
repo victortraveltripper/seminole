@@ -20,10 +20,7 @@ $(function() {
           address:"required",
           agree: "required",
           city:"required",
-          zipcode:"required",
-          country:"required",
-
-
+          zipcode:"required"
       },
 
       // Specify the validation error messages
@@ -33,13 +30,11 @@ $(function() {
           nameonthecard: "",
           cardnumber:"",
           cvv:"",
-
           month:"",
           mobile: {
               required: "",
               minlength: ""
           },
-          country:"",
           email: "",
           address: "",
           city: "",
