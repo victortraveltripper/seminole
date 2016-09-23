@@ -1,4 +1,4 @@
-:Hooks.register :site, :post_read do |site|
+Jekyll::Hooks.register :site, :post_read do |site|
   locale = site.active_lang
   default_locale = site.default_lang
 
