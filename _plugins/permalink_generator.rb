@@ -1,3 +1,4 @@
+
 module Jekyll
   class PageReader
     alias_method :read_orig, :read

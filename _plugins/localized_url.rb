@@ -1,3 +1,4 @@
+
 Jekyll::Hooks.register :site, :post_read do |site|
   site.languages.each do |locale|
     Jekyll::Page::ATTRIBUTES_FOR_LIQUID << "url_#{locale}"
@@ -49,3 +50,4 @@ module Jekyll
 end
 
 Liquid::Template.register_filter(Jekyll::LocalizedPageUrlFilter)
+

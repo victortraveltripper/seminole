@@ -1,3 +1,4 @@
+
 class Array
   def self.wrap(object)
     if object.nil?
@@ -61,3 +62,4 @@ class DataStorage
       collection[name].select{|obj| obj.match?(key, param) }
     end
 end
+
