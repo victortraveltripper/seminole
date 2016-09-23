@@ -1,11 +1,20 @@
-<section ng-controller="MainCtrl">
-    
-    <data-owl-carousel class="owl-carousel" data-options="{navigation: false, items: 2, pagination: true, rewindNav : false}">
-      <div owl-carousel-item="" ng-repeat="item in ::gallery" class="item">
-        <p>{[::item]}</p>
+<section id="Gallery" class="=gallery clear-fix">
+  <div class="container">
+    <div class="row">
+      <h6 class="text-center">GALLERY</h6>
+      {% region gallery_heading %}
+      
+      <div class="owl-carousel owl-theme  slide" id="GallerySlider">
+       {% for item in site.data._models.gallery %}
+       {% if item.image != "" %}
+          <div class="item ">
+            <a href= {{ item.image-href.url }} "images/galleryimgBig-1.jpg" data-lightbox="image-1" >
+            <img src= {{ item.image.url }}  alt="" />
+            </a>
+          </div>
+       {% endif  %}
+       {% endfor %}
       </div>
-    </data-owl-carousel>
-
-    </section>
-
-
+    </div>
+  </div>
+</section>
