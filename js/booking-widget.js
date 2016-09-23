@@ -161,7 +161,6 @@ function bookNow(roomTypeId)
     "eanHotelId": $("#hotel_id").val(),
     "arrivalDate": $("#input1").val(),
     "departureDate": $("#input2").val(),
-
     "rateKey": rateKeyHid,
     "roomCode": roomCodeHid,
     "rateCode": rateCodeHid,
@@ -186,7 +185,7 @@ function bookNow(roomTypeId)
         "creditCardNumber": $.trim($("#ccnum").val()),
         "creditCardIdentifier": $.trim($("#cvc").val()),
         "creditCardExpirationMonth": $.trim(ccexpiry[0]),
-        "creditCardExpirationYear": $.trim(ccexpiry[1]),
+        "creditCardExpirationYear": $.trim(ccexpiry[1])
     },
     "addressInfo":
     {
@@ -200,27 +199,26 @@ function bookNow(roomTypeId)
     }
   };
 
-console.log(booknow_postdata);
+console.log(JSON.stringify(booknow_postdata));
 
   $.ajax({
             url: "https://qapi.reztrip.com/eanbook",
             type: 'POST',
             dataType: 'json',
-            data: booknow_postdata,
+            data: JSON.stringify(booknow_postdata),
             headers: {
-                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1',
-                'Content-Type': 'application/json'
+                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
             },
             //contentType: 'application/json; charset=utf-8',
             success: function (response) {
-//alert("stest");
+              //alert("stest");
                 if(response.HotelRoomReservationResponse.processedWithConfirmation)
                 {
-                //  alert("success");
+                   alert("success");
                   return false;
                 }else{
                   //  $("#roomDetailsWidget").html('Room Details Not Available');
-                //  alert("failed");
+                  alert("failed");
                   return false;
                 }
               },
