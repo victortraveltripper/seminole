@@ -22,7 +22,7 @@
 
 
             </span>
-                    <input type="text" name="quant[1]" class="input-number" value="1" min="1" max="5">
+                    <input type="text" name="quant[1]" id="numAdults" class="input-number" value="1" min="1" max="5">
                   <span class="bookin-widget_parameters-text">Adults</span>
 
                     <span class="bookin-widget_parameters-icons">
@@ -37,7 +37,7 @@
                   <span class="bookin-widget_parameters-icons">
                                     <a role="button" class="btn-min btn-number"  data-type="minus" data-field="quant[2]" value="+"><p>-</p></a>
                                   </span>
-                <input type="text" name="quant[2]" class=" input-number" value="1" min="1" max="5">
+                <input type="text" name="quant[2]" id="numChild" class=" input-number" value="1" min="1" max="5">
                   <span class="bookin-widget_parameters-text">Children</span>
 
                     <span class="bookin-widget_parameters-icons">
@@ -81,7 +81,7 @@
     <div class="booking-widget_buttons-active" style="display:none;">
       <p>  Best Price, per night: <span class="regular-rate">$225</span> <span class="special-rate">$220<span></p>
       <button type="reset" class="booking-widget_reset_date_button" >RESET DATES</button>
-      <button type="submit" class="booking-widget_select_rooms_button  ">SELECT ROOMS</button>
+      <button type="submit" class="booking-widget_select_rooms_button">SELECT ROOMS</button>
     </div>
   </div>
 
@@ -96,116 +96,17 @@
 
     <div class="bookin-widget_selected-date">
       <a href="#" class="backdate back"><img src="../images/calender.svg" alt=""/></a>
-      Tue, Aug 26 - Fri, Aug 30
+        <span id="dateRange"> </span>
 
-      <div class="booking-widget_selected-rooms"><span class="">2</span> Rooms  <span class="fa fa-angle-down"><span/> </div>
+      <div class="booking-widget_selected-rooms"><span class="roomcount"></span> Rooms  <span class="fa fa-angle-down"><span/> </div>
     </div>
   <div class="booking-widget_content">
+    <!-- Start - Div that display the available Rooms on api call --->
+        <div class="bookin-widget_avalible-rooms" id="availableRoomsDiv">
 
-
-    <div class="bookin-widget_avalible-rooms">
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/Select_room-1.jpg " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
 
         </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/Select_room-2.jpg " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/Select_room-3.jpg " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/Select_room-4.jpg " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-
-      <div class="bookin-widget_avalible-rooms">
-        <div class="bookin-widget_avalible-room-details">
-          <a href="#">
-            <img src="../images/Select_room-5.jpg " alt=""/>
-          <div class="room-name_price">
-            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-            1 Queen Bed
-            </div>
-
-            <div class="pull-right room-price">$196<br>
-              <span class="regular-price">
-              <span class="lightfont-dash">$203</span>/night
-            </span>
-          </div>
-        </a>
-
-        </div>
-        </div>
-      </div>
-    </div>
+    <!-- End - Div that display the available Rooms on api call --->
   </div>
 
 </div>
@@ -220,43 +121,25 @@
 
   <div class="bookin-widget_selected-date">
     <a href="#" class="backdate back1" ><img src="../images/calender.svg" alt=""/></a>
-      Tue, Aug 26 - Fri, Aug 30
+        <span id="dateRange1"> </span>
     </div>
   <div class="booking-widget_content">
+    <div class="bookin-widget_avalible-rooms" id="roomDetailsWidget">
 
-
-          <div class="bookin-widget_avalible-rooms">
-            <div class="bookin-widget_avalible-room-details">
-              <a href="#">
-                <img src="../images/Select_room-1.jpg " alt=""/>
-              <div class="room-name_price">
-                <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-                1 Queen Bed
-                </div>
-
-                <div class="pull-right room-price">$196<br>
-                  <span class="regular-price">
-                  <span class="lightfont-dash">$203</span>/night
-                </span>
-              </div>
-            </a>
-
-            </div>
-            </div>
-          </div>
+    </div>
   <div class="bookin-widget_prices-info">
     <table>
       <tr>
         <td>Room Charges :</td>
-          <td class="text-right">$ 198.00</td>
+          <td class="text-right">$ <span id="charges">198.00</span></td>
       </tr>
       <tr>
         <td>  Taxes & Fees :</td>
-          <td class="text-right">$ 2.00</td>
+          <td class="text-right">$ <span id="taxfees">2.00</span></td>
       </tr>
       <tr>
         <td class="bolder">   Total Price  :</td>
-          <td class="text-right bolder">$ 200.00</td>
+          <td class="text-right bolder">$ <span id="totalprice">200.00</span></td>
       </tr>
 
     </table>
@@ -269,7 +152,7 @@
 
 
   <form action="#" method="post" id="register-form"  novalidate="novalidate">
-
+<input type="hidden" id="selectedRoomTypeId" name="selectedRoomTypeId" value="" />
 
 
 
@@ -339,7 +222,7 @@
   <select name="country" id="country" class="required">
       <option>Country</option>
       <option value="5">India</option>
-      <option value="6">USA</option>
+      <option value="US">USA</option>
       <option value="6">Newzeland</option>
       <option value="8">Srilanka</option>
     </select>
@@ -353,10 +236,11 @@
   <div class="select">
     <select name="state" id="state" class="required">
     <option value="">Select State</option>
-    <option value="1">state</option>
-    <option value="2">state</option>
-    <option value="3">state</option>
-    <option value="4">state</option>
+    <option value="AL">Alaska</option>
+    <option value="AZ">Arizona</option>
+    <option value="AR">Arkansas</option>
+    <option value="CA">California</option>
+    <option value="WA">Washington</option>
   </select>
     <div class="select__arrow"></div>
   </div>
@@ -387,7 +271,8 @@
   <div class="booking-widget_booknow">
     <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
 
-    <button class="booking-widget_booknow" id="submit">BOOKNOW</button>
+    <!--<button class="booking-widget_booknow" id="submit" onclick="bookNow();">BOOKNOW</button>-->
+    <input type="button" name="booknow" id="booknow" value="BOOKNOW" class="booking-widget_booknow" onclick="bookNow(document.getElementById('selectedRoomTypeId').value);"/>
     <!--input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" -->
   </div>
 </form>
@@ -503,4 +388,3 @@ Naveen</label>
 
 
 </div>
-

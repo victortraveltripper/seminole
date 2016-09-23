@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   ccnum.addEventListener('input',   updateType);
 
-  submit.addEventListener('click', function() {
+  /*submit.addEventListener('click', function() {
     var valid     = [],
         expiryObj = payform.parseCardExpiry(expiry.value);
 
@@ -21,7 +21,7 @@ $(document).ready(function() {
     valid.push(fieldStatus(cvc,    payform.validateCardCVC(cvc.value, type.innerHTML)));
 
     result.className = 'emoji ' + (valid.every(Boolean) ? 'valid' : 'invalid');
-  });
+  });*/
 
   function updateType(e) {
     var cardType = payform.parseCardType(e.target.value);
