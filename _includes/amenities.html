@@ -5,19 +5,22 @@
             <div  ng-repeat = "items in amenities | limitTo: 18"   class="col-sm-4">
                 <ul>
 
-                    <li>{[items]}</li>
+                    <li>{[items]} </li>
                 </ul>
             </div>
         </div>
         <div id="collapse1" style="display:none">
             <div class="row">
-                <div  ng-repeat = "items in amenities | limitTo: 18..(amenities.length)"   class="col-sm-4">
+                <div  ng-repeat = "items in amenities "   class="col-sm-4">
                     <ul>
+                        <span ng-if="$index>=18">
                         <li>{[items]}</li>
+                            </span>
                     </ul>
                 </div>
             </div>
-        </div>
+</div>
+
         <div class="more-link ">
             <span href="#collapse1" class="nav-toggle button-link">View More</span >
         </div>
