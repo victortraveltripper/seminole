@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="ean" ng-cloak ng-controller="eanInitCtrl">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script> 
+  </head>
+   {% include head.html %}
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    {{ content }}
+    {% include booking-widget.html %}
+    
+
+    {% include scripts.html %}
+  </body>
+</html>

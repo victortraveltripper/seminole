@@ -1,0 +1,17 @@
+<section class="clearfix">
+  <div class="owl-carousel" id="Slider">
+  {% for corousel in site.data._models.top-carousel-images %}
+    <div class="item">
+      <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">{{ corousel.name }}</h1>
+      <div class="owl-social-icons">
+        <a class="fa fa-facebook" aria-hidden="true"></a>
+        <a class="fa fa-twitter" aria-hidden="true"></a>
+        <a class="fa fa-google-plus" aria-hidden="true"></a>
+        <a class="fa fa-instagram" aria-hidden="true"></a>
+        <a class="fa fa-pinterest-p" aria-hidden="true"></a>
+      </div>
+      <img src="{{ corousel.image.url }}" alt=""/>
+    </div>
+  {% endfor %}  
+  </div>
+</section>
