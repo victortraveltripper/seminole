@@ -7,7 +7,7 @@
       <div class="owl-carousel owl-theme  slide" id="GallerySlider">
        {% for item in site.data._models.gallery %}
           <div class="item ">
-            <a href= {{ item.image-href.url }} "images/galleryimgBig-1.jpg" data-lightbox="image-1" >
+            <a href= {{ item.imagehref.url }}  data-lightbox="image-1" >
             <img src= {{ item.image.url }}  alt="" />
             </a>
           </div>
