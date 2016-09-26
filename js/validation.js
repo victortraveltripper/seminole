@@ -43,7 +43,9 @@ $(function() {
 
 
       submitHandler: function(form) {
-          form.submit();
+        //Book your room through api call
+        bookNow($("#selectedRoomTypeId").val());
+        //form.submit();
       }
   });
 

@@ -1,3 +1,4 @@
+
 # Generate pages from individual records in yml files
 # (c) 2014 Adolfo Villafiorita
 # Distributed under the conditions of the MIT License
@@ -71,3 +72,4 @@ module Jekyll
     end
   end
 end
+

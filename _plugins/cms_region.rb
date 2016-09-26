@@ -1,3 +1,4 @@
+
 module Jekyll
   class CmsRegionTag < Liquid::Tag
     def initialize(tag_name, text, tokens)
@@ -87,3 +88,4 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('region', Jekyll::CmsRegionTag)
+
