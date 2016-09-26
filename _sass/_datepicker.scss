@@ -1,0 +1,132 @@
+.booking-widget {
+   .booking-widget_header{
+      background: #2378bc;
+   }
+
+ .booking-widget_rate_col.-count{
+    color: #2378bc;
+ }
+
+ .ui-datepicker-inline{
+margin-bottom:25px;
+
+ }
+	.ui-datepicker {
+  width: auto;
+  padding-bottom: 50px;
+  background: #f9f9f9;
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-top: 2px solid #333;
+    display: none;
+
+    &.ui-state-disabled {
+      opacity: 0.2;
+    }
+  }
+
+  .ui-datepicker-prev {
+    left: 80px;
+    border-left: 2px solid #333;
+    transform: rotate(-45deg);
+    cursor: pointer;
+  }
+
+  .ui-datepicker-next {
+    right: 80px;
+    border-right: 2px solid #333;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  .ui-datepicker-title {
+    margin: 0;
+    line-height: normal;
+    text-align: center;
+    padding: 10px 0px;
+    text-transform: uppercase;
+    background: #f1f1f1;
+  }
+
+  .ui-datepicker-calendar {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: lighter;
+    width:100%;
+
+
+    tbody tr {
+      border-top: 0px solid #ebebeb;
+    }
+
+    th {
+
+      text-transform: uppercase;
+      font-weight: 200;
+      color: #333;
+      text-align: center;
+      font-weight: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ebebeb;
+    }
+
+    td a,
+    td span {
+      text-align: center;
+      color: #333;
+      text-align: center;
+      display: block;
+      padding: 10px;
+      margin: 1px;
+    }
+
+    .ui-state-disabled {
+      opacity: .3;
+    }
+
+    .ui-datepicker-today {
+      a {
+
+      }
+    }
+
+    .ui-datepicker-current-day {
+      .ui-state-active {
+        color: #fff;
+        background: #2378bc;
+        border-radius: 3px;
+        ::before{
+            border-radius: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+}
+
+.ui-datepicker-header {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 10px;
+}
+}
+
+
+.dp-highlight .ui-state-default {
+  background: #2378bc;
+  color: #FFF!important;
+  padding: 10px;
+  border-radius: 4px;
+}
+.ui-datepicker.ui-datepicker-multi  {
+  width: 100% !important;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+float:none;
+}
+
+.ui-widget { font-size: 100% }

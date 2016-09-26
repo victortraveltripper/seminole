@@ -1,0 +1,517 @@
+<div class="booking-widget" ng-controller="bookingWidget as widget">
+
+
+    <div id="step1">
+    <div class="booking-widget_header">
+      <div class="booking-widget_close">&times;</div>
+      <h3 class="booking-widget_title">Your Booking</h3>
+    </div>
+
+    <div class="bookin-widget_parameters">
+      <div class="bookin-widget_parameters_content">
+
+        <div class="bookin-widget_parameters_select-group">
+          <span class="bookin-widget_parameters_lable">GUESTS:</span>
+
+
+
+          <div class="bookin-widget_parameters_adualt">
+            <span class="bookin-widget_parameters-icons">
+                  <a role="button" class="btn-min btn-number"  data-type="minus" value="+" data-field="quant[1]"><p>-</p></a>
+
+
+
+            </span>
+                    <input type="text" name="quant[1]" class="input-number" value="1" min="1" max="5">
+                  <span class="bookin-widget_parameters-text">Adults</span>
+
+                    <span class="bookin-widget_parameters-icons">
+                      <a role="button" class="btn-pls btn-number" data-type="plus" data-field="quant[1]" value="-"><p>+</p>
+                      </a>
+                  </span>
+
+                      </div>
+
+              <div class="bookin-widget_parameters_children">
+
+                  <span class="bookin-widget_parameters-icons">
+                                    <a role="button" class="btn-min btn-number"  data-type="minus" data-field="quant[2]" value="+"><p>-</p></a>
+                                  </span>
+                <input type="text" name="quant[2]" class=" input-number" value="1" min="1" max="5">
+                  <span class="bookin-widget_parameters-text">Children</span>
+
+                    <span class="bookin-widget_parameters-icons">
+                      <a  role="button" class="btn-pls btn-number" data-type="plus" data-field="quant[2]" value="-"><p>+</p></a>
+
+
+
+                    </span>
+                </div>
+
+
+
+          <span class="bookin-widget_parameters_description">*under the age of 12</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="booking-widget_content">
+
+
+      <a href="#" class="booking-widget_flexible-dates">SELECT CHECK-IN  </a>
+      <!--div class="3-calendars"></div-->
+      <!--div id='sandbox-container'><div></div></div-->
+
+      <p class="booking-widget_flexible-dates-active" style="display:none;">
+
+
+      <input type="text" id="input1" size="10">
+
+      <input type="text" id="input2" size="10">
+    </p>
+     <div class="datepicker"></div>
+
+    </div>
+
+    <div class="booking-widget_buttons">
+      <button type="reset" class="booking-widget_reset_date_button" >RESET DATES</button>
+      <button type="submit" class="booking-widget_select_rooms_button"  disabled>SELECT ROOMS</button>
+    </div>
+
+    <div class="booking-widget_buttons-active" style="display:none;">
+      <p>  Best Price, per night: <span class="regular-rate">$225</span> <span class="special-rate">$220<span></p>
+      <button type="reset" class="booking-widget_reset_date_button" >RESET DATES</button>
+      <button type="submit" class="booking-widget_select_rooms_button  ">SELECT ROOMS</button>
+    </div>
+  </div>
+
+
+<!--Avalible Rooms-->
+<div id="step2">
+  <div class="booking-widget_header">
+      <!--div class="booking-widget_back "><img src="images/back.svg"></div-->
+    <div class="booking-widget_close">&times;</div>
+    <h3 class="booking-widget_title">Select Room</h3>
+  </div>
+
+    <div class="bookin-widget_selected-date">
+      <a href="#" class="backdate back"><img src="../images/calender.svg" alt=""/></a>
+      Tue, Aug 26 - Fri, Aug 30
+
+      <div class="booking-widget_selected-rooms"><span class="">2</span> Rooms  <span class="fa fa-angle-down"><span/> </div>
+    </div>
+  <div class="booking-widget_content">
+
+
+    <div class="bookin-widget_avalible-rooms">
+
+      <div class="bookin-widget_avalible-rooms">
+        <div class="bookin-widget_avalible-room-details">
+          <a href="#">
+            <img src="../images/booking-pics/Select_room-1.png " alt=""/>
+          <div class="room-name_price">
+            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+            1 Queen Bed
+            </div>
+
+            <div class="pull-right room-price">$196<br>
+              <span class="regular-price">
+              <span class="lightfont-dash">$203</span>/night
+            </span>
+          </div>
+        </a>
+
+        </div>
+        </div>
+      </div>
+
+      <div class="bookin-widget_avalible-rooms">
+        <div class="bookin-widget_avalible-room-details">
+          <a href="#">
+            <img src="../images/booking-pics/Select_room-2.png " alt=""/>
+          <div class="room-name_price">
+            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+            1 Queen Bed
+            </div>
+
+            <div class="pull-right room-price">$196<br>
+              <span class="regular-price">
+              <span class="lightfont-dash">$203</span>/night
+            </span>
+          </div>
+        </a>
+
+        </div>
+        </div>
+      </div>
+
+      <div class="bookin-widget_avalible-rooms">
+        <div class="bookin-widget_avalible-room-details">
+          <a href="#">
+            <img src="../images/booking-pics/Select_room-3.png " alt=""/>
+          <div class="room-name_price">
+            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+            1 Queen Bed
+            </div>
+
+            <div class="pull-right room-price">$196<br>
+              <span class="regular-price">
+              <span class="lightfont-dash">$203</span>/night
+            </span>
+          </div>
+        </a>
+
+        </div>
+        </div>
+      </div>
+
+
+      <div class="bookin-widget_avalible-rooms">
+        <div class="bookin-widget_avalible-room-details">
+          <a href="#">
+            <img src="../images/booking-pics/Select_room-4.png " alt=""/>
+          <div class="room-name_price">
+            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+            1 Queen Bed
+            </div>
+
+            <div class="pull-right room-price">$196<br>
+              <span class="regular-price">
+              <span class="lightfont-dash">$203</span>/night
+            </span>
+          </div>
+        </a>
+
+        </div>
+        </div>
+      </div>
+
+      <div class="bookin-widget_avalible-rooms">
+        <div class="bookin-widget_avalible-room-details">
+          <a href="#">
+            <img src="../images/booking-pics/Select_room-5.png " alt=""/>
+          <div class="room-name_price">
+            <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+            1 Queen Bed
+            </div>
+
+            <div class="pull-right room-price">$196<br>
+              <span class="regular-price">
+              <span class="lightfont-dash">$203</span>/night
+            </span>
+          </div>
+        </a>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--Room booking info-->
+<div id="step3">
+  <div class="booking-widget_header ">
+      <!--div class="booking-widget_back "><img src="images/back.svg"></div-->
+    <div class="booking-widget_close">&times;</div>
+    <h3 class="booking-widget_title">Book Now</h3>
+  </div>
+
+  <div class="bookin-widget_selected-date">
+    <a href="#" class="backdate back1" ><img src="../images/calender.svg" alt=""/></a>
+      Tue, Aug 26 - Fri, Aug 30
+    </div>
+  <div class="booking-widget_content">
+
+
+          <div class="bookin-widget_avalible-rooms">
+            <div class="bookin-widget_avalible-room-details">
+              <a href="#">
+                <img src="../images/booking-pics/Select_room-1.png " alt=""/>
+              <div class="room-name_price">
+                <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+                1 Queen Bed
+                </div>
+
+                <div class="pull-right room-price">$196<br>
+                  <span class="regular-price">
+                  <span class="lightfont-dash">$203</span>/night
+                </span>
+              </div>
+            </a>
+
+            </div>
+            </div>
+          </div>
+  <div class="bookin-widget_prices-info">
+    <table>
+      <tr>
+        <td>Room Charges :</td>
+          <td class="text-right">$ 198.00</td>
+      </tr>
+      <tr>
+        <td>  Taxes & Fees :</td>
+          <td class="text-right">$ 2.00</td>
+      </tr>
+      <tr>
+        <td class="bolder">   Total Price  :</td>
+          <td class="text-right bolder">$ 200.00</td>
+      </tr>
+
+    </table>
+  </div>
+
+
+  <div class="bookin-widget_form">
+  <h3>GUEST details</h3>
+
+
+
+  <form action="/payment-process/" method="post" id="register-form"  novalidate="novalidate">
+
+
+
+
+
+  <label >Primary Guest</label>
+  <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">
+  <input type="text" id="lastname" name="lastname"  class="form-control"  placeholder="Last Name    ">
+  <input type="text" id="mobile" name="mobile"   class="form-control" placeholder="Mobile    ">
+  <input type="text" id="email" name="email" class="form-control"  placeholder="Email    ">
+
+
+  <h3>Payment Method  <span class="pull-right creditcard"><img src="../images/creditcards.png" alt=""/></span></h3>
+
+
+  <div class="cards booking-wigget-check">
+
+
+
+      <label class="control control--radio">Credit card
+        <input type="radio" name="radio" checked  />
+        <div class="control__indicator"></div>
+      </label>
+    </div>
+
+    <div class="cards booking-wigget-check">
+
+
+
+        <label class="control control--radio">Paypal
+          <input type="radio" name="radio" />
+          <div class="control__indicator"></div>
+        </label>
+
+
+</div>
+
+
+
+  <input type="text" id="nameonthecard" name="nameonthecard"  class="form-control" placeholder="Name on the card    ">
+  <input type="text"  id="cardnumber" name="cardnumber"    class="form-control" placeholder="Card Number   ">
+  <div class="clearfix"></div>
+  <label class="exp-date-lable" >Expiration date</label>
+
+
+  <div class="select-control">
+    <div class="select-control-inner">
+    <div class="select">
+      <select id="month" name="month">
+        <option value="0">January</option>
+        <option value="1">January</option>
+        <option value="2" >February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option><
+        option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+</div>
+<div class="select-control-inner-right">
+    <div class="select">
+      <select>
+        <option>Year</option>
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+      </select>
+      <div class="select__arrow"></div>
+    </div>
+  </div>
+</div>
+
+  <input type="text" id="cvv" name="cvv"  class="form-control"  placeholder="CVV number   ">
+
+
+  <h3>Billing Address </h3>
+  <div class="select">
+    <select>
+      <option>Country</option>
+
+    </select>
+    <div class="select__arrow"></div>
+  </div>
+  <input type="text" class="form-control"  placeholder="Address  ">
+  <input type="text" class="form-control"  placeholder="City   ">
+<div class="select-control-state">
+  <div class="select-control-state-inner">
+
+  <div class="select">
+    <select>
+      <option>Select State </option>
+      <option>Option</option>
+      <option>Option</option>
+    </select>
+    <div class="select__arrow"></div>
+  </div>
+
+</div>
+    <input type="text" id="zipcode" name="zipcode" class="form-control"  placeholder="Zip Code  "-->
+</div>
+
+
+  <div class="termcheckbox booking-wigget-check">
+
+    <label class="control control--checkbox">
+      <input type="checkbox" />
+      <div class="control__indicator"></div>
+    </label>
+      </div>
+<div class="booking-widget_terms  ">
+
+  <p>I accept the <a href="#">Terms & Conditions</a> and the applicable
+  <a href="#">Cancellation Policy</a></p>
+
+  <p class="font-small">Unless otherwise noted, the rates shown here do not include (if applicable) extra person fees, child fees, resort fees, additional mandatory hotel charges or optional incidentals like parking, room service or movies.
+</p>
+</div>
+
+
+<div class="clearfix"></div>
+  <div class="booking-widget_booknow">
+    <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
+    <input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" />
+  </div>
+</form>
+  </div>
+
+
+
+</div>
+</div>
+
+
+<!-- Booking info-->
+<!--Room booking info-->
+<div id="step4">
+  <div class="booking-widget_header ">
+
+    <div class="booking-widget_close">&times;</div>
+    <h3 class="booking-widget_title">Confromation</h3>
+  </div>
+
+  <div class="booking-widget_content">
+
+
+          <div class="bookin-widget_avalible-rooms">
+            <div class="bookin-widget_avalible-room-details">
+
+                <img src="../images/booking-pics/Select_room-1.png " alt=""/>
+              <div class="room-name_price">
+                <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
+                1 Queen Bed
+                </div>
+
+                <div class="pull-right room-price">$196<br>
+                  <span class="regular-price">
+                  <span class="lightfont-dash">$203</span>/night
+                </span>
+              </div>
+
+
+            </div>
+            </div>
+          </div>
+
+
+  <div class="bookin-widget_conform">
+
+  <div class="bookin-widget_conform_room-info">
+    <p >Booking ID</p>
+    <label class="labledata">CRFZ2095345ZWE</label>
+
+      <p >Booked For</p>
+<label class="labledata">02 Adults</label>
+
+<p >Room</p>
+<label class="labledata">STUDIO QUEEN with 1 Queen Bed</label>
+
+<p >Check-In Date</p>
+<legal class="labledata">Tue, Aug 26 - 12:00 PM</label>
+
+<p >Check-Out Date</p>
+<label class="labledata">Fri, Aug 30 - 11:00 AM</label>
+  </div>
+
+  <div class="GuestDetails">
+  <h3>Guest details</h3>
+
+<p>Primary Guest</p>
+Naveen</label>
+
+<p>Mobile Number</p>
+<label class="labledata">9032868666</label>
+
+<p >Email ID</p>
+<label class="labledata">get2navee@gmail.com</label>
+
+</div>
+
+
+  <h3>Payment Summary</h3>
+  <div class="bookin-widget_prices-info">
+    <table>
+      <tr>
+        <td>Room Charges :</td>
+          <td class="text-right">$ 198.00</td>
+      </tr>
+      <tr>
+        <td>  Taxes & Fees :</td>
+          <td class="text-right">$ 2.00</td>
+      </tr>
+      <tr>
+        <td class="bolder">   Total Price  :</td>
+          <td class="text-right bolder">$ 200.00</td>
+      </tr>
+
+    <tr>
+    <td>Reservation Status</td>
+      <td class="text-right confir">Confirmed</td>
+    </tr>
+    </table>
+  </div>
+
+
+  <div class="booking-widget_booknow">
+    <a href="/print/" traget="blank">PRINT</a>
+  </div>
+
+  </div>
+
+
+
+</div>
+</div>
+
+
+</div>

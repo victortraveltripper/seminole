@@ -1,0 +1,18 @@
+<section id="Gallery" class="=gallery clear-fix">
+  <div class="container">
+    <div class="row">
+      <h6 class="text-center">GALLERY</h6>
+      {% region gallery_heading %}
+      
+      <div class="owl-carousel owl-theme  slide" id="GallerySlider">
+       {% for item in site.data._models.gallery %}
+          <div class="item ">
+            <a href= {{ item.image-href.url }} "images/galleryimgBig-1.jpg" data-lightbox="image-1" >
+            <img src= {{ item.image.url }}  alt="" />
+            </a>
+          </div>
+       {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

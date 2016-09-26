@@ -1,0 +1,342 @@
+/*
+* 	Owl Carousel Owl Demo Theme
+*	v1.3.3
+*/
+
+
+#Slider{
+	@media (max-width:900px){
+		margin-top:90px;
+		}
+	}
+
+#Slider.owl-theme .owl-controls
+
+{
+	margin-top: 10px;
+	text-align: left;
+	top:44%;
+	position:absolute;
+
+}
+
+#Slider.owl-theme .owl-controls .owl-prev{
+	cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:23px;
+  left:40px;
+  top:50%;
+ img{
+	  width:23px;
+	  }
+	  @media (max-width:481px){
+		  left:20px;
+		  }
+	}
+#Slider.owl-theme .owl-controls .owl-next{
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:23px;
+  right:40px;
+  top:50%;
+  img{
+	  width:23px;
+	  }
+	   @media (max-width:481px){
+		  right:20px;
+		  }
+
+
+}
+
+
+#GallerySlider.owl-theme .owl-buttons
+{
+	margin-top: 10px;
+	text-align: left;
+	top:-23%;
+	width:100%;
+
+	position:absolute;
+}
+
+#GallerySlider.owl-theme .owl-controls .owl-prev{
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:50%;
+  left:0px;
+  top:50%;
+
+	}
+#GallerySlider.owl-theme .owl-controls .owl-next{
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:50%;
+  right:0px;
+  top:50%;
+  text-align:right;
+  background:url(../images/arrow-left-gray.png) no-repeat ;
+
+}
+
+
+#rooms.owl-theme .owl-buttons
+{
+	margin-top: 10px;
+	text-align: left;
+	top:45%;
+	position:absolute;
+	width:100%;
+	@media (max-width:766px){
+		top:3%;
+	}
+}
+
+#rooms.owl-theme .owl-controls .owl-prev{
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:50%;
+  left:0px;
+  top:50%;
+
+	@media (max-width:766px){
+	left:50px;
+	}
+  img{
+	  width:23px;
+	  }
+
+
+	}
+#rooms.owl-theme .owl-controls .owl-next{
+  cursor: pointer;
+  cursor: hand;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position:absolute;
+  width:50%;
+  right:0px;
+  top:50%;
+  text-align:right;
+	@media (max-width:766px){
+	right:50px;
+	}
+   img{
+	  width:23px;
+	  }
+
+}
+
+
+.owl-theme .owl-controls{
+	margin-top: 10px;
+	text-align: center;
+	width:100%;
+}
+
+
+.owl-carousel .item h1{
+
+	color:#FFF;
+	font-size:60px;
+  	font-family:'bill corporate narrow W00mediu';
+  	 @media (max-width:980px){
+		 font-size:52px;
+		   }
+
+	@media (max-width:640px){
+	  font-size:38px;
+	  }
+
+	 @media (max-width:481px){
+	  font-size:32px;
+	  }
+	  @media (max-width:360px){
+	  font-size:26px;
+	  }
+	}
+
+.owl-carousel .item h4{
+	color:#FFF;
+	font-size:22px;
+	text-transform:uppercase;
+	font-weight:200;
+	 letter-spacing: 2px;
+    family:'billcorporatenarrowW00extralig';
+    word-spacing: 2px;
+	@media (max-width:640px){
+	  font-size:18px;
+	  }
+	 @media (max-width:480px){
+	  font-size:18px;
+	  }
+	  @media (max-width:360px){
+	  font-size:14px;
+	  }
+	}
+
+
+.owl-carousel .owl-heading {
+	position: absolute;
+	z-index:99;
+	top:35%;
+	text-align:center;
+	width:100%;
+	color:#FFF;
+@media (max-width:766px){
+
+	    top: 13%;
+}
+	@media (max-width:670px){
+		top:2%;
+		width: 50%;
+		left: 28%;
+		}
+
+		@media (max-width:480px){
+			top:2%;
+			width: 54%;
+			left: 25%;
+			}
+
+	}
+
+.owl-carousel .owl-sub-heading {
+	position: absolute;
+	z-index:99;
+	top:52%;
+	text-align:center;
+	color:#FFF;
+	width:100%;
+
+	@media (max-width:670px){
+	position: absolute;
+    z-index: 99;
+    top: 57%;
+    text-align: center;
+    color: #FFF;
+    width: 52%;
+    left: 26%;
+		}
+	}
+.owl-social-icons{
+
+
+	position: absolute;
+	z-index:99;
+	top:63%;
+	text-align:center;
+	color:#FFF;
+	width:100%;
+
+	a{
+		color: white;
+    border: 2px solid white;
+    padding: 11px;
+    margin: 6px;
+    font-size: 17px;
+    border-radius: 54%;
+    width: 45px;
+		}
+
+		@media (max-width:670px){
+			display:none;
+			}
+	}
+
+
+/* Styling Next and Prev buttons */
+
+.owl-theme .owl-controls .owl-buttons div{
+	color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+
+}
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+	text-decoration: none;
+}
+
+
+/* Styling Pagination*/
+
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+}
+.owl-theme .owl-controls .owl-page span{
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 5px 7px;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.3;
+
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+
+}
+
+/* If PaginationNumbers is true */
+
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+	height: auto;
+	width: auto;
+	color:#000;
+	padding: 2px 10px;
+	font-size: 12px;
+
+}
+
+/* preloading images */
+.owl-item.loading{
+	min-height: 150px;
+	background: url(AjaxLoader.gif) no-repeat center center
+}
