@@ -20,7 +20,7 @@
               <ul>
                 <li ng-repeat = "items in roomInfo track by $index" owl-carousel-tem >
                   <div class="view view-first">
-                    <h3>INSERT ROOM NAME</h3>
+                    <h3>{[items.roomHead]}</h3>
                     <img ng-src="{[items.owlPic]}" alt="">
                     <a class="readon" data-id="0" data-toggle="pill" href="#menu1">
                       <div class="mask">
