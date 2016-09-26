@@ -14,22 +14,22 @@ angular.module('ean')
         var latlng = new google.maps.LatLng($scope.latitude,$scope.longitude);
 		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
-    var styles = [{
-            "featureType": "landscape.man_made",
-            "stylers": [{ "color": "#f0ede5" }]
-        },{
-            "featureType": "water",
-            "stylers": [{ "color": "#a3ccff" }]
-        },{
-            "featureType": "landscape.natural",
-            "stylers": [{ "color": "#cbe6a3" }]
-        },{
-            "featureType": "road.highway",
-            "stylers": [{ "color": "#fdedb1" }]
-        },{
-            "featureType": "poi",
-            "stylers": [{ "visibility": "off" }]
-          }];
+        var styles = [{
+                "featureType": "landscape.man_made",
+                "stylers": [{ "color": "#f0ede5" }]
+            },{
+                "featureType": "water",
+                "stylers": [{ "color": "#a3ccff" }]
+            },{
+                "featureType": "landscape.natural",
+                "stylers": [{ "color": "#cbe6a3" }]
+            },{
+                "featureType": "road.highway",
+                "stylers": [{ "color": "#fdedb1" }]
+            },{
+                "featureType": "poi",
+                "stylers": [{ "visibility": "off" }]
+        }];
 		var myOptions = {
 			zoom: 12,
   			center: latlng,
@@ -43,9 +43,9 @@ angular.module('ean')
         $scope.map = map
         var marker = new google.maps.Marker({
             position: latlng,
+            icon: '../images/map-icon.svg',
             map: map,
-            icon: '../images/location-icon.svg',
-  		    title: $scope.hotelInfo.name
+  		        title: $scope.hotelInfo.name
         });
 
         $(map.getDiv()).click(function(map) {

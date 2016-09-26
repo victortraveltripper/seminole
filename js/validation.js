@@ -17,25 +17,28 @@ $(function() {
           },
           nameonthecard:"required",
           cardnumber:"required",
-          cvv:"required",
+          address:"required",
           agree: "required",
-          month:"required"
+          city:"required",
+          zipcode:"required"
       },
 
       // Specify the validation error messages
       messages: {
-          firstname: "Please enter your first name",
-          lastname: "Please enter your last name",
-          nameonthecard: "Please enter your Card Name",
-          cardnumber:"Please enter your Card Number",
-          cvv:"Please enter your Card Number",
-          month:"Select Month",
+          firstname: "",
+          lastname: "",
+          nameonthecard: "",
+          cardnumber:"",
+          cvv:"",
+          month:"",
           mobile: {
-              required: "Please enter your Moble Number",
-              minlength: "Your Enter must be at least 10 Number"
+              required: "",
+              minlength: ""
           },
-          email: "Please enter a valid email address",
-          agree: "Please accept our policy"
+          email: "",
+          address: "",
+          city: "",
+          zipcode: ""
 
           },
 

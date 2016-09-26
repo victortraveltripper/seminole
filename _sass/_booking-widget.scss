@@ -31,7 +31,7 @@
     }
 }
 
-.error{display:black; color:#de3235; }
+
 
 .booking-widget_header {
   background: #2378bc;
@@ -482,7 +482,11 @@ table{
 
     font-weight: 300;
     font-size: 12px;
-
+  }
+  label.error{
+    display:none!important;
+    font-weight: 300;
+    font-size: 12px;
   }
   .exp-date-lable{ margin-top: 14px;}
 
@@ -566,6 +570,46 @@ table{
     border:1px solid #cecece;
 
   }
+
+  .error{display:black; color:#de3235;
+
+   }
+
+   input.error{display:black; color:#de3235;
+      border:1px solid #de3235!important;
+    }
+    select.error{display:black; color:#de3235;
+       border:1px solid #de3235!important;
+     }
+
+
+
+    /*validations*/
+
+    .field {
+      display: block;
+
+      label{
+        display:none;
+        }
+    }
+
+    .error input {
+      color: red;
+      border: 1px solid #de3235;
+    }
+
+    .cvc.field {
+      margin-left:0px;
+    }
+
+
+    .error label {
+      color: #de3235;
+    }
+
+
+
 .termcheckbox{
 
   width:10%;
@@ -598,8 +642,8 @@ table{
   }
 
   .booking-widget_booknow{
-  
-    input{
+
+    button{
   background: #2378bc;
   padding:20px;
   text-align:center;

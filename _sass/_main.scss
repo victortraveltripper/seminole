@@ -358,7 +358,7 @@ ul{
 
 	li{
 	display:inline-block;
-	margin:0px  0px;
+	margin:-3px  0px;
 	padding:0px;
 
 	@media (max-width:689px){
@@ -430,7 +430,7 @@ ul{
 
   transition: all 0.2s linear;
   width: 400px;
-  height: 100%;
+  height: 250px;
 }
 
 .view-first .mask {
@@ -829,24 +829,26 @@ width:60%;
 			@media (max-width:700px){
 			margin-bottom:40px;
 			}
-		}
+}
 
 	}
 
+
+
 	.maps{
-		width: 100%;
-		margin: 0 auto;
+	  width: 100%;
+	  margin: 0 auto;
 		height: 550px;
 
 	}
 	#map_container{
-		position: relative;
+	  position: relative;
 	}
 	#map{
-			height:550px;
-			overflow: hidden;
+	    height:550px;
+	    overflow: hidden;
 
-			position: relative;
+	    position: relative;
 	}
 
 

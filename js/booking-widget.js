@@ -57,14 +57,11 @@ else
 //  });
 
 
-
-$('#step2, #step3, #step4').hide();
+$('#step2, #step3, #step4').fadeOut(500);
 $('.booking-widget_select_rooms_button').click(function(){
-   $('#step1').hide();
-   $('#step2').show();
+   $('#step1').fadeOut(500);
+   $('#step2').fadeIn(500);
 });
-
-
 
 //$('.bookin-widget_avalible-room-details').on('click',function(){
 $("body").on('click', '#avalible-room-details',function(){
@@ -73,34 +70,35 @@ $("body").on('click', '#avalible-room-details',function(){
    $('#step3').show();
    //getRoomDetails($(this).attr('data-roomTypeId'));
    showRoomDetails($(this).attr('data-roomTypeId'));
+
 });
 
 $('.bookin-widget_booknow').click(function(){
-   $('#step1').hide();
-   $('#step2').hide();
-   $('#step3').hide();
-   $('#step4').show();
+   $('#step1').fadeOut(500);
+   $('#step2').fadeOut(500);
+   $('#step3').fadeOut(500);
+   $('#step4').fadeIn(500);
 
 });
 
 
 $('.back').click(function(){
-   $('#step1').show();
-   $('#step2').hide();
+   $('#step1').fadeIn(500);
+   $('#step2').fadeOut(500);
 
 });
 
 $('.back1').click(function(){
-   $('#step1').hide();
-   $('#step2').show();
-   $('#step3').hide();
+   $('#step1').fadeOut(500);
+   $('#step2').fadeIn(500);
+   $('#step3').fadeOut(500);
 });
 
 $('.back2').click(function(){
-   $('#step1').hide();
-   $('#step2').hide();
-   $('#step3').show();
-   $('#step4').hide();
+   $('#step1').fadeOut(500);
+   $('#step2').fadeOut(500);
+   $('#step3').fadeIn(500);
+   $('#step4').fadeOut(500);
 });
 });
 
