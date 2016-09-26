@@ -212,8 +212,10 @@ $(document).ready(function(){
           var arrivalDate = $("#input1").val();
           var dispatchDate = $("#input2").val();
           var roomsWidget= '';
+          var countRooms = 0;
           var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d");
           var formattedDispDate = dateFormat(new Date(dispatchDate), "ddd, mmm d");
+          //alert(formattedArrDate+ ' '+formattedDispDate);
           $("#dateRange").html(formattedArrDate+" - "+formattedDispDate);
           $("#availableRoomsDiv").html('');
           $.ajax({
@@ -235,7 +237,7 @@ $(document).ready(function(){
                         if(parseInt(hotelRoomAvailability['@size']) > 0 )
                         {
                             var roomsArr = roomsResponse.HotelRoomAvailabilityResponse.HotelRoomResponse;
-                            var countRooms = roomsArr.length;
+                            countRooms = roomsArr.length;
 
                             $(".roomcount").html(countRooms);
                             var roomsWidget= '';
@@ -280,6 +282,7 @@ $(document).ready(function(){
 
                             } //end if
                       }else{
+                          $("#availableRoomsDiv").html(countRooms);
                           $("#availableRoomsDiv").html('No Rooms Available');
                       }
                     },

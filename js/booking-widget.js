@@ -106,11 +106,39 @@ $('.back2').click(function(){
 
 function showRoomDetails(roomTypeId)
 {
+  var roomSrc = '../images/Select_room-1.JPG';
+  //call api to get Room Image
+  $.ajax({
+            url: "https://qapi.reztrip.com/eanroomimages?roomTypeCode="+roomTypeId,
+            dataType: 'json',
+            type: 'GET',
+            headers: {
+                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+            },
+
+            success: function (responseObj) {
+              if(responseObj.success === true){
+                  var i =0;
+              //  $.each(responseObj.images, function(name, imgObj) {
+                  //Fetch all the dynamic parameters from response
+
+                //  var roomSrc = imgObj.smallUrl;
+
+              //  });
+
+              }// response success
+            },
+            error: function (error) {
+
+            }
+        });
+  var roomImg = '<img src="'+roomSrc+'" alt=""/>';
   var rname1 = $("#"+roomTypeId+"_roomname1").val();
   var rname2 = $("#"+roomTypeId+"_roomname2").val();
-  var roomSrc = '../images/Select_room-1.JPG';
-  var roomImg = '<img src="'+roomSrc+'" alt=""/>';
 
+
+  var numAdults = $("#numAdults").val();
+  var numChilds = $("#numChild").val();
   var arrivalDate = $("#input1").val();
   var dispatchDate = $("#input2").val();
   var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d");
@@ -127,6 +155,7 @@ function showRoomDetails(roomTypeId)
   charges = nightPrice;
   var roomWidget= '';
   $("#selectedRoomTypeId").val(roomTypeId);
+  $(".guestscount").html(parseInt(numAdults)+parseInt(numChilds));
   //Create Rooms Widgets
    roomWidget = '<div class="bookin-widget_avalible-room-details"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(rname1)+' <span class="lightfont">with</span><br>'+$.trim(rname2)+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$ '+nightPrice+'</span>/night</span></div></a></div></div>';
 
@@ -169,8 +198,8 @@ function bookNow(roomTypeId)
       {
         "numberOfAdults": $("#numAdults").val(),
         "numberOfChildren": $("#numChild").val(),
-        "firstName": roomName_1Hid,
-        "lastName": roomName_2Hid,
+        "firstName": $.trim($("#firstname").val()),
+        "lastName": $.trim($("#lastname").val()),
         "bedTypeId": bedTypeIdHid,
         "smokingPreference" : smokingPrefHid
       }
@@ -199,7 +228,7 @@ function bookNow(roomTypeId)
     }
   };
 
-console.log(JSON.stringify(booknow_postdata));
+//console.log(JSON.stringify(booknow_postdata));
 
   $.ajax({
             url: "https://qapi.reztrip.com/eanbook",
@@ -207,18 +236,64 @@ console.log(JSON.stringify(booknow_postdata));
             dataType: 'json',
             data: JSON.stringify(booknow_postdata),
             headers: {
-                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+              "x-api-key": "too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1", "Content-Type": "application/json; charset=utf-8",
+              "Accept": "application/json"
             },
-            //contentType: 'application/json; charset=utf-8',
+            contentType: "application/json",
             success: function (response) {
-              //alert("stest");
-                if(response.HotelRoomReservationResponse.processedWithConfirmation)
+                var respObj = response.HotelRoomReservationResponse;
+                if(respObj.processedWithConfirmation === true)
                 {
-                   alert("success");
+                  $("#errorMsg").hide().html('');
+                  $('#step1').fadeOut(500);
+                  $('#step2').fadeOut(500);
+                  $('#step3').fadeOut(500);
+                  $('#step4').fadeIn(500);
+
+                  var bookedforadults = respObj.RateInfos.RateInfo.RoomGroup.Room.numberOfAdults;
+                  var bookedforchildren = respObj.RateInfos.RateInfo.RoomGroup.Room.numberOfChildren;
+                  var roomName = roomObj.roomDescription.split(',');
+                  var arrivalDate = roomObj.arrivalDate;
+                  var dispatchDate =  roomObj.departureDate;
+                  var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d - hh:MM TT");
+                  var formattedDispDate = dateFormat(new Date(dispatchDate), "ddd, mmm d - hh:MM TT");
+                  var fname = respObj.RateInfos.RateInfo.RoomGroup.Room.firstName;
+                  var lname = respObj.RateInfos.RateInfo.RoomGroup.Room.lastName;
+                  var bookin_charges = respObj.RateInfos.RateInfo.ChargeableRateInfo.NightlyRatesPerRoom.NightlyRate['@rate'];
+                  var bookin_taxfees = respObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
+                  var bookin_totalprice = respObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
+                  var reservation_status = respObj.reservationStatusCode;
+                  var imgsrc = '';
+                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img src="'+imgsrc+'" alt=""/><div class="room-name_price"><div class="pull-left room-name">'+roomName[0]+' <span class="lightfont">with</span><br>'+roomName[1]+'</div><div class="pull-right room-price">$'+bookin_totalprice+'<br><span class="regular-price"><span class="lightfont-dash">$'+bookin_charges+'</span>/night</span></div></div></div>';
+
+                  $("#bookin_room_details").html(bookinRoomBanner);
+                  $("#booking_id").html(respObj.itineraryId);
+                  if(bookedforadults < 10)
+                    $("#booked_for_adults").html("0"+bookedforadults);
+                  else
+                    $("#booked_for_adults").html(bookedforadults);
+
+                    if(bookedforchildren < 10)
+                      $("#booked_for_children").html("0"+bookedforchildren);
+                    else
+                      $("#booked_for_children").html(bookedforchildren);
+
+                    $("#room_name").html(roomName[0]+' with '+roomName[1]);
+
+                    $("#checkin_date").html(formattedArrDate);
+                    $("#checkout_date").html(formattedDispDate);
+                    $("#primary_guest").html(lname +" "+fname);
+                    $("#email_id").html($("#email").val());
+                    $("#bookin_charges").html(bookin_charges);
+                    $("#bookin_taxfees").html(bookin_taxfees);
+                    $("#bookin_totalprice").html(bookin_totalprice);
+                    if(reservation_status == "CF")
+                      $("#reservation_status").html('CONFIRMED');
+                    else
+                      $("#reservation_status").html('PENDING..');
                   return false;
                 }else{
-                  //  $("#roomDetailsWidget").html('Room Details Not Available');
-                  alert("failed");
+                  $("#errorMsg").show().html(respObj.EanWsError.presentationMessage);
                   return false;
                 }
               },

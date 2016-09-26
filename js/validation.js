@@ -51,11 +51,12 @@ $(function() {
 
 
       submitHandler: function(form) {
-          form.submit();
+        bookNow($("#selectedRoomTypeId").val());
+        //form.submit();
+
       }
   });
 
 
 
 });
-

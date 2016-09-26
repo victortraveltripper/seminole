@@ -122,6 +122,7 @@
   <div class="bookin-widget_selected-date">
     <a href="#" class="backdate back1" ><img src="../images/calender.svg" alt=""/></a>
         <span id="dateRange1"> </span>
+          <div class="booking-widget_selected-rooms"><span class="guestscount"></span> Guests  <span class="fa fa-angle-down"><span/> </div>
     </div>
   <div class="booking-widget_content">
     <div class="bookin-widget_avalible-rooms" id="roomDetailsWidget">
@@ -131,15 +132,15 @@
     <table>
       <tr>
         <td>Room Charges :</td>
-          <td class="text-right">$ <span id="charges">198.00</span></td>
+          <td class="text-right">$ <span id="charges"></span></td>
       </tr>
       <tr>
         <td>  Taxes & Fees :</td>
-          <td class="text-right">$ <span id="taxfees">2.00</span></td>
+          <td class="text-right">$ <span id="taxfees"></span></td>
       </tr>
       <tr>
         <td class="bolder">   Total Price  :</td>
-          <td class="text-right bolder">$ <span id="totalprice">200.00</span></td>
+          <td class="text-right bolder">$ <span id="totalprice"></span></td>
       </tr>
 
     </table>
@@ -147,6 +148,7 @@
 
 
   <div class="bookin-widget_form">
+    <span id="errorMsg" class="error" style="display:none;"></span>
   <h3>GUEST details</h3>
 
 
@@ -271,8 +273,8 @@
   <div class="booking-widget_booknow">
     <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
 
-    <!--<button class="booking-widget_booknow" id="submit" onclick="bookNow();">BOOKNOW</button>-->
-    <input type="button" name="booknow" id="booknow" value="BOOKNOW" class="booking-widget_booknow" onclick="bookNow(document.getElementById('selectedRoomTypeId').value);"/>
+    <button class="booking-widget_booknow" id="submit" >BOOKNOW</button>
+    <!--<input type="button" name="booknow" id="booknow" value="BOOKNOW" class="booking-widget_booknow" onclick="bookNow(document.getElementById('selectedRoomTypeId').value);"/> -->
     <!--input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" -->
   </div>
 </form>
@@ -290,63 +292,47 @@
   <div class="booking-widget_header ">
 
     <div class="booking-widget_close">&times;</div>
-    <h3 class="booking-widget_title">Confromation</h3>
+    <h3 class="booking-widget_title"></h3>
   </div>
 
   <div class="booking-widget_content">
 
+<!-- Room Image and details gets replaced here -->
+    <div class="bookin-widget_avalible-rooms" id="bookin_room_details">
 
-          <div class="bookin-widget_avalible-rooms">
-            <div class="bookin-widget_avalible-room-details">
-
-                <img src="../images/Select_room-1.jpg " alt=""/>
-              <div class="room-name_price">
-                <div class="pull-left room-name">STUDIO QUEEN <span class="lightfont">with</span><br>
-                1 Queen Bed
-                </div>
-
-                <div class="pull-right room-price">$196<br>
-                  <span class="regular-price">
-                  <span class="lightfont-dash">$203</span>/night
-                </span>
-              </div>
-
-
-            </div>
-            </div>
-          </div>
+    </div>
 
 
   <div class="bookin-widget_conform">
 
   <div class="bookin-widget_conform_room-info">
     <p >Booking ID</p>
-    <label class="labledata">CRFZ2095345ZWE</label>
+    <label class="labledata"><span id="booking_id"></span></label>
 
       <p >Booked For</p>
-<label class="labledata">02 Adults</label>
+      <label class="labledata" id="booked_for_adults"></label>
+      <label class="labledata" id="booked_for_children"></label>&npsp;
 
 <p >Room</p>
-<label class="labledata">STUDIO QUEEN with 1 Queen Bed</label>
+<label class="labledata" id="room_name"></label>
 
 <p >Check-In Date</p>
-<legal class="labledata">Tue, Aug 26 - 12:00 PM</label>
+<legal class="labledata" id="checkin_date"></label>
 
 <p >Check-Out Date</p>
-<label class="labledata">Fri, Aug 30 - 11:00 AM</label>
+<label class="labledata"  id="checkout_date"></label>
   </div>
 
   <div class="GuestDetails">
   <h3>Guest details</h3>
 
-<p>Primary Guest</p>
-Naveen</label>
+<p>Primary Guest</p><label class="labledata" id="primary_guest"></label>
 
 <p>Mobile Number</p>
-<label class="labledata">9032868666</label>
+<label class="labledata" id="mobile_no"></label>
 
 <p >Email ID</p>
-<label class="labledata">get2navee@gmail.com</label>
+<label class="labledata" id="email_id"></label>
 
 </div>
 
@@ -356,20 +342,20 @@ Naveen</label>
     <table>
       <tr>
         <td>Room Charges :</td>
-          <td class="text-right">$ 198.00</td>
+          <td class="text-right" >$ <span id="bookin_charges"></span></td>
       </tr>
       <tr>
         <td>  Taxes & Fees :</td>
-          <td class="text-right">$ 2.00</td>
+          <td class="text-right">$ <span id="bookin_taxfees"></span></td>
       </tr>
       <tr>
         <td class="bolder">   Total Price  :</td>
-          <td class="text-right bolder">$ 200.00</td>
+          <td class="text-right bolder">$ <span id="bookin_totalprice"></span</td>
       </tr>
 
     <tr>
     <td>Reservation Status</td>
-      <td class="text-right confir">Confirmed</td>
+      <td class="text-right confir"><span id="reservation_status">Confirmed</span></td>
     </tr>
     </table>
   </div>
