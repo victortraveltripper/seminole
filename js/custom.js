@@ -204,9 +204,8 @@ $(document).ready(function(){
    		});
 
 
-/*** Start -- Api Call to fetch the available rooms ***/
+/*** Start -- Api Call to search the available rooms ***/
         $(".booking-widget_select_rooms_button").on("click",function()  {
-        //alert("hello");
           var numAdults = $("#numAdults").val();
           var numChilds = $("#numChild").val();
           var arrivalDate = $("#input1").val();
@@ -215,11 +214,12 @@ $(document).ready(function(){
           var countRooms = 0;
           var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d");
           var formattedDispDate = dateFormat(new Date(dispatchDate), "ddd, mmm d");
+          var hotelId = $("#hotel_id").val();
           //alert(formattedArrDate+ ' '+formattedDispDate);
           $("#dateRange").html(formattedArrDate+" - "+formattedDispDate);
           $("#availableRoomsDiv").html('');
           $.ajax({
-                    url: "https://qapi.reztrip.com/eansearch?eanHotelId=106347&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
+                    url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
                     type: 'GET',
                     dataType: 'json',
                     headers: {
@@ -231,9 +231,8 @@ $(document).ready(function(){
                     },*/
                     success: function (roomsResponse) {
 
-                      //Fetch all the dynamic parameters from response
-                      var hotelRoomAvailability = roomsResponse.HotelRoomAvailabilityResponse;
-
+                        //Fetch all the dynamic parameters from response
+                        var hotelRoomAvailability = roomsResponse.HotelRoomAvailabilityResponse;
                         if(parseInt(hotelRoomAvailability['@size']) > 0 )
                         {
                             var roomsArr = roomsResponse.HotelRoomAvailabilityResponse.HotelRoomResponse;
@@ -259,7 +258,6 @@ $(document).ready(function(){
                                 var bedTypeId = roomObj.BedTypes.BedType['@id'];
                                 var smokingPref = roomObj.smokingPreferences;
 
-
                                 //create require params hidden vars
                                 var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomName[0]+'"/>';
                                 var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomName[1]+'"/>';
@@ -276,10 +274,9 @@ $(document).ready(function(){
                                  roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(roomName[0])+' <span class="lightfont">with</span><br>'+$.trim(roomName[1])+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$'+nightPrice+'</span>/night</span></div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
-//alert("test");
+
                               //Append the Room Widgets to the main widget
                                 $("#availableRoomsDiv").html(roomsWidget);
-
                             } //end if
                       }else{
                           $("#availableRoomsDiv").html(countRooms);

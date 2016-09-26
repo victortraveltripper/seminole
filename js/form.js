@@ -21,7 +21,6 @@ $(document).ready(function() {
     valid.push(fieldStatus(cvc,    payform.validateCardCVC(cvc.value, type.innerHTML)));
 
     result.className = 'emoji ' + (valid.every(Boolean) ? 'valid' : 'invalid');
-  
   });
 
   function updateType(e) {
