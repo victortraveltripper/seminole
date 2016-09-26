@@ -213,7 +213,7 @@ function bookNow(roomTypeId)
             success: function (response) {
                 var respObj = response.HotelRoomReservationResponse;
                 if(respObj.processedWithConfirmation == true)
-                {alert("test");
+                {
                   $("#errorMsg").hide().html('');
                   $('#step1').fadeOut(500);
                   $('#step2').fadeOut(500);
