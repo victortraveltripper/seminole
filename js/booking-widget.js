@@ -419,7 +419,7 @@ function showReservationInfo()
     //console.log("test: "+reservationInfo);
     $("#bookin_id").html(reservationInfo.bookinId);
     $("#booked_for").html(reservationInfo.bookedFor);
-    $("#room_img").setAttribute('src',reservationInfo.roomImageSrc);
+    $("#room_img").attr('src',reservationInfo.roomImageSrc);
     if(reservationInfo.roomname2 != "")
       $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
     else
