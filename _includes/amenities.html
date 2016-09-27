@@ -3,19 +3,19 @@
         <div class="row">
             <h6 class="text-center">HOTEL AMENITIES</h6>
             <div  ng-repeat = "items in amenities | limitTo: 18"   class="col-sm-4">
-                <ul>
-                    <li>{[items]} </li>
-                </ul>
+
+                    <span > <i class="fa fa-circle"></i> {[items]}</span>
+
             </div>
         </div>
         <div id="collapse1" style="display:none">
             <div class="row">
                 <div  ng-repeat = "items in amenities "   class="col-sm-4">
-                    <ul>
+
                         <span ng-if="$index>=18">
-                        <li>{[items]}</li>
-                            </span>
-                    </ul>
+                        <span > <i class="fa fa-circle"></i>{[items]}</span>
+                        </span>
+
                 </div>
             </div>
         </div>

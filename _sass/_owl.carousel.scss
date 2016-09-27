@@ -14,7 +14,9 @@
 #GallerySlider .owl-item{
 	img{
 		display: block;
-		width: 100%;
+		width: 90%;
+		height: 150px;
+		margin: 5%;
 	}
 }
 
@@ -22,9 +24,10 @@
 background:#FFF;
 }
 
-#rooms .owl-wrapper-outer
+#rooms-carousel .owl-wrapper-outer
 {
-	width:86%;
+	width:90%;
+
 	margin:auto;
 	}
 
