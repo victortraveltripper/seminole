@@ -65,9 +65,9 @@ $('.booking-widget_select_rooms_button').click(function(){
 
 //$('.bookin-widget_avalible-room-details').on('click',function(){
 $("body").on('click', '#avalible-room-details',function(){
-   $('#step1').hide();
-   $('#step2').hide();
-   $('#step3').show();
+   $('#step1').fadeOut(500);
+   $('#step2').fadeOut(500);
+   $('#step3').fadeIn(500);
    //getRoomDetails($(this).attr('data-roomTypeId'));
    showRoomDetails($(this).attr('data-roomTypeId'));
 
@@ -100,7 +100,12 @@ $('.back2').click(function(){
    $('#step3').fadeIn(500);
    $('#step4').fadeOut(500);
 });
+
+
+
 });
+
+
 
 function showRoomDetails(roomTypeId)
 {
@@ -225,12 +230,12 @@ function bookNow(roomTypeId)
                   $('#step2').fadeOut(500);
                   $('#step3').fadeOut(500);
                   $('#step4').fadeIn(500);
-
+                  var bookedforadults = bookedforchildren = 0;
                   var bookedforadults =  $("#numAdults").val();
                   var roomName = respObj.roomDescription.split(',');
                   var bookedforchildren = $("#numChild").val();
                   var rname1 = rname2 = '';
-                  var roomName =  roomNameDiv = '';
+                  var roomName =  roomNameDiv =  '' ;
                   if(respObj.roomDescription.indexOf(",") != -1){
                     var roomName = respObj.roomDescription.split(',');
                     rname1 = roomName[0];
@@ -248,8 +253,11 @@ function bookNow(roomTypeId)
                   var bookin_taxfees = respObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
                   var bookin_totalprice = respObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
                   var reservation_status = respObj.reservationStatusCode;
-
+                  var bookInId = respObj.itineraryId;
+                  var bookedFor = '';
                   var roomSrc = '../images/Select_room-1.JPG';
+                  var mobile = $("#mobile").val();
+                  var email = $("#email").val();
 
                    if(rname2 == ''){
                       roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+'</div>';
@@ -262,33 +270,51 @@ function bookNow(roomTypeId)
                   var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+bookin_totalprice+'</div></div></div>';
 
                   $("#bookin_room_details").html(bookinRoomBanner);
-                  $("#booking_id").html(respObj.itineraryId);
+                  $("#booking_id").html(bookInId);
 
-                  if(bookedforadults > 0 && bookedforadults < 10)
+                  if(bookedforadults > 0 && bookedforadults < 10){
                       $("#booked_for_adults").html("0"+bookedforadults);
-                  else
+                      bookedFor = "0"+bookedforadults;
+                  }else{
                       $("#booked_for_adults").html(bookedforadults);
-
-                    if(bookedforchildren > 0 &&  bookedforchildren < 10)
+                      bookedFor = bookedforadults;
+                    }
+                    bookedFor += ' Adult(s)';
+                    if(bookedforchildren > 0 &&  bookedforchildren < 10){
                       $("#booked_for_children").html("0"+bookedforchildren);
-                    else
+                      bookedFor += " 0"+bookedforchildren;
+                    }else{
                       $("#booked_for_children").html(bookedforchildren);
+                      bookedFor += " "+bookedforchildren;
+                    }
+                    bookedFor += ' Children';
 
                     $("#checkin_date").html(formattedArrDate);
                     $("#checkout_date").html(formattedDispDate);
                     $("#primary_guest").html(lname +" "+fname);
-                    $("#mobile_no").html($("#mobile").val());
-                    $("#email_id").html($("#email").val());
+                    $("#mobile_no").html(mobile);
+                    $("#email_id").html(email);
                     $("#bookin_charges").html(bookin_charges);
                     $("#bookin_taxfees").html(bookin_taxfees);
                     $("#bookin_totalprice").html(bookin_totalprice);
-                    if(reservation_status == "CF")
+                    if(reservation_status == "CF"){
                       $("#reservation_status").html('CONFIRMED');
-                    else
+
+                      //Store all the Reservation Info into broswer localstorage
+                      if (typeof(Storage) !== "undefined") {
+                          // Store
+                          var bookin_info = {bookinId: bookInId, bookedFor: bookedFor,roomImageSrc: roomSrc, roomname1: rname1, roomname2:rname2,  checkIn: formattedArrDate, checkOut: formattedDispDate,totalPrice: bookin_totalprice,charges: bookin_charges,taxfees: bookin_taxfees, firstname: fname, lastname: lname, mobile: mobile , email: email, reservation_status: 'CONFIRMED'  };
+                          localStorage.setItem("reservationInfo", JSON.stringify(bookin_info));
+                          //console.log(localStorage.getItem("reservationInfo"));
+                      } else {
+                          $("#localstorage_support_errmsg") = "Sorry, your browser does not support Web Storage...";
+                      } //end local storage else
+
+                    }else
                       $("#reservation_status").html('PENDING..');
                   return false;
                 }else{
-                  $("#errorMsg").show().html(respObj.EanWsError.presentationMessage);
+                  $("#errorMsg").fadeIn(500).html(respObj.EanWsError.presentationMessage);
                   return false;
                 }
               },
@@ -383,4 +409,40 @@ function getRoomImage(roomTypeId){
                 return roomSrc;
             }
         });
+}
+
+function showReservationInfo()
+{
+//alert("hi");
+  if (typeof(Storage) !== "undefined") {
+    var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
+    //console.log("test: "+reservationInfo);
+    $("#bookin_id").html(reservationInfo.bookinId);
+    $("#booked_for").html(reservationInfo.bookedFor);
+    $("#room_img").setAttribute('src',reservationInfo.roomImageSrc);
+    if(reservationInfo.roomname2 != "")
+      $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
+    else
+      $("#room_name").html(reservationInfo.roomname1);
+
+    $("#checkin_date").html(reservationInfo.checkIn);
+    $("#checkout_date").html(reservationInfo.checkOut);
+
+    if(reservationInfo.roomname2 != "")
+      $("#room_name_label").html(reservationInfo.roomname1+' <span class="checkout-details-lightfont">with</span><br>'+reservationInfo.roomname2);
+    else
+        $("#room_name_label").html(reservationInfo.roomname1);
+
+    $("#img_total_price").html(reservationInfo.totalPrice);
+    $("#primary_guest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
+    $("#mobile_no").html(reservationInfo.mobile);
+    $("#email_id").html(reservationInfo.email);
+    $("#room_charges").html(reservationInfo.charges);
+    $("#tax_fees").html(reservationInfo.taxfees);
+    $("#total_price").html(reservationInfo.totalPrice);
+    $("#resv_status").html(reservationInfo.reservation_status);
+      //console.log(localStorage.getItem("reservationInfo"));
+  } else {
+    console.log("Sorry, your browser does not support Web Storage...");
+  }
 }

@@ -286,7 +286,7 @@ $(document).ready(function(){
 
 
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+totalPrice+'</div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+nightPrice+'</span>/night</span></div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
 
