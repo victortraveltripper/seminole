@@ -215,7 +215,7 @@ $(document).ready(function(){
           var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d");
           var formattedDispDate = dateFormat(new Date(dispatchDate), "ddd, mmm d");
           var hotelId = $("#hotel_id").val();
-          //alert(formattedArrDate+ ' '+formattedDispDate);
+          $(".roomcount").html('');
           $("#dateRange").html(formattedArrDate+" - "+formattedDispDate);
           $("#availableRoomsDiv").html('');
           $.ajax({
@@ -246,8 +246,16 @@ $(document).ready(function(){
                                 //Fetch all the dynamic parameters from response
                                 var roomSrc = '../images/Select_room-1.JPG';
                                 var roomImg = '<img src="'+roomSrc+'" alt=""/>';
-
-                                var roomName = roomObj.roomTypeDescription.split(',');
+                                var roomName = '';
+                                var roomname1 = roomname2 = '';
+                                if(roomObj.roomTypeDescription.indexOf(",") != -1)
+                                {
+                                  roomName = roomObj.roomTypeDescription.split(',');
+                                  roomname1 = roomName[0];
+                                  roomname2 = roomName[1];
+                                }else{
+                                  roomname1 = roomObj.roomTypeDescription;
+                                }
                                 var totalPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
                                 var nightPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal'];
                                 var surcharges = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
@@ -259,8 +267,8 @@ $(document).ready(function(){
                                 var smokingPref = roomObj.smokingPreferences;
 
                                 //create require params hidden vars
-                                var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomName[0]+'"/>';
-                                var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomName[1]+'"/>';
+                                var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomname1+'"/>';
+                                var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomname2+'"/>';
                                 var totalPriceHid = '<input type="hidden" id="'+roomTypeId+'_totalprice" value="'+totalPrice+'"/>';
                                 var nightPriceHid = '<input type="hidden" id="'+roomTypeId+'_nightprice" value="'+nightPrice+'"/>';
                                 var taxfeesHid = '<input type="hidden" id="'+roomTypeId+'_taxfees" value="'+surcharges+'"/>';
@@ -270,8 +278,15 @@ $(document).ready(function(){
                                 var bedTypeId_Hid = '<input type="hidden" id="'+roomTypeId+'_bedtypeid" value="'+bedTypeId+'"/>';
                                 var smokingPref_Hid = '<input type="hidden" id="'+roomTypeId+'_smokingpref" value="'+smokingPref+'"/>';
 
+                                var roomNameDiv = '';
+                                if(roomname2 == '')
+                                  roomNameDiv = '<div class="pull-left room-name">'+$.trim(roomname1)+'</div>';
+                                else
+                                  roomNameDiv = '<div class="pull-left room-name">'+$.trim(roomname1)+' <span class="lightfont">with</span><br>'+$.trim(roomname2)+'</div>';
+
+
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(roomName[0])+' <span class="lightfont">with</span><br>'+$.trim(roomName[1])+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$'+nightPrice+'</span>/night</span></div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+totalPrice+'</div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
 

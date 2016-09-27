@@ -107,6 +107,7 @@ function showRoomDetails(roomTypeId)
   var roomSrc = '../images/Select_room-1.JPG';
   //call api to get Room Image
   //roomSrc = getRoomImage(roomTypeId);
+  var rname1 = rname2 = '';
   var roomImg = '<img src="'+roomSrc+'" alt=""/>';
   var rname1 = $("#"+roomTypeId+"_roomname1").val();
   var rname2 = $("#"+roomTypeId+"_roomname2").val();
@@ -129,9 +130,14 @@ function showRoomDetails(roomTypeId)
   var roomWidget= '';
   $("#selectedRoomTypeId").val(roomTypeId);
   $(".guestscount").html(parseInt(numAdults)+parseInt(numChilds));
+  var roomNameDiv = '';
 
+   if(rname2 == '')
+    roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+'</div>';
+   else
+      roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+' <span class="lightfont">with</span><br>'+$.trim(rname2)+'</div>';
   //Create Rooms Widgets
-   roomWidget = '<div class="bookin-widget_avalible-room-details"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(rname1)+' <span class="lightfont">with</span><br>'+$.trim(rname2)+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$ '+nightPrice+'</span>/night</span></div></a></div></div>';
+   roomWidget = '<div class="bookin-widget_avalible-room-details"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+totalPrice+'</div></a></div></div>';
 
    //Append the Room Widgets to the main widget
    $("#roomDetailsWidget").html(roomWidget);
@@ -220,9 +226,18 @@ function bookNow(roomTypeId)
                   $('#step3').fadeOut(500);
                   $('#step4').fadeIn(500);
 
-                  var bookedforadults = respObj.RateInfos.RateInfo.RoomGroup.Room.numberOfAdults;
-                  var bookedforchildren = respObj.RateInfos.RateInfo.RoomGroup.Room.numberOfChildren;
+                  var bookedforadults =  $("#numAdults").val();
                   var roomName = respObj.roomDescription.split(',');
+                  var bookedforchildren = $("#numChild").val();
+                  var rname1 = rname2 = '';
+                  var roomName =  roomNameDiv = '';
+                  if(respObj.roomDescription.indexOf(",") != -1){
+                    var roomName = respObj.roomDescription.split(',');
+                    rname1 = roomName[0];
+                    rname2 = roomName[1];
+                  }else{
+                    rname1 = respObj.roomDescription;
+                  }
                   var arrivalDate = respObj.arrivalDate;
                   var dispatchDate =  respObj.departureDate;
                   var formattedArrDate = dateFormat(new Date(arrivalDate), "ddd, mmm d - hh:MM TT");
@@ -236,21 +251,28 @@ function bookNow(roomTypeId)
 
                   var roomSrc = '../images/Select_room-1.JPG';
 
-                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img src="'+roomSrc+'" alt=""/><div class="room-name_price"><div class="pull-left room-name">'+roomName[0]+' <span class="lightfont">with</span><br>'+roomName[1]+'</div><div class="pull-right room-price">$'+bookin_totalprice+'<br><span class="regular-price"><span class="lightfont-dash">$'+bookin_charges+'</span>/night</span></div></div></div>';
+                   if(rname2 == ''){
+                      roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+'</div>';
+                      $("#room_name").html(rname1);
+                   }
+                   else{
+                      roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+' <span class="lightfont">with</span><br>'+$.trim(rname2)+'</div>';
+                      $("#room_name").html(rname1+' with '+rname2);
+                    }
+                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+bookin_totalprice+'</div></div></div>';
 
                   $("#bookin_room_details").html(bookinRoomBanner);
                   $("#booking_id").html(respObj.itineraryId);
+
                   if(bookedforadults > 0 && bookedforadults < 10)
-                    $("#booked_for_adults").html("0"+bookedforadults);
+                      $("#booked_for_adults").html("0"+bookedforadults);
                   else
-                    $("#booked_for_adults").html(bookedforadults);
+                      $("#booked_for_adults").html(bookedforadults);
 
                     if(bookedforchildren > 0 &&  bookedforchildren < 10)
                       $("#booked_for_children").html("0"+bookedforchildren);
                     else
                       $("#booked_for_children").html(bookedforchildren);
-
-                    $("#room_name").html(roomName[0]+' with '+roomName[1]);
 
                     $("#checkin_date").html(formattedArrDate);
                     $("#checkout_date").html(formattedDispDate);
