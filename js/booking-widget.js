@@ -471,5 +471,5 @@ function showReservationInfo()
 
 function priceFormat(priceval)
 {
-  return parseFloat(priceval).toFixed(2); //returns string fixed to 2 decimal places
+  return Match.round(parseFloat(priceval)); //returns string fixed to 2 decimal places
 }
