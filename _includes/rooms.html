@@ -19,11 +19,11 @@
           <div id="home" class="tab-pane fade in active text-center container-a1" >
             <div class="rooms-type">
               <ul>
-                <li ng-repeat = "items in roomInfo track by $index" owl-carousel-tem >
+                <li ng-repeat = "items in roomInfo track by $index">
                   <div class="view view-first">
                     <h3>{[items.roomHead]}</h3>
                     <img ng-src="{[items.owlPic]}" alt="">
-                    <a class="readon" data-id="0" data-toggle="pill" href="#menu1">
+                    <a class="readon" data-id="{[$index]}" data-toggle="pill" href="#menu1">
                       <div class="mask">
                         <h2>View This Room</h2>
                         <!--a href="#" class="info">Read More</a-->
@@ -39,13 +39,12 @@
               <div class="row">
 
                     <div id="rooms-carousel" class="carousel slide" data-ride="carousel">
-                      <!-- Indicators -->
 
-                      <ol class="carousel-indicators">
-                        <li ng-repeat = "items in roomInfo"   data-target="#rooms-carousel" data-slide-to="$index" ng-class="{active:!$index}" ></li>
-                      </ol>
 
-                      <div class="owl-wrapper-outer">
+                      <!--ol class="carousel-indicators">
+                        <li ng-repeat = "items in roomInfo" data-target="#rooms-carousel" data-slide-to="$index" ng-class="{active:!$index}" ></li>
+                      </ol-->
+
                       <div class="carousel-inner" role="listbox">
                         <div  ng-class="{active:!$index}" ng-repeat = "items in roomInfo" class="item "  >
 
@@ -68,23 +67,21 @@
                         </div>
 
                       </div>
-                    </div>
-                      <!-- Controls -->
+
                       <a class="left carousel-control" href="#rooms-carousel" role="button" data-slide="prev">
                         <span class="fa " aria-hidden="true"><img src="images/arrow-left-gray.svg" alt=""/></span>
-                        <span class="sr-only">Pre</span>
+                        <span class="sr-only">Previous</span>
                       </a>
                       <a class="right carousel-control" href="#rooms-carousel" role="button" data-slide="next">
-                        <span class="fa  " aria-hidden="true"> <img src="images/arrow-right-gray.svg" alt=""/></span>
+                        <span class="fa " aria-hidden="true"> <img src="images/arrow-right-gray.svg" alt=""/></span>
                         <span class="sr-only">Next</span>
                       </a>
-
-
                     </div>
 
-
-
                 </div>
+
+
+
               </div>
 
               <div class="text-center">More Room Images</div>

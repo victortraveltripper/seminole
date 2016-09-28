@@ -1,4 +1,11 @@
 $(document).ready(function(){
+  $(document).on("click", ".readon", function() {
+     var owlid = $(this).attr('data-id');
+     $('.contTabs li:last').tab('show');
+     $('#rooms-carousel').carousel(parseInt(owlid));
+  });
+
+
   $("#Slider").owlCarousel({
       navigation : true,
       navigationText: ["<img src='images/arrow-left.svg'> ","<img src='images/arrow-right.svg'>"],
@@ -60,13 +67,7 @@ $(document).ready(function(){
 
   });
 
-  $('a.readon').click(function(){
-    var owlid = $(this).attr('data-id');
-    $('.contTabs li:last').tab('show');
-    var owl = $('#rooms').data('owlCarousel');
-    owl.goTo(owlid);
 
-  });
 
  //Show Hide Aminites
 
@@ -261,9 +262,9 @@ $(document).ready(function(){
                                 }else{
                                   roomname1 = roomObj.roomTypeDescription;
                                 }
-                                var totalPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
-                                var nightPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal'];
-                                var surcharges = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
+                                var totalPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total']);
+                                var nightPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal']);
+                                var surcharges = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal']);
                                 var roomTypeId = roomObj.roomTypeCode;
                                 var rateKey = roomObj.RateInfos.RateInfo.RoomGroup.Room.rateKey;
                                 var rateCode = roomObj.rateCode;
