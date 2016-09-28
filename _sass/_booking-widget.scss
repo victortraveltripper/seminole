@@ -138,16 +138,17 @@
   text-align: center;
   background: #FFF;
 
-input{
+span{
   border:none;
   font-family: 'Lato', sans-serif;
+  text-transform: capitalize;
 }
 
 }
 
 .booking-widget_selected-rooms{
 float:right;
-width:95px;
+width:105px;
 
 span{
    color:#2378bc;
