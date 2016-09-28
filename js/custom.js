@@ -190,14 +190,19 @@ $(document).ready(function(){
    					$("#input1").val(dateText);
    					$("#input2").val("");
                        $(this).datepicker();
+                       $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
+                       $("#chkOut").html('');
+
                    } else if( selectedDate < date1 ) {
                        $("#input2").val( $("#input1").val() );
                        $("#input1").val( dateText );
                        $(this).datepicker();
-
+                       $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
+                       $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d"));
                    } else {
    					$("#input2").val(dateText);
                        $(this).datepicker();
+                       $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d"));
 
    				}
 
@@ -266,10 +271,10 @@ $(document).ready(function(){
                                 var roomCode = roomTypeId;
                                 var bedTypeId = roomObj.BedTypes.BedType['@id'];
                                 var smokingPref = roomObj.smokingPreferences;
+                                //get room image
                                 getRoomImage(roomTypeId);
                                 var roomSrc = $("#selectedRoomImage").val();
                                 //var roomImg = '<img src="'+roomSrc+'" alt=""/>';
-//alert(roomSrc);
                                 var roomImg = '<img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/>';
                                 var roomSrc_Hid = '<input type="hidden" id="'+roomTypeId+'_roomnimage" value="'+roomSrc+'"/>';
                                 //create require params hidden vars

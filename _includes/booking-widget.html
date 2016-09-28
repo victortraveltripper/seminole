@@ -63,9 +63,10 @@
       <p class="booking-widget_flexible-dates-active" style="display:none;">
 
 
-      <input type="text" id="input1" size="10">
+      <span style="display:none;"><input type="text" id="input1" size="10" >
 
-      <input type="text" id="input2" size="10">
+      <input type="text" id="input2" size="10"></span>
+      <span id="chkIn"></span><span id="chkOut"></span>
     </p>
      <div class="datepicker"></div>
 
@@ -122,7 +123,7 @@
   </div>
 
   <div class="bookin-widget_selected-date">
-    <a href="javascript:void(0);" class="backdate back1" ><img src="../images/calender.svg" alt=""/></a>
+    <a href="javascript:void(0);" class="backdate back1" id="booknow_widget_back"><img src="../images/calender.svg" alt=""/></a>
         <span id="dateRange1"> </span>
           <div class="booking-widget_selected-rooms"><span class="guestscount"></span> Guests  <span class="fa fa-angle-down"><span/> </div>
     </div>
@@ -160,13 +161,6 @@
 
 
   <form action="#" method="post" id="register-form"  novalidate="novalidate">
-<input type="hidden" id="selectedRoomTypeId" name="selectedRoomTypeId" value="" />
-<input type="hidden" id="selectedRoomImage" name="selectedRoomImage" value="" />
-
-
-
-
-
 
   <label >Primary Guest</label>
   <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">

@@ -3,6 +3,11 @@ layout: default
 ---
 
 {% include nav.html %}
+<script type="text/javascript">
+$(document).ready(function(){
+  showReservationInfo();
+});
+</script>
 <article class="print clearfix">
 
 <h4 class="text-center"><span class="fa fa-check"></span>YOUR Reservations is successfull</h4>
@@ -146,10 +151,5 @@ New York NY 10001 </div>
 </div>
 </div>
 </article>
-<script type="text/javascript">
-$(document).ready(function(){
-  showReservationInfo();
-});
 
-</script>
   {% include footer.html %}

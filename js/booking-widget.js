@@ -73,6 +73,12 @@ $("body").on('click', '#avalible-room-details',function(){
 
 });
 
+$("body").on('click', '#booknow_widget_back',function(){
+  $("#ccnum").val('');
+  $("#expiry").val('');
+  $("#cvc").val('');
+});
+
 $('.bookin-widget_booknow').click(function(){
    $('#step1').fadeOut(500);
    $('#step2').fadeOut(500);
@@ -424,35 +430,41 @@ function getRoomImage(roomTypeId){
 
 function showReservationInfo()
 {
-  if (typeof(Storage) !== "undefined") {
-    var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
-    //console.log("test: "+reservationInfo);
-    $("#bookin_id").html(reservationInfo.bookinId);
-    $("#booked_for").html(reservationInfo.bookedFor);
-    $("#room_img").attr('src',reservationInfo.roomImageSrc);
-    if(reservationInfo.roomname2 != "")
-      $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
-    else
-      $("#room_name").html(reservationInfo.roomname1);
+  if (typeof(Storage) !== "undefined")
+  {
+      var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
+      //console.log("test: "+reservationInfo);
+      if(reservationInfo != ""){
+          $("#bookin_id").html(reservationInfo.bookinId);
+          $("#booked_for").html(reservationInfo.bookedFor);
+          $("#room_img").attr('src',reservationInfo.roomImageSrc);
+          if(reservationInfo.roomname2 != "")
+            $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
+          else
+            $("#room_name").html(reservationInfo.roomname1);
 
-    $("#checkin_date").html(reservationInfo.checkIn);
-    $("#checkout_date").html(reservationInfo.checkOut);
+          $("#checkin_date").html(reservationInfo.checkIn);
+          $("#checkout_date").html(reservationInfo.checkOut);
 
-    if(reservationInfo.roomname2 != "")
-      $("#room_name_label").html(reservationInfo.roomname1+' <span class="checkout-details-lightfont">with</span><br>'+reservationInfo.roomname2);
-    else
-        $("#room_name_label").html(reservationInfo.roomname1);
+          if(reservationInfo.roomname2 != "")
+            $("#room_name_label").html(reservationInfo.roomname1+' <span class="checkout-details-lightfont">with</span><br>'+reservationInfo.roomname2);
+          else
+              $("#room_name_label").html(reservationInfo.roomname1);
 
-    $("#img_total_price").html(reservationInfo.totalPrice);
-    $("#primary_guest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
-    $("#mobile_no").html(reservationInfo.mobile);
-    $("#email_id").html(reservationInfo.email);
-    $("#room_charges").html(reservationInfo.charges);
-    $("#tax_fees").html(reservationInfo.taxfees);
-    $("#total_price").html(reservationInfo.totalPrice);
-    $("#resv_status").html(reservationInfo.reservation_status);
-      //console.log(localStorage.getItem("reservationInfo"));
-  } else {
-    console.log("Sorry, your browser does not support Web Storage...");
-  }
+          $("#img_total_price").html(reservationInfo.totalPrice);
+          $("#primary_guest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
+          $("#mobile_no").html(reservationInfo.mobile);
+          $("#email_id").html(reservationInfo.email);
+          $("#room_charges").html(reservationInfo.charges);
+          $("#tax_fees").html(reservationInfo.taxfees);
+          $("#total_price").html(reservationInfo.totalPrice);
+          $("#resv_status").html(reservationInfo.reservation_status);
+            //console.log(localStorage.getItem("reservationInfo"));
+          //localStorage.setItem("reservationInfo", '');
+        }else {
+            window.location = "/";
+        }
+    } else {
+      window.location = "/";
+    }
 }
