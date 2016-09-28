@@ -154,7 +154,7 @@ function showRoomDetails(roomTypeId)
    $("#roomDetailsWidget").html(roomWidget);
 
   // Replace the prices
-     $("#charges").html(charges);
+     $("#charges").html(Math.round(charges));
      $("#taxfees").html(taxFee);
      $("#totalprice").html(totalPrice);
 }
@@ -373,7 +373,7 @@ function getRoomDetails(roomTypeId)
 
                     var roomWidget= '';
                     //Create Rooms Widgets
-                     roomWidget = '<div class="bookin-widget_avalible-room-details"><a href="#">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(roomName[0])+' <span class="lightfont">with</span><br>'+$.trim(roomName[1])+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$ '+nightPrice+'</span>/night</span></div></a></div></div>';
+                     roomWidget = '<div class="bookin-widget_avalible-room-details"><a href="#">'+roomImg+'<div class="room-name_price"><div class="pull-left room-name">'+$.trim(roomName[0])+' <span class="lightfont">with</span><br>'+$.trim(roomName[1])+'</div><div class="pull-right room-price">$'+totalPrice+'<br><span class="regular-price"><span class="lightfont-dash">$ '+Math.round(nightPrice)+'</span>/night</span></div></a></div></div>';
                      //Append the Room Widgets to the main widget
                        $("#roomDetailsWidget").html(roomWidget);
 
