@@ -4,7 +4,7 @@
             <h6 class="text-center">HOTEL AMENITIES</h6>
             <div  ng-repeat = "items in amenities | limitTo: 18"   class="col-sm-4">
 
-                    <span > <i class="fa fa-circle"></i> {[items]}</span>
+                    <div class="list"> <i class="fa fa-circle"></i> {[items]}</div>
 
             </div>
         </div>
@@ -13,7 +13,7 @@
                 <div  ng-repeat = "items in amenities "   class="col-sm-4">
 
                         <span ng-if="$index>=18">
-                        <span > <i class="fa fa-circle"></i>{[items]}</span>
+                        <div class="list"> <i class="fa fa-circle"></i>{[items]}</div>
                         </span>
 
                 </div>
