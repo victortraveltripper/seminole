@@ -1,4 +1,11 @@
 $(document).ready(function(){
+  $(document).on("click", ".readon", function() {
+     var owlid = $(this).attr('data-id');
+     $('.contTabs li:last').tab('show');
+     $('#rooms-carousel').carousel(parseInt(owlid));
+  });
+
+
   $("#Slider").owlCarousel({
       navigation : true,
       navigationText: ["<img src='images/arrow-left.svg'> ","<img src='images/arrow-right.svg'>"],
@@ -60,13 +67,7 @@ $(document).ready(function(){
 
   });
 
-  $('a.readon').click(function(){
-    var owlid = $(this).attr('data-id');
-    $('.contTabs li:last').tab('show');
-    var owl = $('#rooms').data('owlCarousel');
-    owl.goTo(owlid);
 
-  });
 
  //Show Hide Aminites
 
