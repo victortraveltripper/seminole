@@ -1,7 +1,26 @@
-default_lang: 'en'
-languages: ['en']
 hotel_id: '105507'
 api_header_key: 'x-api-key'
 api_headerkey_value: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
 
 
+# Site settings
+title: Instant Site
+baseurl: ""
+permalink: pretty
+
+default_lang: 'en'
+languages: ['en']
+
+
+# Build settings
+markdown: kramdown
+
+port: 8080
+
+
+
+exclude:
+  - 'sitemap.json'
+
+keep_files: ['assets']
+rsync_copy: ['_assets']
