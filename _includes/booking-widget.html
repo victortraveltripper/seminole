@@ -63,9 +63,10 @@
       <p class="booking-widget_flexible-dates-active" style="display:none;">
 
 
-      <input type="text" id="input1" size="10">
+      <span style="display:none;"><input type="text" id="input1" size="10" >
 
-      <input type="text" id="input2" size="10">
+      <input type="text" id="input2" size="10"></span>
+      <span id="chkIn"></span><span id="chkOut"></span>
     </p>
      <div class="datepicker"></div>
 
@@ -160,6 +161,7 @@
 
 
   <form action="#" method="post" id="register-form"  novalidate="novalidate">
+
   <label >Primary Guest</label>
   <input type="text" id="firstname" name="firstname"  class="form-control" placeholder="First Name">
   <input type="text" id="lastname" name="lastname"  class="form-control"  placeholder="Last Name    ">
