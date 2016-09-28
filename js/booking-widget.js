@@ -109,11 +109,11 @@ $('.back2').click(function(){
 
 function showRoomDetails(roomTypeId)
 {
-  var roomSrc = '../images/Select_room-1.JPG';
+  var roomSrc = $("#"+roomTypeId+"_roomnimage").val();
   //call api to get Room Image
-  //roomSrc = getRoomImage(roomTypeId);
+
   var rname1 = rname2 = '';
-  var roomImg = '<img src="'+roomSrc+'" alt=""/>';
+  var roomImg = '<img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/>';
   var rname1 = $("#"+roomTypeId+"_roomname1").val();
   var rname2 = $("#"+roomTypeId+"_roomname2").val();
   var numAdults = $("#numAdults").val();
@@ -255,7 +255,7 @@ function bookNow(roomTypeId)
                   var reservation_status = respObj.reservationStatusCode;
                   var bookInId = respObj.itineraryId;
                   var bookedFor = '';
-                  var roomSrc = '../images/Select_room-1.JPG';
+                  var roomSrc =  $("#"+roomTypeId+"_roomnimage").val();
                   var mobile = $("#mobile").val();
                   var email = $("#email").val();
 
@@ -267,7 +267,8 @@ function bookNow(roomTypeId)
                       roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+' <span class="lightfont">with</span><br>'+$.trim(rname2)+'</div>';
                       $("#room_name").html(rname1+' with '+rname2);
                     }
-                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+bookin_totalprice+'</div></div></div>';
+
+                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+bookin_totalprice+'</div></div></div>';
 
                   $("#bookin_room_details").html(bookinRoomBanner);
                   $("#booking_id").html(bookInId);
@@ -303,6 +304,7 @@ function bookNow(roomTypeId)
                       //Store all the Reservation Info into broswer localstorage
                       if (typeof(Storage) !== "undefined") {
                           // Store
+                          //roomSrc =  $("#selectedRoomImage").val();
                           var bookin_info = {bookinId: bookInId, bookedFor: bookedFor,roomImageSrc: roomSrc, roomname1: rname1, roomname2:rname2,  checkIn: formattedArrDate, checkOut: formattedDispDate,totalPrice: bookin_totalprice,charges: bookin_charges,taxfees: bookin_taxfees, firstname: fname, lastname: lname, mobile: mobile , email: email, reservation_status: 'CONFIRMED'  };
                           localStorage.setItem("reservationInfo", JSON.stringify(bookin_info));
                           //console.log(localStorage.getItem("reservationInfo"));
@@ -384,42 +386,50 @@ function getRoomDetails(roomTypeId)
 }
 
 function getRoomImage(roomTypeId){
-  var roomSrc = '../images/booking-pics/Select_room-1.png';
+  var roomSrc = '';
+  $("#selectedRoomImage").val('');
   $.ajax({
-            url: "https://qapi.reztrip.com/eanroomimages?roomTypeCode="+roomTypeId,
+            url: "https://qapi.reztrip.com/eanroomimages/"+roomTypeId,
             dataType: 'json',
             type: 'GET',
+            async: false,
             headers: {
                 'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
             },
-
             success: function (responseObj) {
               if(responseObj.success === true){
-                  var i =0;
-              //  $.each(responseObj.images, function(name, imgObj) {
+                  //var i = 0;
+                //$.each(responseObj.images, function(name, imgObj) {
                   //Fetch all the dynamic parameters from response
-
-                //  var roomSrc = imgObj.smallUrl;
-
-              //  });
-              return roomSrc;
+                //  if( i == 0){
+                    //alert(responseObj.images[0].smallUrl);
+                    roomSrc = responseObj.images[0].smallUrl;
+                    $("#selectedRoomImage").val(roomSrc);
+                    //alert("core :"+roomSrc);
+              //$("."+roomTypeId+"_show_image_room_dtls").attr('src',roomSrc);
+                    //return roomSrc;
+                    //return false;
+                //  }
+                  //if(i > 0)
+                   //return false;
+                  //i++;
+                //});
               }// response success
             },
             error: function (error) {
-                return roomSrc;
+                  return roomSrc;
             }
         });
 }
 
 function showReservationInfo()
 {
-//alert("hi");
   if (typeof(Storage) !== "undefined") {
     var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
     //console.log("test: "+reservationInfo);
     $("#bookin_id").html(reservationInfo.bookinId);
     $("#booked_for").html(reservationInfo.bookedFor);
-    $("#room_img").setAttribute('src',reservationInfo.roomImageSrc);
+    $("#room_img").attr('src',reservationInfo.roomImageSrc);
     if(reservationInfo.roomname2 != "")
       $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
     else
