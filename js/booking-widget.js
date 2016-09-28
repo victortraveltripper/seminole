@@ -420,13 +420,10 @@ function getRoomImage(roomTypeId){
                   return roomSrc;
             }
         });
-        //alert(roomSrc);
-//return roomSrc;
 }
 
 function showReservationInfo()
 {
-//alert("hi");
   if (typeof(Storage) !== "undefined") {
     var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
     //console.log("test: "+reservationInfo);
