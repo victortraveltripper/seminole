@@ -218,6 +218,7 @@ $(document).ready(function(){
           $(".roomcount").html('');
           $("#dateRange").html(formattedArrDate+" - "+formattedDispDate);
           $("#availableRoomsDiv").html('');
+          $("#selectedRoomImage").val('');
           $.ajax({
                     url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
                     type: 'GET',
@@ -244,8 +245,7 @@ $(document).ready(function(){
                            {
                               $.each(roomsArr, function(name, roomObj) {
                                 //Fetch all the dynamic parameters from response
-                                var roomSrc = '../images/Select_room-1.JPG';
-                                var roomImg = '<img src="'+roomSrc+'" alt=""/>';
+
                                 var roomName = '';
                                 var roomname1 = roomname2 = '';
                                 if(roomObj.roomTypeDescription.indexOf(",") != -1)
@@ -265,7 +265,12 @@ $(document).ready(function(){
                                 var roomCode = roomTypeId;
                                 var bedTypeId = roomObj.BedTypes.BedType['@id'];
                                 var smokingPref = roomObj.smokingPreferences;
-
+                                getRoomImage(roomTypeId);
+                                var roomSrc = $("#selectedRoomImage").val();
+                                //var roomImg = '<img src="'+roomSrc+'" alt=""/>';
+//alert(roomSrc);
+                                var roomImg = '<img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/>';
+                                var roomSrc_Hid = '<input type="hidden" id="'+roomTypeId+'_roomnimage" value="'+roomSrc+'"/>';
                                 //create require params hidden vars
                                 var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomname1+'"/>';
                                 var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomname2+'"/>';
@@ -286,12 +291,13 @@ $(document).ready(function(){
 
 
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+nightPrice+'</span>/night</span></div></a></div></div>'+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+nightPrice+'</span>/night</span></div></a></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
 
                               //Append the Room Widgets to the main widget
                                 $("#availableRoomsDiv").html(roomsWidget);
+
                             } //end if
                       }else{
                           $("#availableRoomsDiv").html(countRooms);
