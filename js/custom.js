@@ -262,9 +262,9 @@ $(document).ready(function(){
                                 }else{
                                   roomname1 = roomObj.roomTypeDescription;
                                 }
-                                var totalPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
-                                var nightPrice = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal'];
-                                var surcharges = roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
+                                var totalPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total']);
+                                var nightPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal']);
+                                var surcharges = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal']);
                                 var roomTypeId = roomObj.roomTypeCode;
                                 var rateKey = roomObj.RateInfos.RateInfo.RoomGroup.Room.rateKey;
                                 var rateCode = roomObj.rateCode;

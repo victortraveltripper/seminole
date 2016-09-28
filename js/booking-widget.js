@@ -131,10 +131,10 @@ function showRoomDetails(roomTypeId)
   $("#dateRange1").html(formattedArrDate+" - "+formattedDispDate);
 
   var roomPrice = nightPrice = charges = taxFee = totalPrice = "0.00";
-  var roomPrice = $("#"+roomTypeId+"_totalprice").val();
-  var nightPrice =  $("#"+roomTypeId+"_nightprice").val();
+  var roomPrice = priceFormat($("#"+roomTypeId+"_totalprice").val());
+  var nightPrice =  priceFormat($("#"+roomTypeId+"_nightprice").val());
 
-  var taxFee = $("#"+roomTypeId+"_taxfees").val();
+  var taxFee = priceFormat($("#"+roomTypeId+"_taxfees").val());
   //var totalPrice = parseInt(charges) + parseInt(taxFee);
   var totalPrice = roomPrice;
   charges = nightPrice;
@@ -467,4 +467,9 @@ function showReservationInfo()
     } else {
       window.location = "/";
     }
+}
+
+function priceFormat(priceval)
+{
+  return parseFloat(priceval).toFixed(2); //returns string fixed to 2 decimal places
 }
