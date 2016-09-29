@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
+
 {% include nav.html %}
+<script type="text/javascript">
+$(document).ready(function(){
+  showReservationInfo();
+});
+</script>
 <article class="print clearfix">
 
 <h4 class="text-center"><span class="fa fa-check"></span>YOUR Reservations is successfull</h4>
@@ -10,7 +16,7 @@ layout: default
 <div class="container">
 <div class="checkout-details clearfix">
 
-  <h2>Booking Details <span class="pull-right print-invoice"><a href="#">PRINT INVOICE</a></span></h2>
+  <h2>Booking Details <span class="pull-right print-invoice"><a href="javascript:void(0);" onclick="window.print();">PRINT INVOICE</a></span></h2>
 
 <div class="hotel_details row">
   <div class="col-md-12">
@@ -30,29 +36,29 @@ New York NY 10001 </div>
   <div class="checkout-details_bookin-info">
       <div class="col-md-12">
     <div class="checkout-heading">Booking ID</div>
-    <label class="labledata">CRFZ2095345ZWE</label>
+    <label class="labledata" id="bookin_id"></label>
   </div>
 
       <div class="col-sm-6 col-md-6">
         <div class="checkout-heading">Booked For</div>
-        <label class="labledata">02 Adults</label>
+        <label class="labledata"  id="booked_for"></label>
   </div>
 
   <div class="col-sm-6 col-md-6">
   <div class="checkout-heading">Room</div>
-  <label class="labledata">STUDIO QUEEN with <br>1 Queen Bed</label>
+  <label class="labledata" id="room_name"></label>
 </div>
 
 
 <div class="col-sm-6 col-md-6">
   <div class="checkout-heading">Check-In Date </div>
-<label class="labledata">Tue, Aug 26 - 12:00 PM</label>
+<label class="labledata"  id="checkin_date"></label>
 
 </div>
 
 <div class="col-sm-6 col-md-6">
 <div class="checkout-heading">Check-Out Date</div>
-  <label class="labledata">Fri, Aug 30 - 11:00 AM</label>
+  <label class="labledata"   id="checkout_date"></label>
 </div>
 
   </div>
@@ -62,16 +68,12 @@ New York NY 10001 </div>
 <div class="col-md-6">
 <div class="checkout-details-room-details">
   <a href="#">
-    <img src="../images/booking-pics/Select_room-1.png " alt=""/>
+    <img id="room_img" src="../images/Select_room-1.jpg " alt=""/>
   <div class="checkout-details-room-name_price">
-    <div class="pull-left checkout-details-room-name">STUDIO QUEEN <span class="checkout-details-lightfont">with</span><br>
-    1 Queen Bed
-    </div>
+    <div class="pull-left checkout-details-room-name" id="room_name_label"></div>
 
-    <div class="pull-right checkout-details-room-price">$196<br>
-      <span class="checkout-details-regular-price">
-      <span class="checkout-details-lightfont-dash">$203</span>/night
-    </span>
+    <div class="pull-right checkout-details-room-price">$<span id="img_total_price"></span><br>
+      <!--<span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$203</span>/night</span>-->
   </div>
 </a>
 
@@ -93,18 +95,18 @@ New York NY 10001 </div>
       <tr>
         <td>Primary Guest
 </td>
-          <td class="text-right checkout-details_bolder">Naveen
+          <td class="text-right checkout-details_bolder"><span id="primary_guest"></span>
 </td>
       </tr>
       <tr>
         <td>  Mobile Number
         </td>
-          <td class="text-right checkout-details_bolder">9032868666
+          <td class="text-right checkout-details_bolder"> <span id="mobile_no"></span>
           </td>
       </tr>
       <tr>
         <td class="">   Email ID </td>
-          <td class="text-right checkout-details_bolder">get2navee@gmail.com</td>
+          <td class="text-right checkout-details_bolder"><span id="email_id"></span></td>
       </tr>
 
 
@@ -116,20 +118,20 @@ New York NY 10001 </div>
     <table>
       <tr>
         <td>Room Charges :</td>
-          <td class="text-right">$ 198.00</td>
+          <td class="text-right">$&nbsp;<span id="room_charges"></span></td>
       </tr>
       <tr>
         <td>  Taxes & Fees :</td>
-          <td class="text-right">$ 2.00</td>
+          <td class="text-right">$&nbsp;<span id="tax_fees"></span></td>
       </tr>
       <tr>
         <td class="bolder">   Total Price  :</td>
-          <td class="text-right checkout-details_bolder">$ 200.00</td>
+          <td class="text-right checkout-details_bolder">$&nbsp;<span id="total_price"></span></td>
       </tr>
 
     <tr>
-    <td>Reservation Status</td>
-      <td class="text-right checkout-details-confrom">Confirmed</td>
+    <td>Reservation Status:</td>
+      <td class="text-right checkout-details-confrom"><span id="resv_status"></span></td>
     </tr>
     </table>
   </div>

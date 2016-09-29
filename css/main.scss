@@ -3,13 +3,9 @@
 ---
 @charset "utf-8";
 
-
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
-        "font-awesome",
     		"main",
     		"lightbox",
     		"owl.carousel",
@@ -17,5 +13,5 @@
     		"owl.theme",
     		"scrolling-nav",
     		"booking-widget",
-        "datepicker"
-;
+        "datepicker",
+        "print";

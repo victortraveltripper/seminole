@@ -1,3 +1,4 @@
+
 module Jekyll
   class CmsRegionTag < Liquid::Tag
     def initialize(tag_name, text, tokens)
@@ -20,9 +21,13 @@ module Jekyll
       site.data['regions'] << File.join(page_folder, @filename)
 
       wrap('div', 'class' => 'tt-region', 'data-region' => File.join(site.active_lang, page_folder, @filename)) do
-        region_items.each_with_index.map do |ped, index|
-          include(include_data_path, context, index, ped)
-        end.join
+        if region_items.size == 0
+          include(include_data_path, context, 0, {"_template"=>"html"})
+        else
+          region_items.each_with_index.map do |ped, index|
+            include(include_data_path, context, index, ped)
+          end.join
+        end
       end
     rescue Exception => error
       print error.message, "\n"
@@ -83,3 +88,4 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('region', Jekyll::CmsRegionTag)
+

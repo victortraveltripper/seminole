@@ -1,0 +1,28 @@
+<section id="Amenities" class="clearfix hotel-Amenites" >
+    <div class="container">
+        <div class="row">
+            <h6 class="text-center">HOTEL AMENITIES</h6>
+            <div  ng-repeat = "items in amenities | limitTo: 18"   class="col-sm-4">
+
+                    <div class="list"> <i class="fa fa-circle"></i> {[items]}</div>
+
+            </div>
+        </div>
+        <div id="collapse1" style="display:none">
+            <div class="row">
+                <div  ng-repeat = "items in amenities "   class="col-sm-4">
+
+                        <span ng-if="$index>=18">
+                        <div class="list"> <i class="fa fa-circle"></i>{[items]}</div>
+                        </span>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="more-link ">
+            <span href="#collapse1" class="nav-toggle button-link">View More</span >
+        </div>
+
+    </div>
+</section>

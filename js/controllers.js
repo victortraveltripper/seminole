@@ -9,23 +9,23 @@ angular.module('ean')
         $scope.hotelInfo=createHotelInfo(d.data.hotels,$rootScope.locationHash);
         $scope.latitude=$scope.hotelInfo.latitude;
         $scope.longitude=$scope.hotelInfo.longitude;
-        
+
         // init the map here
         var latlng = new google.maps.LatLng($scope.latitude,$scope.longitude);
 		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
         var styles = [{
                 "featureType": "landscape.man_made",
-                "stylers": [{ "color": "#a8dcd3" }]
+                "stylers": [{ "color": "#f0ede5" }]
             },{
                 "featureType": "water",
-                "stylers": [{ "color": "#519dc3" }]
+                "stylers": [{ "color": "#a3ccff" }]
             },{
                 "featureType": "landscape.natural",
-                "stylers": [{ "color": "#fbe4bc" }]
+                "stylers": [{ "color": "#cbe6a3" }]
             },{
                 "featureType": "road.highway",
-                "stylers": [{ "color": "#333" }]
+                "stylers": [{ "color": "#fdedb1" }]
             },{
                 "featureType": "poi",
                 "stylers": [{ "visibility": "off" }]
@@ -37,16 +37,17 @@ angular.module('ean')
   			disableDefaultUI: true,
   			styles: styles,
             scrollwheel: false,
-            draggable: false            
-  		}; 
+            draggable: false
+  		};
         var map = new google.maps.Map(document.getElementById('map'), myOptions);
         $scope.map = map
         var marker = new google.maps.Marker({
             position: latlng,
+            icon: '../images/map-icon.svg',
             map: map,
-  		    title: $scope.hotelInfo.name
-        }); 
-        
+  		        title: $scope.hotelInfo.name
+        });
+
         $(map.getDiv()).click(function(map) {
            map.setOptions({
                scrollwheel: true,
@@ -65,8 +66,8 @@ angular.module('ean')
                draggable: false
            })
         }.bind(this, map));
-        
-        
+
+
         // service to get hotelInfo depending on the hotel Id provided as parameter
         if (!$rootScope.locationHash) {
             var hotels = [];
@@ -126,7 +127,7 @@ angular.module('ean')
                 text += result[0]
             }
             return matches
-            
+
         }
 
        function createAmenities(items, param)
@@ -150,7 +151,7 @@ angular.module('ean')
 
 
 	function createHotelInfo(items, param) {
-      
+
       var details={};
       for(var i = 0; i < items.length; i++) {
 
@@ -169,7 +170,7 @@ angular.module('ean')
         	details.lowRate=items[i].lowRate;
         	details.latitude=items[i].latitude;
         	details.longitude=items[i].longitude;
-        
+
     	}
       }
 
@@ -200,26 +201,26 @@ angular.module('ean')
                         roomImageUrl = getValidRoomImage(d.data.roomImages);
                         if (roomImageUrl) {
                             $scope.roomInfo.push({
-                                owlPic: roomImageUrl, 
-                                roomHead: roomHeader[0], 
-                                roomCaption: roomHeader[1], 
+                                owlPic: roomImageUrl,
+                                roomHead: roomHeader[0],
+                                roomCaption: roomHeader[1],
                                 roomFeature: roomHeader[2],
                                 longdesp: d.data.roomDetails.descriptionLong
                             });
                             if ($scope.carousel.length < 5) {
-                                $scope.carousel.push(roomImageUrl);                                
+                                $scope.carousel.push(roomImageUrl);
                             }
                             $scope.gallery = galleryImgArr(d.data.roomImages,'big');
                             $scope.galleryThumb = galleryImgArr(d.data.roomImages,'small');
                         }
                     } else {
                         $scope.roomInfo.push({
-                            owlPic:'/images/dummy.png', 
-                            roomHead: roomHeader[0], 
-                            roomCaption:roomHeader[1], 
-                            roomFeature:roomHeader[2], 
+                            owlPic:'/images/dummy.jpg',
+                            roomHead: roomHeader[0],
+                            roomCaption:roomHeader[1],
+                            roomFeature:roomHeader[2],
                             longdesp:d.data.roomDetails.descriptionLong
-                        });  
+                        });
                     }
                 }
                 if(d.data.roomAmenities.length!=0 && $scope.loop==false) {
@@ -231,11 +232,11 @@ angular.module('ean')
                 }
             });
         }
-        
+
         $('#homebanner').carousel()
-    
-        
-        
+
+
+
     });
 
     function getValidRoomImage(roomImageList) {
@@ -291,7 +292,7 @@ angular.module('ean')
     $scope.showNext = function () {
         $scope._Index = ($scope._Index < $scope.gallery.length - 1) ? ++$scope._Index : 0;
     };
-		 
+
 
     // show a certain image
     $scope.showPhoto = function (index) {
@@ -299,5 +300,3 @@ angular.module('ean')
     };
 
 }])
-
-

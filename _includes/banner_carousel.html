@@ -1,20 +1,18 @@
+<section class="clearfix">
+  <div class="owl-carousel" id="Slider">
+  {% for corousel in site.data._models.top-carousel-images %}
 
-<div class="home-banner-wrapper" ng-controller='roomsInitCtrl'>
-  <!-- Carousel  -->
-  <div id="homebanner" class="carousel slide" >
-    <!-- Indicators -->
-    <!--ol class="carousel-indicators">
-      <li ng-repeat="room in carousel track by $index" data-target="#homebanner"  data-slide-to="{[$index]}" ng-class="{active: $index==0}"></li>
-    </ol-->
-    <div class="carousel-inner" role="listbox">
-      <div class="item" ng-repeat="room_img in carousel track by $index" ng-class="{active: $index==0}" >
-        <img ng-src="{[room_img]}" >
-        <div class="container" >
-          <div class="carousel-caption">
-            <h1 class="box-title">{[hotelInfo.name]}</h1>
-          </div>
-        </div>
+      <div class="item active" style="background-image:url({{ corousel.image.url }}); height:650px; background-size:cover;">
+      <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">{{ corousel.name }}</h1>
+      <div class="owl-social-icons">
+        <a class="fa fa-facebook" aria-hidden="true"></a>
+        <a class="fa fa-twitter" aria-hidden="true"></a>
+        <a class="fa fa-google-plus" aria-hidden="true"></a>
+        <a class="fa fa-instagram" aria-hidden="true"></a>
+        <a class="fa fa-pinterest-p" aria-hidden="true"></a>
       </div>
-      <a class="left carousel-control" href="#homebanner" role="button" data-slide="prev"><span class="" ><img src="images/arrow-left.svg"/></span>  </a> <a class="right carousel-control" href="#homebanner" role="button" data-slide="next"> <img src="images/arrow-right.svg"/></a>       </div>
-</div>
-</div>
+      <!--img src="" alt=""/-->
+    </div>
+  {% endfor %}
+  </div>
+</section>
