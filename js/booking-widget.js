@@ -21,6 +21,16 @@ $(function() {
   closeButton.on('click', function() {
     body.removeClass('overflow');
     sidebar.removeClass('-show');
+
+      $('#step1').fadeIn(500);
+
+      $('#step2').fadeOut(500);
+      $('#step3').fadeOut(500);
+      $('#step4').fadeOut(500);
+      document.getElementById("selectedRoomTypeId") == "";
+      document.getElementById("selectedRoomImage") =="";
+      clearValues();
+     
   });
 
   // View Special Rates
@@ -133,6 +143,7 @@ function showRoomDetails(roomTypeId)
   var roomPrice = nightPrice = charges = taxFee = totalPrice = "0.00";
   var roomPrice = priceFormat($("#"+roomTypeId+"_totalprice").val());
   var nightPrice =  priceFormat($("#"+roomTypeId+"_nightprice").val());
+    var nightlyRateTotalHid =  priceFormat($("#"+roomTypeId+"_nightlyRateTotal").val());
 
   var taxFee = priceFormat($("#"+roomTypeId+"_taxfees").val());
   //var totalPrice = parseInt(charges) + parseInt(taxFee);
@@ -154,7 +165,7 @@ function showRoomDetails(roomTypeId)
    $("#roomDetailsWidget").html(roomWidget);
 
   // Replace the prices
-     $("#charges").html(Math.round(charges));
+     $("#charges").html(nightlyRateTotalHid);
      $("#taxfees").html(taxFee);
      $("#totalprice").html(totalPrice);
 }
@@ -224,7 +235,7 @@ function bookNow(roomTypeId)
             data: JSON.stringify(booknow_postdata),
             headers: {
               "x-api-key": "too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1", "Content-Type": "application/json; charset=utf-8",
-              "Accept": "application/json"
+              "Accept": "application/json", "Connection": "keep-alive"
             },
             contentType: "application/json",
             success: function (response) {
@@ -409,7 +420,7 @@ function getRoomImage(roomTypeId){
                   //Fetch all the dynamic parameters from response
                 //  if( i == 0){
                     //alert(responseObj.images[0].smallUrl);
-                    roomSrc = responseObj.images[0].smallUrl;
+                    roomSrc = responseObj.images[0].thumbUrl;
                     $("#selectedRoomImage").val(roomSrc);
                     //alert("core :"+roomSrc);
               //$("."+roomTypeId+"_show_image_room_dtls").attr('src',roomSrc);
@@ -472,6 +483,17 @@ function showReservationInfo()
 
 function priceFormat(priceval)
 {
-  return Math.round(parseFloat(priceval)); //returns string fixed to 2 decimal places
+  return Math.ceil(parseFloat(priceval)); //returns string fixed to 2 decimal places
 }
 
+function clearValues()
+{
+    $("#appHidden").empty();
+     $("#numAdults").val(1);
+    $("#numChild").val(1);
+     $("#input1").val("");
+     $("#input2").val("");
+    $("#dateRange").html("");
+    $("#availableRoomsDiv").html('');
+    $("#selectedRoomImage").val('');
+}

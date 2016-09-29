@@ -263,7 +263,8 @@ $(document).ready(function(){
                                   roomname1 = roomObj.roomTypeDescription;
                                 }
                                 var totalPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@total']);
-                                var nightPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal']);
+                                var nightlyRateTotal = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@nightlyRateTotal']);
+                                var nightPrice = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@averageBaseRate']);
                                 var surcharges = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal']);
                                 var roomTypeId = roomObj.roomTypeCode;
                                 var rateKey = roomObj.RateInfos.RateInfo.RoomGroup.Room.rateKey;
@@ -275,19 +276,20 @@ $(document).ready(function(){
                                 getRoomImage(roomTypeId);
                                 var roomSrc = $("#selectedRoomImage").val();
                                 //var roomImg = '<img src="'+roomSrc+'" alt=""/>';
-                                var roomImg = '<img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/>';
-                                var roomSrc_Hid = '<input type="hidden" id="'+roomTypeId+'_roomnimage" value="'+roomSrc+'"/>';
+                                var roomImg = '<img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt="" class="appHidden"/>';
+                                var roomSrc_Hid = '<input type="hidden" id="'+roomTypeId+'_roomnimage" value="'+roomSrc+'" class="appHidden"/>';
                                 //create require params hidden vars
-                                var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomname1+'"/>';
-                                var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomname2+'"/>';
-                                var totalPriceHid = '<input type="hidden" id="'+roomTypeId+'_totalprice" value="'+totalPrice+'"/>';
-                                var nightPriceHid = '<input type="hidden" id="'+roomTypeId+'_nightprice" value="'+nightPrice+'"/>';
-                                var taxfeesHid = '<input type="hidden" id="'+roomTypeId+'_taxfees" value="'+surcharges+'"/>';
-                                var rateKey_Hid = '<input type="hidden" id="'+roomTypeId+'_ratekey" value="'+rateKey+'"/>';
-                                var rateCode_Hid = '<input type="hidden" id="'+roomTypeId+'_ratecode" value="'+rateCode+'"/>';
-                                var roomCode_Hid = '<input type="hidden" id="'+roomTypeId+'_roomcode" value="'+roomTypeId+'"/>';
-                                var bedTypeId_Hid = '<input type="hidden" id="'+roomTypeId+'_bedtypeid" value="'+bedTypeId+'"/>';
-                                var smokingPref_Hid = '<input type="hidden" id="'+roomTypeId+'_smokingpref" value="'+smokingPref+'"/>';
+                                var roomName_1Hid = '<input type="hidden" id="'+roomTypeId+'_roomname1" value="'+roomname1+'" class="appHidden"/>';
+                                var roomName_2Hid = '<input type="hidden" id="'+roomTypeId+'_roomname2" value="'+roomname2+'" class="appHidden"/>';
+                                var totalPriceHid = '<input type="hidden" id="'+roomTypeId+'_totalprice" value="'+totalPrice+'" class="appHidden"/>';
+                                var nightPriceHid = '<input type="hidden" id="'+roomTypeId+'_nightprice" value="'+nightPrice+'" class="appHidden"/>';
+                                var nightlyRateTotalHid = '<input type="hidden" id="'+roomTypeId+'_nightlyRateTotal" value="'+nightlyRateTotal+'" class="appHidden"/>';
+                                var taxfeesHid = '<input type="hidden" id="'+roomTypeId+'_taxfees" value="'+surcharges+'" class="appHidden"/>';
+                                var rateKey_Hid = '<input type="hidden" id="'+roomTypeId+'_ratekey" value="'+rateKey+'" class="appHidden"/>';
+                                var rateCode_Hid = '<input type="hidden" id="'+roomTypeId+'_ratecode" value="'+rateCode+'" class="appHidden"/>';
+                                var roomCode_Hid = '<input type="hidden" id="'+roomTypeId+'_roomcode" value="'+roomTypeId+'" class="appHidden"/>';
+                                var bedTypeId_Hid = '<input type="hidden" id="'+roomTypeId+'_bedtypeid" value="'+bedTypeId+'" class="appHidden"/>';
+                                var smokingPref_Hid = '<input type="hidden" id="'+roomTypeId+'_smokingpref" value="'+smokingPref+'" class="appHidden"/>';
 
                                 var roomNameDiv = '';
                                 if(roomname2 == '')
@@ -297,7 +299,7 @@ $(document).ready(function(){
 
 
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
 
