@@ -299,7 +299,7 @@ $(document).ready(function(){
 
 
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="clearfix"></div><div class=" room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a> <input type="submit" value="Select" class="select-room"/></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
 
                               });
 

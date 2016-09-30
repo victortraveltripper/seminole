@@ -98,7 +98,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   background: #E6E4E5;
-
+  p{
+     margin: 0px;
+   }
   .bk-select{
       width: 100%;
       min-height: 40px;
@@ -414,16 +416,28 @@ img {
 }
 .room-name_price{
   font-family: 'Lato', sans-serif;
-position: absolute;
-bottom:0px;
+  position: absolute;
+  bottom:0px;
   padding: 40px 20px 20px 20px ;
-
   background: url('../images/background.png')repeat-x;
   text-transform: uppercase;
   color: #FFF;
   width:100%;
   font-weight: 500;
 
+
+
+  :hover{
+    opacity: 1;
+  }
+
+
+
+  a{
+    width:50%;
+    float: left;
+
+  }
 .lightfont{
   font-size:10px;
 }
@@ -431,6 +445,8 @@ bottom:0px;
   font-weight:200;
   text-transform: none;
   }
+
+
   .regular-price{
     color:#939393;
   }
@@ -443,6 +459,27 @@ bottom:0px;
   }
 }
 }
+
+}
+.bookin-widget_avalible-room-details .select-room{
+  background: #2378bc;
+  border: 1px solid #1e9bff;
+  padding: 3px 5px;
+  text-transform:uppercase;
+  float: right;
+  position: absolute;
+  bottom: 21px;
+  right: 20px;
+  font-size: 16px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+
+}
+.bookin-widget_avalible-room-details:hover .select-room {
+    opacity: 1;
 }
 
 .bookin-widget_prices-info{
@@ -883,4 +920,3 @@ table{
 .select select:focus ~ .select__arrow {
   border-top-color: #000;
 }
-

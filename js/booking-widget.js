@@ -30,7 +30,7 @@ $(function() {
       document.getElementById("selectedRoomTypeId") == "";
       document.getElementById("selectedRoomImage") =="";
       clearValues();
-     
+
   });
 
   // View Special Rates
@@ -285,7 +285,7 @@ function bookNow(roomTypeId)
                       $("#room_name").html(rname1+' with '+rname2);
                     }
 
-                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-right room-price">$'+bookin_totalprice+'</div></div></div>';
+                  var bookinRoomBanner = '<div class="bookin-widget_avalible-room-details"><img class="'+roomTypeId+'_show_image_room_dtls" src="'+roomSrc+'" alt=""/><div class="room-name_price">'+roomNameDiv+'<div class="pull-left room-price">$'+bookin_totalprice+'</div></div></div>';
 
                   $("#bookin_room_details").html(bookinRoomBanner);
                   $("#booking_id").html(bookInId);
