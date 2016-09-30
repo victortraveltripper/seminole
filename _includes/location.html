@@ -51,18 +51,13 @@
 <section>
 
 <div class="col-sm-6">
-
-<p class="second">Lorem ipsum dolor sit amet, justo clita  vix ad, pri ei erant omnes deleniti:</p>
-<div class="list">
-<ul>
-    <li>Lorem ipsum dolor sit ametmus    <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Cum sociis natoque penatibus <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Magnis dis parturient montes <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Nulla consequat massa quis enim <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Lorem ipsum dolor sit ametmus <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Magnis dis parturient montes <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-    <li>Lorem ipsum dolor sit ametmus <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
-  </ul>
+  <p class="second">Lorem ipsum dolor sit amet, justo clita  vix ad, pri ei erant omnes deleniti:</p>
+  <div class="list">
+    <ul>
+    {% for item in site.data._models.attractions %}
+      <li>Lorem ipsum dolor sit ametmus    <i class="fa fa-plus pull-right" aria-hidden="true"></i></li>
+    {% endfor %}
+    </ul>
   </div>
 </div>
 
