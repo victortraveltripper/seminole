@@ -213,15 +213,7 @@ angular.module('ean')
                             $scope.gallery = galleryImgArr(d.data.roomImages,'big');
                             $scope.galleryThumb = galleryImgArr(d.data.roomImages,'small');
                         }
-                    } else {
-                        $scope.roomInfo.push({
-                            owlPic:'/images/dummy.jpg',
-                            roomHead: roomHeader[0],
-                            roomCaption:roomHeader[1],
-                            roomFeature:roomHeader[2],
-                            longdesp:d.data.roomDetails.descriptionLong
-                        });
-                    }
+                    } 
                 }
                 if(d.data.roomAmenities.length!=0 && $scope.loop==false) {
                     var len=d.data.roomAmenities.length;
