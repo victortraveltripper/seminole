@@ -113,12 +113,27 @@ body{
 
 	.navbar-brand {
 
-		@media (max-width:360px){
+	/*	@media (max-width:360px){
 			width:130px;
 			margin-top:2px;
 			img{width:100%;
 			}
 
+		}*/
+		h3{
+		margin: 0px;
+    color: #009cbe;
+    text-align: center;
+    padding: 3px 0px;
+		font-size: 26px;
+		}
+		.logo-tag{
+		font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 4px 0px;
 		}
 	}
 	.nav-social {
@@ -674,6 +689,53 @@ ul{
  }
 
  }
+.col-sm-6{padding:0px; }
+	h4{
+		font-family:'bill corporate narrow W00mediu';
+		font-size: 20px;
+		text-transform:uppercase;
+		padding-bottom: 20px;
+	}
+.Dinner{
+	font-family:'NeueHaasGroteskDisp W01';
+	background: #f7f7f7 url('/images/Dinner.svg') 35px 50px;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
+	font-size: 16px;
+	padding-bottom: 15px;
+  padding: 50px 50px 50px 100px;
+	background-size:50px;
+}
+.amenities{
+	background: #FFF url('/images/aminites.svg') 35px 50px;
+	background-repeat: no-repeat;
+	font-family:'NeueHaasGroteskDisp W01';
+	padding: 50px 50px 51px 100px;
+	font-size: 16px;
+	background-size:50px;
+}
+.business{
+	background: #FFF url('/images/business.svg') 23px 60px;
+	background-repeat: no-repeat;
+	font-family:'NeueHaasGroteskDisp W01';
+	padding: 51px 51px 51px 100px;
+	font-size: 16px;
+	background-size:60px;
+}
+.location-fa{
+
+	font-family:'NeueHaasGroteskDisp W01';
+	background: #f7f7f7 url('/images/location.svg') 35px 50px;
+	background-repeat: no-repeat;
+	border-top: 1px solid #e5e5e5;
+	border-left: 1px solid #e5e5e5;
+	font-size: 16px;
+	padding: 50px 50px 50px 100px;
+	background-size:50px;
+
+}
+
 }
 
 
@@ -687,7 +749,7 @@ ul{
 		margin:auto;
 		font-size: 16px;
 		font-family:'NeueHaasGroteskDisp W01';
-		width:60%;
+		width:70%;
 		margin: auto;
 
 	.fa{font-size:10px; padding: 14px;}
@@ -1018,6 +1080,21 @@ footer{
 		text-align:center;
 		padding:30px 0px 30px 0px;
 		border-right:1px solid #b7b7b7;
+		h3{
+		margin: 0px;
+    color: #009cbe;
+    text-align: center;
+    padding: 3px 0px;
+		font-size: 27px;
+		}
+		.logo-tag{
+		font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 4px 0px;
+		}
 		@media (max-width:648px){
 			display:none;
 			}
