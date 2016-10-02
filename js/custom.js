@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   $("#Slider").owlCarousel({
       navigation : true,
-      navigationText: ["<img src='images/arrow-left.svg'> ","<img src='images/arrow-right.svg'>"],
+      navigationText: ["<img src='assets/images/arrow-left.svg'> ","<img src='assets/images/arrow-right.svg'>"],
       slideSpeed : 300,
       paginationSpeed : 400,
       pagination : false,
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 
       navigation: true, // Show next and prev buttons
-      navigationText: ["<img src='images/arrow-left-gray.svg'> <span class='slider-text'>Previous Thumbnail</spnan>","<span class='slider-text'>Next Thumbnail</spann> <img src='images/arrow-right-gray.svg'>"],
+      navigationText: ["<img src='assets/images/arrow-left-gray.svg'> <span class='slider-text'>Previous Thumbnail</spnan>","<span class='slider-text'>Next Thumbnail</spann> <img src='assets/images/arrow-right-gray.svg'>"],
       autoPlay: 3000,
       slideSpeed : 100,
       paginationSpeed : 200,
@@ -56,7 +56,7 @@ $(document).ready(function(){
   $("#rooms").owlCarousel({
 
       navigation : true, // Show next and prev buttons
-      navigationText: ["<img src='images/arrow-left-gray.svg'> ","<img src='images/arrow-right-gray.svg'>"],
+      navigationText: ["<img src='assets/images/arrow-left-gray.svg'> ","<img src='assets/images/arrow-right-gray.svg'>"],
       autoPlay: false,
       slideSpeed : 100,
       paginationSpeed : 200,
