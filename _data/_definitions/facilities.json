@@ -1,5 +1,0 @@
-{
-    "id": { "type": "integer" },
-    "name": {"type": "string" },
-    "content": {"type": "string" }
-}
