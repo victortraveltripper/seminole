@@ -1,0 +1,8 @@
+{
+    "name": { "required": true },
+    "image": { "type": "image" },
+    "image_href": {"type": "image" },
+    "order": {"type": "integer" }
+}
+
+
