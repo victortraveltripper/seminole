@@ -13,7 +13,7 @@ excerpt:
 
   <div class="container">
     <div class="row">
-      {% region about_us_heading %}
+      <h6 class="text-center">{% region about_us_heading %}</h6>
       {% region about_us %}
 
       <div class="col-sm-12 text-center social-icons">
@@ -66,14 +66,15 @@ excerpt:
 
 
 <!--Rooms us Part-->
-{% include rooms.html %} 
+{% include rooms.html %}
 
 <!--Facilities us Part-->
 <section id="Facilities" class="Facilities clearfix">
 
   <div class="container">
     <div class="row">
-    {% region facilities_heading %}
+      <h6 class="text-center">{% region facilities_heading %}</h6>
+      <h2 class="text-center">Cum sociis natoque </h2>
     {% for item in site.data._models.facilities %}
       <div class="col-sm-6 ">
        <div class= {{ item.class_name }} >
@@ -88,22 +89,19 @@ excerpt:
   <article class="facility-pics clearfix">
     <div class="col-sm-6">
       <div class="row">
-        <!-- {% region facilities_img1 %}
+        {% region facilities_img1 %}
         <div class="facility-pics-info">
-          Quae quidem sapien<br>
-          sequuntur duce
-        </div> -->
+
+        </div>
       </div>
     </div>
 
     <div class="col-sm-6">
       <div class="row">
-        <!-- {% region facilities_img3 %}
+        {% region facilities_img3 %}
 
         <div class="facility-pics-info">
-          Quae quidem sapien<br>
-          sequuntur duce
-        </div> -->
+        </div>
       </div>
     </div>
   </article>
