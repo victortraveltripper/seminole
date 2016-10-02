@@ -13,8 +13,8 @@ excerpt:
 
   <div class="container">
     <div class="row">
-      <h6 class="text-center">ABOUT US</h6>
-      {% region about_us %}
+       {% region about_us %}
+      {% region about_us_heading %}
 
       <div class="col-sm-12 text-center social-icons">
         <h5>Follow Us</h5>
@@ -73,7 +73,7 @@ excerpt:
 
   <div class="container">
     <div class="row">
-      <h6 class="text-center">FACILITIES</h6>
+    {% region facilities_heading %}
       <h2 class="text-center">Cum sociis natoque </h2>
     {% for item in site.data._models.facilities %}
       <div class="col-sm-6 ">
