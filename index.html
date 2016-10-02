@@ -13,7 +13,7 @@ excerpt:
 
   <div class="container">
     <div class="row">
-      <h6 class="text-center">ABOUT US</h6>
+      {% region about_us_heading %}
       {% region about_us %}
 
       <div class="col-sm-12 text-center social-icons">
@@ -66,64 +66,44 @@ excerpt:
 
 
 <!--Rooms us Part-->
-{% include rooms.html %}
+{% include rooms.html %} 
 
 <!--Facilities us Part-->
 <section id="Facilities" class="Facilities clearfix">
 
   <div class="container">
     <div class="row">
-      <h6 class="text-center">FACILITIES</h6>
-      <h2 class="text-center">Cum sociis natoque </h2>
-
+    {% region facilities_heading %}
+    {% for item in site.data._models.facilities %}
       <div class="col-sm-6 ">
-        <div class="Dinner">
-          <h4>Dining</h4>
-        <p>Enjoy a satisfying meal at a restaurant serving guests of AC Hotel by Marriott New Orleans Bourbon/French Quarter Area. Quench your thirst with your favorite drink at a bar/lounge. Buffet breakfasts are available daily for a fee.</p>
+       <div class= {{ item.class_name }} >
+          <h4> {{ item.name }} </h4>
+          <p> {{ item.content }} </p>
+       </div>
       </div>
-    </div>
-<div class="col-sm-6">
-    <div class="amenities">
-<h4>amenities</h4>
-  <p>Enjoy recreation amenities such as a 24-hour fitness center or take in the view from a rooftop terrace. This Art Deco hotel also features complimentary wireless Internet access, gift shops/newsstands, and wedding services. </p>
-</div>
-</div>
-<div class="col-sm-6">
-    <div class="business">
-<h4>Business</h4>
-  <p>Featured amenities include a 24-hour business center, limo/town car service, and express check-in. Planning an event in New Orleans? This hotel has 2200 square feet (204 square meters) of space consisting of a conference center and meeting rooms. Self parking (subject to charges) is available onsite.</p>
-</div>
-</div>
-
-<div class="col-sm-6 ">
-  <div class="location-fa">
-<h4> Location</h4>
-  <p>AC Hotel by Marriott New Orleans Bourbon/French Quarter Area is in the heart of New Orleans, walking distance from McDonogh Monument and Lafayette Square.  This 4-star hotel is within close proximity of Henry Clay Statue and Audubon Insectarium.</p>
-</div>
-</div>
-
+    {% endfor %}
     </div>
   </div>
 
   <article class="facility-pics clearfix">
     <div class="col-sm-6">
       <div class="row">
-        {% region facilities_img1 %}
+        <!-- {% region facilities_img1 %}
         <div class="facility-pics-info">
           Quae quidem sapien<br>
           sequuntur duce
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="col-sm-6">
       <div class="row">
-        {% region facilities_img3 %}
+        <!-- {% region facilities_img3 %}
 
         <div class="facility-pics-info">
           Quae quidem sapien<br>
           sequuntur duce
-        </div>
+        </div> -->
       </div>
     </div>
   </article>
