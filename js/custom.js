@@ -8,7 +8,7 @@ $(document).ready(function(){
 
   $("#Slider").owlCarousel({
       navigation : true,
-      navigationText: ["<img src='assets/images/arrow-left.svg'> ","<img src='assets/images/arrow-right.svg'>"],
+      navigationText: ["<img src='/images/arrow-left.svg'> ","<img src='/images/arrow-right.svg'>"],
       slideSpeed : 300,
       paginationSpeed : 400,
       pagination : false,
