@@ -1,4 +1,5 @@
-<section id="Gallery" class="=gallery clear-fix">
+
+<!--section id="Gallery" class="=gallery clear-fix">
   <div class="container">
     <div class="row">
       <h6 class="text-center">{% region gallery_heading %}</h6>
@@ -15,5 +16,31 @@
       </div>
     </div>
   </div>
-</section>
+</section-->
 
+
+
+
+<section  id="Gallery">
+  <!-- gallery wrap -->
+  <h6 class="text-center">{% region gallery_heading %}</h6>
+  <div class="gallery-wrapper">
+    <div class="gallery-listing">
+
+        {% for item in site.data._models.gallery %}
+        <div class="container gallery-wrap "  id="lightgallery">
+          <ul class=" row">
+            <li class="col-md-4 col-sm-4 portfolio hotel"  data-cat="hotel">
+              <div class="item"  data-src= {{ item.imagehref.url }}> <img src= {{ item.image.url }} class="img-responsive"/> </div>
+            </li>
+
+          </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <!--<div class="btn-holder text-center"><a href="#" class="button-common btn-blue">load more images</a></div> -->
+  </div>
+  <!--/gallery wrap -->
+</section>

@@ -1,10 +1,10 @@
 // JavaScript Document
 window.apiConfig = {
     host: 'https://qapi.reztrip.com',
-    key: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1' 
+    key: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
 }
 
-//Rooms 
+//Rooms
 jQuery(document).ready(function(){
 
 
@@ -33,17 +33,22 @@ jQuery(document).ready(function(){
 
 
 	}, 6000);
-    
+
 
 });
 
 
 // Gallery
+
  $(document).ready(function() {
-     $('#lightgallery').lightGallery({
-         selector: '.item'
-     })
- 
+   $('#lightgallery').lightGallery({
+      selector: '.item',
+      thumbnail: true,
+      download: false,
+      zoom: true
+    })
+
+
 		 $(".filter").on("click", function () {
     var $this = $(this);
     // if we click the active tab, do nothing
@@ -52,24 +57,24 @@ jQuery(document).ready(function(){
       $this.addClass("active"); // set the active tab
       var $filter = $this.data("rel"); // get the data-rel value from selected tab and set as filter
       $filter == 'all' ? // if we select "view all", return to initial settings and show all
-        $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() 
+        $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn()
         : // otherwise
-        $(".fancybox").fadeOut(0).filter(function () { 
+        $(".fancybox").fadeOut(0).filter(function () {
           return $(this).data("filter") == $filter; // set data-filter value as the data-rel value of selected tab
         }).attr("data-fancybox-group", $filter).fadeIn(1000); // set data-fancybox-group and show filtered elements
     } // if
   }); // on
 
-	$('.anchorlink').on('click', function(event){     
+	$('.anchorlink').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 });
 
  });
- 
- 
+
+
  //View more
- 
+
  //$('#about-link').addClass('current');
 $('.viewmore').on('click', function (e) {
 	//alert("test");
@@ -90,7 +95,7 @@ $(document).ready(function(){
         $('#navbar').collapse('hide')
         return false;
 
-    }); 
+    });
 
 });
 
@@ -100,62 +105,61 @@ var today = new Date();
 	$(document).on('change', '#arrival_dates', function() {
 			arrival = $('#arrival_dates').val();
 			departure = $('#departure_dates').val();
-	
+
 			var arrivalDateValue = new Date(arrival)
 			var departureDateValue = new Date(departure)
-			
+
 			var minDepartureDateValue = new Date(arrivalDateValue)
 			minDepartureDateValue.setDate(minDepartureDateValue.getDate() + 1)
-			
+
 			departureDate.datepicker('option', 'minDate', minDepartureDateValue);
-	
+
 			if (minDepartureDateValue.getTime() > departureDateValue.getTime()) {
 					departureDate.datepicker('setDate', minDepartureDateValue);
 					departure = $.datepicker.formatDate('mm/dd/yy', minDepartureDateValue);
 			}
-			 
+
 	});
 	$(document).on('change', '#departure_dates', function() {
-			departure = $('#departure_dates').val(); 
+			departure = $('#departure_dates').val();
 	});
-	 
-	
+
+
 	function createLink(to, item) {
 			var date = new Date();
 			var arrival = $.datepicker.formatDate('mm/dd/yy', date);
 			var departure = $.datepicker.formatDate('mm/dd/yy', new Date(date.setDate(date.getDate() + 1)));
-		
-	} 
- 
- 
+
+	}
+
+
 //  Datepicker
 	var defaultArrivalDate = arrival;
 	var defaultDepartureDate = departure;
-	
+
 	var arrivalDate = $('#arrival_dates');
 	var departureDate = $('#departure_dates');
-	
+
 	arrivalDate.val(defaultArrivalDate);
 	departureDate.val(defaultDepartureDate);
-	
+
 	arrivalDate.datepicker({
 			dateFormat: 'mm/dd/yy',
 			minDate: 0
 	});
-	
+
 	departureDate.datepicker({
 			dateFormat: 'mm/dd/yy',
 	});
-	 
+
 	var arrivalDate1 = $('#q49_arrivalDate');
-	var departureDate1 = $('#q50_departureDate'); 
-	
+	var departureDate1 = $('#q50_departureDate');
+
 	arrivalDate1.datepicker({
 			dateFormat: 'mm/dd/yy',
 			minDate: 0
 	});
-	
+
 	departureDate1.datepicker({
 			dateFormat: 'mm/dd/yy',
 	});
-	 
