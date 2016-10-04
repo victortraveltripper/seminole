@@ -4,11 +4,6 @@
 */
 
 
-#Slider{
-	@media (max-width:900px){
-		margin-top:90px;
-		}
-	}
 
 #Slider.owl-theme .owl-controls
 
@@ -16,6 +11,7 @@
 	margin-top: 10px;
 	text-align: left;
 	top:44%;
+	z-index:3;
 	position:absolute;
 
 }
@@ -257,7 +253,7 @@
 
 	position: absolute;
 	z-index:99;
-	top:63%;
+
 	text-align:center;
 	color:#FFF;
 	width:100%;

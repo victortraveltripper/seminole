@@ -4,11 +4,32 @@
  */
 
 
+		#topSlider{
+		 margin-top: 90px;
+
+		 .banner-heading{
+				 top: 45%;
+				 position: absolute;
+				 z-index: 1;
+				 text-align: center;
+				 width: 100%;
+					text-transform: uppercase;
+					font-family:'bill corporate narrow W00mediu';
+			 }
+
+			 .item{
+				 background-repeat: no-repeat;
+				 background-size: cover;
+				 height: 600px;
+				}
+		 	}
+
 #Slider{
 	img{
     display: block;
     width: 100%;
 		}
+
 }
 
 #GallerySlider .owl-item{
