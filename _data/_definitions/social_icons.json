@@ -1,0 +1,6 @@
+{
+    "icon_name": { "required": true },
+    "icon_href": {"type": "image" },
+}
+
+
