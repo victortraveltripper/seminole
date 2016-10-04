@@ -1,4 +1,3 @@
-
 def translate_data(content, locale, default_locale)
   map_content(content) do |key, value|
     if key.end_with?('_localized') && value.is_a?(Hash)
@@ -43,4 +42,3 @@ module Jekyll
 end
 
 Liquid::Template.register_filter(Jekyll::ValuesFilter)
-

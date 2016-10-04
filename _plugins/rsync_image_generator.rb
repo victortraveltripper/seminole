@@ -1,4 +1,3 @@
-
 Jekyll::Hooks.register :site, :after_reset do |site|
   site.config['keep_files'] ||= []
   site.config['keep_files'] << 'assets' unless site.config['keep_files'].include?('assets')

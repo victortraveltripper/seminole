@@ -1,4 +1,3 @@
-
 require 'date'
 
 class DataObject
@@ -58,4 +57,3 @@ class DataObject
   end
 
 end
-
