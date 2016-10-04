@@ -27,16 +27,18 @@
   <div class="gallery-wrapper">
     <div class="gallery-listing">
 
-        {% for item in site.data._models.gallery %}
+
         <div class="container gallery-wrap "  id="lightgallery">
           <ul class=" row">
+            {% for item in site.data._models.gallery %}
             <li class="col-md-4 col-sm-4 col-xs-12 portfolio hotel"  data-cat="hotel">
               <div class="item"  data-src= {{ item.imagehref.url }}> <img src= {{ item.image.url }} class="img-responsive"/> </div>
             </li>
+            {% endfor %}
 
           </ul>
         </div>
-        {% endfor %}
+
     </div>
 
 
