@@ -27,6 +27,7 @@
     	margin: 0 0px 30px ;
 			float:left;
 			height: 250px;
+			overflow: hidden;
 		}
 		.item+.item {
 				@media (min-width: $screen-sm-min) {
