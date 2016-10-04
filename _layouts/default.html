@@ -5,7 +5,7 @@
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
     {{ content }}
     {% include booking-widget.html %}
-    <input type = "text" value = "{{ site.hotel_id }}" id="hotel_id">
+    <input type = "text" value = "{{ site.hotel_id }}" id="hotel_id" style="display:none;">
     <input type="hidden" id="selectedRoomTypeId" name="selectedRoomTypeId" value="" />
     <input type="hidden" id="selectedRoomImage" name="selectedRoomImage" value="" />
 
