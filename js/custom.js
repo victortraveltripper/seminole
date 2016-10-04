@@ -19,7 +19,11 @@ $(document).ready(function(){
 
   });
 
-
+  $('#aniimated-thumbnials').lightGallery({
+     selector: '.item',
+     zoom: true,
+    thumbnail:true
+   });
 
 
   //$('#sandbox-container div').datepicker({
