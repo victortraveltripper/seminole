@@ -1,4 +1,3 @@
-
 # Jekyll Polyglot v1.1.0
 # Fast, painless, open source i18n plugin for Jekyll 3.0 Blogs.
 #   author Samuel Volin (@untra)
@@ -148,4 +147,3 @@ module Jekyll
     end
   end
 end
-

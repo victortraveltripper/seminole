@@ -1,4 +1,3 @@
-
 require 'json'
 
 module Jekyll
@@ -48,3 +47,4 @@ module Jekyll
     end
   end
 end
+

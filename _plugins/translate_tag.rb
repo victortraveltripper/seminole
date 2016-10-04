@@ -1,4 +1,3 @@
-
 require 'i18n'
 
 module Jekyll
@@ -30,4 +29,3 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('t', Jekyll::TranslateTag)
-
