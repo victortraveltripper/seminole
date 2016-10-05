@@ -31,7 +31,7 @@
 <div class="row">
 <div class="col-sm-6">
 <div class="row">
-<img src="/images/location.jpg" alt=""/>
+{% region location_img %}
 </div>
 </div>
 
@@ -46,11 +46,10 @@
 </div>
 </div>
 </section>
-
 <section>
 
 <div class="col-sm-6">
-  <div class="second">Lorem ipsum dolor sit amet, justo clita  vix ad, pri ei erant omnes deleniti:</div>
+  <div class="second">{% region attractions_heading %}</div>
   <div class="list">
     <ul>
     {% for item in site.data._models.attractions %}
