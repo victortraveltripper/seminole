@@ -20,17 +20,8 @@ body{
 	.container{width:100%;}
 	}
 
-
-:hov
-
-
-.cls
-
-element.style {
-}
-@media (min-width: 768px)
-.col-sm-6 {
-    width: 49.40%;
+@media (min-width: 768px){
+.col-sm-6 {width: 49.40%;}
 }
 
 
@@ -126,7 +117,6 @@ element.style {
 
 	.navbar-brand {
 		width:300px;
-
 		@media (max-width:360px){
 			width:170px;
 			margin-top:0px;
