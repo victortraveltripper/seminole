@@ -1,0 +1,5 @@
+{
+    "name": { "required": true },
+    "content": { "type": "string" },
+    "order": { "required": true, "type": "integer" }
+}
