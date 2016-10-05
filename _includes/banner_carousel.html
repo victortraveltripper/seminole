@@ -4,7 +4,7 @@
   <h1 class="owl-heading  text-center">THE <br class="hiddenbrk">{[hotelInfo.name]}</h1>
       <div class="owl-social-icons">
         {% for social_icons in site.data._models.social_icons %}
-          <a class= "{{ social_icons.icon_name }}" aria-hidden="true" href = "{{ social_icons.icon_href }}"></a>
+          <a class= "{{ social_icons.icon_name }}" aria-hidden="true" href = "{{ social_icons.icon_href }}" target = "_blank"></a>
         <!--img src="" alt=""/-->
         {% endfor %}
       </div>
