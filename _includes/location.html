@@ -36,11 +36,12 @@
 </div>
 
 <div class="col-sm-6">
+<div class="first">{% region location_desc %}</div>
 
-<p class="first">{% region location_desc %}</p>
-
-<div class="middle"> <h5 >Address Details</h5>
-  <p class="gap">{% region fullAddress %}</p></div>
+<div class="middle"> {% region address_heading %}
+  <div class="gap">{% region fullAddress %}</div>
+}
+</div>
 
 </div>
 </div>
@@ -50,7 +51,7 @@
 <section>
 
 <div class="col-sm-6">
-  <p class="second">Lorem ipsum dolor sit amet, justo clita  vix ad, pri ei erant omnes deleniti:</p>
+  <div class="second">Lorem ipsum dolor sit amet, justo clita  vix ad, pri ei erant omnes deleniti:</div>
   <div class="list">
     <ul>
     {% for item in site.data._models.attractions %}

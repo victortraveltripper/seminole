@@ -14,29 +14,20 @@
   </div>
 
   <div class="col-sm-3 f-social-links">
-  <h3>Follow Us</h3>
-  <a class="fa fa-facebook" aria-hidden="true"></a>
-
-  <a class="fa fa-twitter" aria-hidden="true"></a>
-
-  <a class="fa fa-google-plus" aria-hidden="true"></a>
-
-  <a class="fa fa-instagram" aria-hidden="true"></a>
-
-  <a class="fa fa-pinterest-p" aria-hidden="true"></a>
-
+    <h3>Follow Us</h3>
+    {% for social_icons in site.data._models.social_icons %}
+      <a class= "{{ social_icons.icon_name }}" aria-hidden="true" href = "{{ social_icons.icon_href }}"></a> 
+    {% endfor %}
   </div>
 
   <div class="col-sm-3">
   <h3>Contact</h3>
-<a href="callto:(207)363-5112">(207)363-5112</a><br>
-<a href="callto:(207)363-5113">(207)363-5113</a><br>
-<a href="mailto:info@hotelhugo.com">info@hotelhugo.com</a>
+  {% region contact_info %}
   </div>
 
   <div class="col-sm-3">
   <h3>Address</h3>
-<p>118 West 18th Street<br> New York NY 10001 <br>GPS 41°24'12.2"N</p>
+    {% region fullAddress %}
   </div>
   <div class="clearfix"></div>
   </div>
@@ -44,6 +35,5 @@
   </div>
 </footer>
 <section class="copyrights">
-
-&copy 2016 Lorem ipsum dolor sit amet, in sanctus detraxit qui, usu ut feugait minimum
+{% region copyrights_info %}
 </section>
