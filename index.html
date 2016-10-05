@@ -74,8 +74,7 @@ excerpt:
   <div class="container">
     <div class="row">
     {% region facilities_heading %}
-    {% assign sorted_facilities = site.data._models.facilities | sort: "order" %}
-    {% for item in sorted_facilities %}
+    {% for item in site.data._models.facilities | sort: "order" %}
       <div class="col-sm-6 ">
        <div class= {{ item.name }} >
           <h4> {{ item.name }} </h4>
