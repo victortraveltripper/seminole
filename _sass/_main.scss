@@ -21,6 +21,19 @@ body{
 	}
 
 
+:hov
+
+
+.cls
+
+element.style {
+}
+@media (min-width: 768px)
+.col-sm-6 {
+    width: 49.40%;
+}
+
+
 .navbar-toggle {
   border: none;
   background:#f7f7f7;
@@ -113,6 +126,7 @@ body{
 
 	.navbar-brand {
 		width:300px;
+
 		@media (max-width:360px){
 			width:170px;
 			margin-top:0px;
@@ -123,7 +137,7 @@ body{
 		h3{
 		margin: 0px;
     color: #009cbe;
-    text-align: center;
+    text-align: left;
     padding: 3px 0px;
 		font-size: 18px;
 		text-transform: uppercase;
