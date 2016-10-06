@@ -3,7 +3,7 @@
         <div class="row">
             <h6 class="text-center">HOTEL AMENITIES</h6>
              {% for item in site.data._models.amenities %}
-                <div class="list"> <i class="fa fa-circle"></i> {{ item.name }}</div>
+                <div class="col-sm-4"><div class="list"> <i class="fa fa-circle"></i> {{ item.name }}</div></div>
              {% endfor %}
         </div>
 <!--         <div id="collapse1" style="display:none">
