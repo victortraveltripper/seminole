@@ -24,7 +24,6 @@ body{
 .col-sm-6 {width: 49.40%;}
 }
 
-
 .navbar-toggle {
   border: none;
   background:#f7f7f7;
@@ -82,6 +81,7 @@ body{
 .navbar-default{
 	background:$color-white;
 	border:none;
+	max-height:
 
 	@media (max-width:767px){
 		background:none;
@@ -117,10 +117,11 @@ body{
 
 	.navbar-brand {
 		width:300px;
-		@media (max-width:360px){
+
+		@media (max-width:320px){
 			width:170px;
 			margin-top:0px;
-			font-size: 18px;
+
 
 		}
 
@@ -206,7 +207,7 @@ display: none;
 		display:none;
 			}
 
-			a{padding:15px; display:block;}
+			a{padding:12px; display:block;}
 }
 
 
