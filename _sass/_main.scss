@@ -24,6 +24,7 @@ body{
 .col-sm-6 {width: 49.40%;}
 }
 
+
 .navbar-toggle {
   border: none;
   background:#f7f7f7;
@@ -65,23 +66,22 @@ body{
 
 
 
-.navbar-header{background:$color-white;}
+	.navbar-header{background:$color-white;}
 
- .navbar-collapse{
-		 background:$color-white;
+	 .navbar-collapse{
+			 background:$color-white;
 
-	@media (max-width:767px){
-		width:230px;
-		float:right;
-		max-height:470px;
-		font-family:'bill corporate narrow W00mediu';
-		}
-	 }
+		@media (max-width:767px){
+			width:230px;
+			float:right;
+			max-height:470px;
+			font-family:'bill corporate narrow W00mediu';
+			}
+		 }
 
 .navbar-default{
 	background:$color-white;
 	border:none;
-	max-height:
 
 	@media (max-width:767px){
 		background:none;
@@ -207,7 +207,7 @@ display: none;
 		display:none;
 			}
 
-			a{padding:12px; display:block;}
+			a{padding:15px; display:block;}
 }
 
 
