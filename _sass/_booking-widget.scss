@@ -411,6 +411,8 @@ padding: 2%;
 .bookin-widget_avalible-room-details{
   position: relative;
   margin-bottom: 2px;
+  height: 250px;
+  overflow: hidden;
 img {
   width:100%;
 }
@@ -434,7 +436,7 @@ img {
 
 
   a{
-    width:50%;
+    width:100%;
     float: left;
 
   }
