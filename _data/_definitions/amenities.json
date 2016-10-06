@@ -1,5 +1,4 @@
 {
-    "id": { "type": "integer" },
     "name": {"type": "string" },
     "order": {"type": "integer" }
 }
