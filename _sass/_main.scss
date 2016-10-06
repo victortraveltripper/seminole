@@ -708,10 +708,9 @@ ul{
 	}
 .Dining{
 	font-family:'NeueHaasGroteskDisp W01';
-	background: #f7f7f7 url('/images/dinner.svg') 35px 50px;
+	background:url('/images/dinner.svg') 35px 50px;
 	background-repeat: no-repeat;
-	border-bottom: 1px solid #e5e5e5;
-	border-right: 1px solid #e5e5e5;
+
 	font-size: 16px;
 	padding-bottom: 15px;
   padding: 50px 50px 50px 100px;
@@ -736,10 +735,9 @@ ul{
 .Location{
 
 	font-family:'NeueHaasGroteskDisp W01' ;
-	background: #f7f7f7 url('/images/location.svg') 35px 50px;
+	background: url('/images/location.svg') 35px 50px;
 	background-repeat: no-repeat;
-	border-top: 1px solid #e5e5e5;
-	border-left: 1px solid #e5e5e5;
+
 	font-size: 16px;
 	padding: 50px 50px 50px 100px;
 	background-size:50px;
