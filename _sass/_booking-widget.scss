@@ -107,6 +107,14 @@
       border:0px;
       cursor: pointer;
   }
+
+  .no-rooms{
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+  }
 }
 
 // Flexible dates --------------------------------------------------------------
