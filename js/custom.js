@@ -313,7 +313,7 @@ $(document).ready(function(){
                             } //end if
                       }else{
                           $("#availableRoomsDiv").html(countRooms);
-                          $("#availableRoomsDiv").html('No Rooms Available');
+                          $("#availableRoomsDiv").html('<div class="no-rooms">No Rooms Available</div>');
                       }
                     },
                     error: function (error) {
