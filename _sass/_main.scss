@@ -909,6 +909,9 @@ width:60%;
 .gallery{ 
   background:$color-bg;
   padding-top: 60px;
+  .gallery-wrapper {
+    margin-top: 20px;
+  }
 }
 
 .item > .col-md-6{ padding:0px;}
