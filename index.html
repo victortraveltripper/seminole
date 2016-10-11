@@ -83,21 +83,21 @@ excerpt:
 
   <div class="container">
     <div class="row">
-    <h6>{% region facilities_heading %}</h6>
-    <h2>{% region facilities_subheader %}</h2>
-    <div class='content-area content-area-intro'>
-       {% region facilities_intro %}
+      <h6>{% region facilities_heading %}</h6>
+      <h2>{% region facilities_subheader %}</h2>
+      <div class='content-area content-area-intro'>
+        {% region facilities_intro %}
+      </div>
     </div>
-    
-    {% for item in site.data._models.facilities | sort: "order" %}
-       <div class= {{ item.name }} >
+    <div class="row">
+      {% for item in site.data._models.facilities | sort: "order" %}
+        <div class='col-sm-6 col-xs-12 {{ item.name }}' >
           <h4> {{ item.name }} </h4>
           <div class='content-area'>
             <p> {{ item.content }} </p>
           </div>
-       </div>
-      </div>
-    {% endfor %}
+        </div>
+      {% endfor %}
     </div>
   </div>
 
