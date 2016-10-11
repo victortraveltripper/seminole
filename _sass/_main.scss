@@ -1,11 +1,3 @@
-$color: black;
-$color-bg:#f7f7f7;
-$color-white:white;
-$color-blue:#04082f;
-$color-lightgray:#32333c;
-$color-gray:#b7b7b7;
-$color-booking:#1a24a7;
-
 body{
 	background:$color-white;
 	background-image:url("../images/Checkout-07.jpg") right;
@@ -17,11 +9,14 @@ body{
 	.container{width:1160px;}
 }
 @media(max-width:980px){
-	.container{width:100%;}
-	}
+	.container{width:90%;}
+}
+.narrow-container {
+  max-width: 800px;
+}
 
-@media (min-width: 768px){
-.col-sm-6 {width: 49.40%;}
+p {
+  margin: inherit;
 }
 
 
@@ -31,7 +26,7 @@ body{
   @media (max-width:767px){
 	  padding-right:136px;
 	  background:#f7f7f7;
-	  }
+	}
 }
 .navbar-toggle:hover {
   background: transparent !important;
@@ -226,44 +221,66 @@ display: none;
 
 /*section*/
 section{
-
+  padding-top: 60px;
 	h6{
-	text-transform:uppercase;
-	padding:60px 0px 32px 0px;
-	font-size:14px;
-	font-family:'NeueHaasGroteskDisp W01';
-	color:$color-blue;
+  	text-transform:uppercase;
+    text-align: center;
+  	font-size:14px;
+  	padding:0 0 1.5em 0px;
+  	font-family:'NeueHaasGroteskDisp W01';
+  	color:$color-blue;
+    margin: 0;
+    letter-spacing: 2px;
 	}
 
 	h5{
-	font-size:16px;
-	font-family:'NHaasGroteskDSW01-65Md';
-	color:$color-blue;
+  	font-size:16px;
+  	font-family:'NHaasGroteskDSW01-65Md';
+  	color:$color-blue;
+    margin: 0;
+    padding: 0 0 1em 0;
+    letter-spacing: 2px;
 	}
 
 	h2{
+    text-align: center;
+    margin: 0;
 
-	@media(max-width:780px){
-		font-size:36px;
-		padding:0px 0px 50px 0px;
-		}
-	padding:0px 0px 60px 0px;
-	color:$color-blue;
-	font-size:30px;
-	font-family:'bill corporate narrow W00mediu';
-	text-transform: uppercase;
+  	@media(max-width:780px){
+  		font-size:24px;
+  		padding:0px 0px 50px 0px;
+  	}
+    letter-spacing: 1px;    
+    padding:0px 0px 1.5em 0px;
+  	color:$color-blue;
+  	font-size:42px;
+  	font-family:'bill corporate narrow W00mediu';
+  	text-transform: uppercase;
 	}
 
 
 }
 
-p{
+.content-area p {
 		font-family:'NeueHaasGroteskDisp W01';
 		font-size:16px;
 		line-height:28px;
 		color:$color-lightgray;
 		letter-spacing: 1px;
-		}
+    margin: 0 0 10px;
+}
+
+.content-area-intro p {
+	font-family:"NHaasGroteskDSW01-45Lt";
+	font-size:22px;
+  line-height: 1.7em;
+	letter-spacing: 2px;
+	color:$color-text-lightgray;
+	text-align: center;
+  width: 80%;
+  margin: 0px auto;
+  font-weight: normal;
+}
 
 /*About us*/
 
@@ -272,24 +289,14 @@ p{
 
 
 .About {
-	p{
-		font-family:"NHaasGroteskDSW01-45Lt";
-		font-size:22px;
-		letter-spacing: 2px;
-		color:$color-blue;
-		text-align: center;
 
-
-
+	.col-sm-6 p {
+    @media (max-width:767px){
+		  padding-top:46px;
 		}
-
-	.col-sm-5 p{
-	@media (max-width:767px){
-			padding-top:46px;
-			}
 		@media (max-width:980px){
 			padding-right:0px;
-			}
+		}
 		font-family:'NeueHaasGroteskDisp W01';
 		font-size:16px;
 		padding-top:60px;
@@ -297,7 +304,7 @@ p{
 		line-height:28px;
 		color:$color-lightgray;
 		letter-spacing: 1px;
-		}
+	}
 
 	ul{
 	display:inline-block;
@@ -317,7 +324,10 @@ p{
 	}
 
 	.about-pics	{
-
+    p {
+      margin: 0;
+      padding: 0;
+    }
 		img{
 		width:100%;
 		height:100%;
@@ -326,8 +336,7 @@ p{
 
 
 	.social-icons{
-		margin-bottom: 30px;
-
+    margin: 50px auto;
 	}
 }
 
@@ -530,50 +539,27 @@ ul{
 .General-Amenities{
 	background:#212124;
 	color:$color-white;
-	padding-bottom:3%;
-	margin-top:20px;
+  padding-top: 40px;
+	padding-bottom:40px;
+	margin-top:40px;
 
-	ul{
-
-		@media (max-width:980px){
-		padding:0px;
-		}
-		@media(max-width:668px){
-			margin-left:216px;
-			padding:0px;
-			}
-			@media(max-width:480px){
-				margin-left:128px;
-				padding:0px;
-				}
-				@media(max-width:415px){
-					margin-left:97px;
-					padding:0px;
-					}
-				@media(max-width:376px){
-					margin-left:60px;
-					padding:0px;
-					}
-					@media(max-width:360px){
-						margin-left:40px;
-						padding:0px;
-						}
-
-		}
-	ul li{
-
-	line-height:30px;
-	margin-left:40px;
-	@media(max-width:980px){
-		margin-left:10px;
-		}
-	}
+	ul {
+    @include make-row();
+    margin: 40px 0;
+    li{
+       @include make-xs-column(12);
+       @include make-sm-column(6);
+       @include make-md-column(4);
+       padding-bottom: .5em;
+       padding-right: 60px;
+    }
+  }
 
 	h6{
 		color:$color-white;
-		}
+	}
 
-	.link{
+	.link {
 	width:80px;
 	margin:40px auto 20px auto;
 
@@ -651,10 +637,10 @@ ul{
 			 	padding:0px 0px;
 
 			 	h6{
-			 	padding:10px 0px!important;
-			 	text-transform: capitalize;
-				font-family:'NHaasGroteskDSW01-65Md';
-				font-size:16px;
+          padding:10px 0px!important;
+			 	  text-transform: capitalize;
+				  font-family:'NHaasGroteskDSW01-65Md';
+				  font-size:16px;
 
 			 	}
 			 	p{
@@ -676,9 +662,13 @@ ul{
 
  .facility-pics	{
  	padding-top:5%;
+  p {
+    margin: 0;
+    padding: 0;
+  }
 	img{
-	width:100%;
-	position: relative;
+	  width:100%;
+	  position: relative;
 	}
 
  .facility-pics-info{
@@ -760,48 +750,9 @@ ul{
 		font-family:'NeueHaasGroteskDisp W01';
 		width:100%;
 		margin: auto;
-
+    padding-bottom: .5em;
 	}
-	/*ul{
 
-
-		@media(max-width:980px){
-		margin-left:0px;
-		padding:0px;
-		}
-		@media(max-width:668px){
-			margin-left:216px;
-			padding:0px;
-			}
-			@media(max-width:480px){
-				margin-left:128px;
-				padding:0px;
-				}
-				@media(max-width:415px){
-					margin-left:97px;
-					padding:0px;
-					}
-				@media(max-width:376px){
-					margin-left:60px;
-					padding:0px;
-					}
-					@media(max-width:360px){
-						margin-left:40px;
-						padding:0px;
-						}
-
-	ul
-	li{
-	margin-left:40px;
-	line-height:30px;
-	font-family:'NeueHaasGroteskDisp W01';
-	@media(max-width:980px){
-		margin-left:10px;
-		padding:0px;
-		}
-
-	}
-}*/
 	.more-link {
 		width:100px; margin:auto;
 		span{
@@ -824,7 +775,8 @@ ul{
 .Location-bg{
 	background:#f7f7f7;
 	text-align:center;
-	padding-bottom:0px;
+	padding-bottom:60px;
+  padding-top: 60px;
 	}
 
 	.Location{
@@ -954,7 +906,10 @@ width:60%;
 
 /*Gallery*/
 
-.gallery{ background:$color-bg}
+.gallery{ 
+  background:$color-bg;
+  padding-top: 60px;
+}
 
 .item > .col-md-6{ padding:0px;}
 .item > .col-md-5{ padding:0px;
@@ -1161,4 +1116,57 @@ footer{
 	margin-top: -100px;
 	z-index:2;
 	overflow: auto;
+}
+
+
+#topSlider{
+  margin-top: 90px;
+  position: relative;
+  min-height: 100px;
+
+  .banner-heading{
+	  top: 37%;
+	  position: absolute;
+	  z-index: 1;
+	  text-align: center;
+	  width: 100%;
+	  text-transform: uppercase;
+		font-family:'bill corporate narrow W00mediu';
+		color:$color-white;
+	}
+
+	.item{
+	  background-repeat: no-repeat;
+		background-size: cover;
+    background-position: center center;
+		height: 600px;
+	}
+}
+
+#Slider{
+	img{
+    display: block;
+    width: 100%;
+	}
+}
+
+#GallerySlider .owl-item{
+	img{
+		display: block;
+		width: 90%;
+		height: 150px;
+		margin: 5%;
+		background: #FFF;
+	}
+}
+
+#rooms .owl-item{
+  background:#FFF;
+}
+
+#rooms-carousel .carousel-inner
+{
+	width:90%;
+	margin:auto;
+	background: #FFF;
 }

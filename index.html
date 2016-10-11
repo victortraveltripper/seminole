@@ -11,11 +11,21 @@ excerpt:
 
 <section id="About"  class="About clearfix">
 
-  <div class="container">
+  <div class="container narrow-container">
     <div class="row">
-       {% region about_us_heading %}
-
-       {% region about_us %}
+      <h6>{% region about_us_heading %}</h6>
+      <h2>{% region about_us_subheader %}</h2>
+      <div class='content-area content-area-intro'>
+         {% region about_us_intro %}
+      </div>
+      <div  class='content-area row'>
+        <div class="col-sm-6">
+           {% region about_us_col_1 %}
+        </div>
+        <div class="col-sm-6">
+          {% region about_us_col_2 %}          
+        </div>
+      </div>
       <div class="col-sm-12 text-center social-icons">
         <h5>Follow Us</h5>
         <ul>
@@ -73,21 +83,27 @@ excerpt:
 
   <div class="container">
     <div class="row">
-    {% region facilities_heading %}
+    <h6>{% region facilities_heading %}</h6>
+    <h2>{% region facilities_subheader %}</h2>
+    <div class='content-area content-area-intro'>
+       {% region facilities_intro %}
+    </div>
+    
     {% for item in site.data._models.facilities | sort: "order" %}
-      <div class="col-sm-6 ">
        <div class= {{ item.name }} >
           <h4> {{ item.name }} </h4>
-          <p> {{ item.content }} </p>
+          <div class='content-area'>
+            <p> {{ item.content }} </p>
+          </div>
        </div>
       </div>
     {% endfor %}
     </div>
   </div>
 
-  <article class="facility-pics clearfix">
+  <article class="facility-pics clearfix row">
     <div class="col-sm-6">
-      <div class="row">
+      <div class="">
         {% region facilities_img1 %}
         <div class="facility-pics-info">
           Quae quidem sapien<br>
@@ -97,7 +113,7 @@ excerpt:
     </div>
 
     <div class="col-sm-6">
-      <div class="row">
+      <div class="">
         {% region facilities_img3 %}
 
         <div class="facility-pics-info">

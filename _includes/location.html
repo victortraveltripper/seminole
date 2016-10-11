@@ -1,29 +1,8 @@
-
-<!--section class="location_section" id="location">
-  <div class="container">
-    <div class="title_info">
-      <h2>LOCATION</h2>
-      <div class="title_tagline"></div>
-    </div>
-    <!-- Loaded by the eanhotels controller //-->
-    <!--div class="map" >
-      <div id="map"></div>
-    </div>
-    <div class="location">
-      <div class="location-hight areastyle">
-        <ul>
-
-        </ul>
-      </div>
-      <a href="#" class="viewmore">View more</a> </div>
-  </div>
-</section-->
-
-
 <section id="Location" class="Location clearfix" >
 <article class="Location-bg clearfix">
-
-{% region location_heading %}
+  <h6>{% region location_heading %}</h6>
+  <h2>{% region location_subheader %}</h2>
+  
 </article>
 
 <section>
@@ -36,9 +15,12 @@
 </div>
 
 <div class="col-sm-6">
-<div class="first">{% region location_desc %}</div>
+<div class="first">
+  <div  class='content-area'>{% region location_desc %}</div>
+</div>
 
-<div class="middle"> {% region address_heading %}
+<div class="middle"> 
+  <h5>{% region address_heading %}</h5>
   <div class="gap">{% region fullAddress %}</div>
 </div>
 
