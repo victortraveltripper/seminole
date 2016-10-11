@@ -91,7 +91,7 @@ excerpt:
     </div>
     <div class="row">
     {% for item in site.data._models.facilities | sort: "order" %}
-      {% assign mod_idx = forloop.index | modulo:2 %}
+      {% assign mod_idx = forloop.index0 | modulo:2 %}
       {% if mod_idx == 0 %}
         </div>
         <div class="row">
