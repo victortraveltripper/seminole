@@ -36,7 +36,8 @@
         <div class="container gallery-wrap "  id="lightgallery">
           <ul class=" row">
             {% for item in site.data._models.gallery %}
-            <li class="col-md-4 col-sm-4 col-xs-12 portfolio hotel"  data-cat="hotel">
+            <li class="col-md-4 col-sm-4 col-xs-12 portfolio hotel"  data-cat="hotel"  data-live-edit-model='gallery'
+data-live-edit-model-instance='{{item.id}}.json' >
               <div class="item"  data-src= {{ item.imagehref.url }}> <img src= {{ item.image.url }} class="img-responsive"/> </div>
             </li>
             {% endfor %}

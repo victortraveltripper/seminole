@@ -91,7 +91,8 @@ excerpt:
     </div>
     <div class="row">
       {% for item in site.data._models.facilities | sort: "order" %}
-        <div class='col-sm-6 col-xs-12 {{ item.name }}' >
+        <div class='col-sm-6 col-xs-12 {{ item.name }}' data-live-edit-model='facilities'
+data-live-edit-model-instance='{{item.id}}.json' >
           <h4> {{ item.name }} </h4>
           <div class='content-area'>
             <p> {{ item.content }} </p>

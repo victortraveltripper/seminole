@@ -8,7 +8,8 @@
             </div>
             <ul class='row'>
              {% for item in site.data._models.amenities %}
-                <li class="col-md-4 col-sm-6 col-xs-12"><div class="list"> {{ item.name }}</div></li>
+                <li class="col-md-4 col-sm-6 col-xs-12"  data-live-edit-model='amenities'
+data-live-edit-model-instance='{{item.id}}.json' ><div class="list"> {{ item.name }}</div></li>
              {% endfor %}
             </ul>
         </div>
