@@ -168,50 +168,16 @@ $(document).ready(function(){
        });
 
 
+/********** Start UI DatePicker initialization ***********/
 
-       ///date picker
+    initializeUiDatePicker();
 
-       $(".datepicker").datepicker({
-   			minDate: 0,
-   			numberOfMonths: [12,1],
-   			beforeShowDay: function(date) {
-   				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
-   				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
-   				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-   			},
-   			onSelect: function(dateText, inst) {
-   				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
-   				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
-           var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText, "DD, d MM, yy");
-           $('.booking-widget_buttons').hide();
-           $('.booking-widget_buttons-active').show();
+/********** End UI DatePicker initialization ***********/
 
-           $('.booking-widget_flexible-dates').hide();
-           $('.booking-widget_flexible-dates-active').show();
+    $(".booking-widget_reset_date_button").on("click", function(){
+          resetDatePicker();
+    });
 
-
-                   if (!date1 || date2) {
-   					$("#input1").val(dateText);
-   					$("#input2").val("");
-                       $(this).datepicker();
-                       $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
-                       $("#chkOut").html('');
-
-                   } else if( selectedDate < date1 ) {
-                       $("#input2").val( $("#input1").val() );
-                       $("#input1").val( dateText );
-                       $(this).datepicker();
-                       $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
-                       $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d"));
-                   } else {
-   					$("#input2").val(dateText);
-                       $(this).datepicker();
-                       $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d"));
-
-   				}
-
-   			}
-   		});
 
 
 /*** Start -- Api Call to search the available rooms ***/
