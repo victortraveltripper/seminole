@@ -2,7 +2,7 @@
 <article class="Location-bg clearfix">
   <h6>{% region location_heading %}</h6>
   <h2>{% region location_subheader %}</h2>
-  
+
 </article>
 
 <section>
@@ -19,7 +19,7 @@
   <div  class='content-area'>{% region location_desc %}</div>
 </div>
 
-<div class="middle"> 
+<div class="middle">
   <h5>{% region address_heading %}</h5>
   <div class="gap">{% region fullAddress %}</div>
 </div>
@@ -35,7 +35,9 @@
   <div class="list">
     <ul>
     {% for item in site.data._models.attractions %}
-      <li  data-live-edit-model='attractions'
+        <hr>
+        <span class="fa fa-check"></span>
+        <li  data-live-edit-model='attractions'
 data-live-edit-model-instance='{{item.id}}.json' > {{ item.name }}</li>
     {% endfor %}
     </ul>
