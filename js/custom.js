@@ -242,6 +242,27 @@ $(document).ready(function(){
                                 var roomCode = roomTypeId;
                                 var bedTypeId = roomObj.BedTypes.BedType['@id'];
                                 var smokingPref = roomObj.smokingPreferences;
+                               
+                                var valueAdds = [];
+                                var valueAdd_Hid = valueAddStr = '';
+                                var cancelPolicy = roomObj.RateInfos.RateInfo.cancellationPolicy;
+
+                                if(roomObj.ValueAdds['@size'] >= 1)
+                                {
+                                  var valAdd = roomObj.ValueAdds.ValueAdd;
+                                    if($.isArray(valAdd))
+                                    {
+                                      $.each(valAdd, function(valObj) {
+                                        valueAdds.push(valObj.description);
+                                      });
+                                    }else 
+                                    {
+                                      valueAdds.push(valAdd.description);
+                                    }
+                                    valueAddStr = valueAdds.join(); 
+                                }
+
+
                                 //get room image
                                 getRoomImage(roomTypeId);
                                 var roomSrc = $("#selectedRoomImage").val();
@@ -260,6 +281,8 @@ $(document).ready(function(){
                                 var roomCode_Hid = '<input type="hidden" id="'+roomTypeId+'_roomcode" value="'+roomTypeId+'" class="appHidden"/>';
                                 var bedTypeId_Hid = '<input type="hidden" id="'+roomTypeId+'_bedtypeid" value="'+bedTypeId+'" class="appHidden"/>';
                                 var smokingPref_Hid = '<input type="hidden" id="'+roomTypeId+'_smokingpref" value="'+smokingPref+'" class="appHidden"/>';
+                                var valueAdds_Hid = '<input type="hidden" id="'+roomTypeId+'_valuedd" value="'+valueAddStr+'" class="appHidden"/>';
+                                var cancelPolicy_Hid = '<input type="hidden" id="'+roomTypeId+'_cancelpolicy" value="'+cancelPolicy+'" class="appHidden"/>';
 
                                 var roomNameDiv = '';
                                 if(roomname2 == '')
@@ -269,7 +292,7 @@ $(document).ready(function(){
 
 
                                 //Create Rooms Widgets
-                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="clearfix"></div><div class=" room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a> <input type="submit" value="Select" class="select-room"/></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+'</div>';
+                                 roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="clearfix"></div><div class=" room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a> <input type="submit" value="Select" class="select-room"/></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+valueAdds_Hid+cancelPolicy_Hid+'</div>';
 
                               });
 
