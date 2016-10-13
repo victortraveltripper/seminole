@@ -447,18 +447,18 @@ function showReservationInfo()
   if (typeof(Storage) !== "undefined")
   {
       var reservationInfo = JSON.parse(localStorage.getItem("reservationInfo"));
-      console.log("test: "+reservationInfo);
+      //console.log("test: "+reservationInfo);
       if(reservationInfo != ""){
           $("#bookin_id").html(reservationInfo.bookinId);
           $("#booked_for").html(reservationInfo.bookedFor);
           $("#room_img").attr('src',reservationInfo.roomImageSrc);
           if(reservationInfo.roomname2 != "")
-            $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
+            $("#roomname").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
           else
-            $("#room_name").html(reservationInfo.roomname1);
+            $("#roomname").html(reservationInfo.roomname1);
 
-          $("#checkin_date").html(reservationInfo.checkIn);
-          $("#checkout_date").html(reservationInfo.checkOut);
+          $("#checkindate").html(reservationInfo.checkIn);
+          $("#checkoutdate").html(reservationInfo.checkOut);
 
           if(reservationInfo.roomname2 != "")
             $("#room_name_label").html(reservationInfo.roomname1+' <span class="checkout-details-lightfont">with</span><br>'+reservationInfo.roomname2);
@@ -466,9 +466,9 @@ function showReservationInfo()
               $("#room_name_label").html(reservationInfo.roomname1);
 
           $("#img_total_price").html(reservationInfo.totalPrice);
-          $("#primary_guest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
-          $("#mobile_no").html(reservationInfo.mobile);
-          $("#email_id").html(reservationInfo.email);
+          $("#primaryguest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
+          $("#mobileno").html(reservationInfo.mobile);
+          $("#emailid").html(reservationInfo.email);
           $("#room_charges").html(reservationInfo.charges);
           $("#tax_fees").html(reservationInfo.taxfees);
           $("#total_price").html(reservationInfo.totalPrice);
@@ -592,6 +592,8 @@ function initializeUiDatePicker()
           if($("#input2").val() != "")
           {
               getBestAvarageBasePrice();
+          }else{
+            $("#bestnight_price").html("");
           }
 
         }
@@ -644,7 +646,7 @@ function getBestAvarageBasePrice()
 
           } //end if
     }else{
-       $("#bestnight_price").html("-");
+       $("#bestnight_price").html("");
     }
   },
   error: function (error) {
