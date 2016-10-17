@@ -1,7 +1,7 @@
 angular.module('ean')
 .controller('eanInitCtrl', ['$scope','$rootScope','$location','eanHotelsInfo', 'eanHotelDetails', function ($scope, $rootScope, $location, eanHotelsInfo, eanHotelDetails){
     $scope.hotelDetails={};
-    $rootScope.locationHash = angular.element('#hotel_id').val();
+    $rootScope.locationHash = angular.element('#hotel_id').val() || $location.search()['ID'];
     console.log(angular.element('#hotel_id').val());
     //service to get global ean Hotels present in the api
     eanHotelsInfo.async('eanhotels').then(function(d) {

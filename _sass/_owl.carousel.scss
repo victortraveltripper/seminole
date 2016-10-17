@@ -4,58 +4,6 @@
  */
 
 
-		#topSlider{
-		 margin-top: 90px;
-		 position: relative;
-
-		 .banner-heading{
-				 top: 37%;
-				 position: absolute;
-				 z-index: 1;
-				 text-align: center;
-				 width: 100%;
-					text-transform: uppercase;
-					font-family:'bill corporate narrow W00mediu';
-					color:$color-white;
-			 }
-
-			 .item{
-				 background-repeat: no-repeat;
-				 background-size: 100% 100%;
-				 height: 600px;
-				}
-		 	}
-
-#Slider{
-	img{
-    display: block;
-    width: 100%;
-		}
-
-}
-
-#GallerySlider .owl-item{
-	img{
-		display: block;
-		width: 90%;
-		height: 150px;
-		margin: 5%;
-		background: #FFF;
-	}
-}
-
-#rooms .owl-item{
-background:#FFF;
-}
-
-#rooms-carousel .carousel-inner
-{
-	width:90%;
-	margin:auto;
-	background: #FFF;
-	}
-
-
 /* clearfix */
 .owl-carousel .owl-wrapper:after {
 	content: ".";
