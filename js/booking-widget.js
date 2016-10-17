@@ -479,6 +479,8 @@ function showReservationInfo()
               var valueAds = reservationInfo.valueAdds.split(",");
               for(var i = 0; i < valueAds.length; i++)
               {
+                 if(valueAds[i] != "")
+                 {
                   var valueaddstr = valueAds[i].toLowerCase();
                   if(valueaddstr.indexOf("breakfast") != -1)
                     $("#valueadds_"+i).addClass("activites-left");
@@ -488,17 +490,21 @@ function showReservationInfo()
                     $("#valueadds_"+i).addClass("activites-right");                                       
                  
                   $("#valueadds_"+i).html(valueAds[i]);
+                }
               }
           }else
           {
             var valueaddstr = reservationInfo.valueAdds.toLowerCase();
-            if(valueaddstr.indexOf("breakfast") != -1)
-              $("#valueadds_1").addClass("activites-left");
-            if(valueaddstr.indexOf("internet") != -1)
-              $("#valueadds_1").addClass("activites-center"); 
-            if(valueaddstr.indexOf("airport") != -1)
-              $("#valueadds_1").addClass("activites-right");              
-            $("#valueadds_1").html(reservationInfo.valueAdds);
+              if(valueaddstr != "")
+              {
+                if(valueaddstr.indexOf("breakfast") != -1)
+                  $("#valueadds_1").addClass("activites-left");
+                if(valueaddstr.indexOf("internet") != -1)
+                  $("#valueadds_1").addClass("activites-center"); 
+                if(valueaddstr.indexOf("airport") != -1)
+                  $("#valueadds_1").addClass("activites-right");              
+                $("#valueadds_1").html(reservationInfo.valueAdds);
+             }
           }
 
             //console.log(localStorage.getItem("reservationInfo"));
@@ -556,9 +562,10 @@ function initializeUiDatePicker()
         beforeShowDay: function(date) {
           var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
           var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
+          
           return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
         },
-        onSelect: function(dateText, inst) {
+        onSelect: function(dateText, inst) { 
           var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
           var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
            var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText, "DD, d MM, yy");
@@ -568,10 +575,28 @@ function initializeUiDatePicker()
            $('.booking-widget_flexible-dates').hide();
            $('.booking-widget_flexible-dates-active').show();
 
-
          if (!date1 || date2) {
+         
+         /*   var arr = dateText.split('/');
+            var m1 = parseInt(arr[0])-1;
+            var d1 = parseInt(arr[1]);
+            var y1 = parseInt(arr[2]);
+            $("td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td').addClass('ui-state-default-checkin');
+            var chkin_td_obj = $("td[data-month='"+m1+"'][data-year='"+y1+"']");*/
+
+            /*if(chkin_td_obj.has("a:contains('"+d1+"')"))
+              chkin_td_obj.addClass('ui-state-default-checkin');
+          
+            if(chkinobj) alert("hey yes");
+            else alert("oops");*/
+            //console.log($( "td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td')); 
+            //$("td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td').addClass('ui-state-default-checkin');
+            //$(this).datepicker("refresh");*/
+
+
             $("#input1").val(dateText);   //ui-state-default-checkin
             $("#input2").val("");
+
              $(this).datepicker();
              $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
              $("#chkOut").html('');
