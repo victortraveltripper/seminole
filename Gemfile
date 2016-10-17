@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'jekyll'
+gem 'jekyll','3.1.6'
 gem 'i18n'
 gem 'xkeys'
 gem "jekyll-assets"

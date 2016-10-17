@@ -271,10 +271,12 @@ function bookNow(roomTypeId)
                   var bookin_totalprice = respObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
                   var reservation_status = respObj.reservationStatusCode;
                   var bookInId = respObj.itineraryId;
-                  var bookedFor = '';
+                  var bookedFor = cancelPolicy = valueAdds = '' ;
                   var roomSrc =  $("#"+roomTypeId+"_roomnimage").val();
                   var mobile = $("#mobile").val();
                   var email = $("#email").val();
+                  cancelPolicy = $("#"+roomTypeId+"_cancelpolicy").val(); 
+                  valueAdds = $("#"+roomTypeId+"_valuedd").val();  
 
                    if(rname2 == ''){
                       roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+'</div>';
@@ -322,7 +324,7 @@ function bookNow(roomTypeId)
                       if (typeof(Storage) !== "undefined") {
                           // Store
                           //roomSrc =  $("#selectedRoomImage").val();
-                          var bookin_info = {bookinId: bookInId, bookedFor: bookedFor,roomImageSrc: roomSrc, roomname1: rname1, roomname2:rname2,  checkIn: formattedArrDate, checkOut: formattedDispDate,totalPrice: bookin_totalprice,charges: bookin_charges,taxfees: bookin_taxfees, firstname: fname, lastname: lname, mobile: mobile , email: email, reservation_status: 'CONFIRMED'  };
+                          var bookin_info = {bookinId: bookInId, bookedFor: bookedFor,roomImageSrc: roomSrc, roomname1: rname1, roomname2:rname2,  checkIn: formattedArrDate, checkOut: formattedDispDate,totalPrice: bookin_totalprice,charges: bookin_charges,taxfees: bookin_taxfees, firstname: fname, lastname: lname, mobile: mobile , email: email, reservation_status: 'CONFIRMED', 'cancelPolicy': cancelPolicy ,'valueAdds': valueAdds };
                           localStorage.setItem("reservationInfo", JSON.stringify(bookin_info));
                           //console.log(localStorage.getItem("reservationInfo"));
                       } else {
@@ -451,12 +453,12 @@ function showReservationInfo()
           $("#booked_for").html(reservationInfo.bookedFor);
           $("#room_img").attr('src',reservationInfo.roomImageSrc);
           if(reservationInfo.roomname2 != "")
-            $("#room_name").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
+            $("#roomname").html(reservationInfo.roomname1+" with "+reservationInfo.roomname2);
           else
-            $("#room_name").html(reservationInfo.roomname1);
+            $("#roomname").html(reservationInfo.roomname1);
 
-          $("#checkin_date").html(reservationInfo.checkIn);
-          $("#checkout_date").html(reservationInfo.checkOut);
+          $("#checkindate").html(reservationInfo.checkIn);
+          $("#checkoutdate").html(reservationInfo.checkOut);
 
           if(reservationInfo.roomname2 != "")
             $("#room_name_label").html(reservationInfo.roomname1+' <span class="checkout-details-lightfont">with</span><br>'+reservationInfo.roomname2);
@@ -464,13 +466,41 @@ function showReservationInfo()
               $("#room_name_label").html(reservationInfo.roomname1);
 
           $("#img_total_price").html(reservationInfo.totalPrice);
-          $("#primary_guest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
-          $("#mobile_no").html(reservationInfo.mobile);
-          $("#email_id").html(reservationInfo.email);
+          $("#primaryguest").html(reservationInfo.lastname+" "+reservationInfo.firstname);
+          $("#mobileno").html(reservationInfo.mobile);
+          $("#emailid").html(reservationInfo.email);
           $("#room_charges").html(reservationInfo.charges);
           $("#tax_fees").html(reservationInfo.taxfees);
           $("#total_price").html(reservationInfo.totalPrice);
           $("#resv_status").html(reservationInfo.reservation_status);
+          $("#cancelpolicy").html(reservationInfo.cancelPolicy);
+          if(reservationInfo.valueAdds.indexOf(",") != -1)
+          {
+              var valueAds = reservationInfo.valueAdds.split(",");
+              for(var i = 0; i < valueAds.length; i++)
+              {
+                  var valueaddstr = valueAds[i].toLowerCase();
+                  if(valueaddstr.indexOf("breakfast") != -1)
+                    $("#valueadds_"+i).addClass("activites-left");
+                  if(valueaddstr.indexOf("internet") != -1)
+                    $("#valueadds_"+i).addClass("activites-center"); 
+                  if(valueaddstr.indexOf("airport") != -1)
+                    $("#valueadds_"+i).addClass("activites-right");                                       
+                 
+                  $("#valueadds_"+i).html(valueAds[i]);
+              }
+          }else
+          {
+            var valueaddstr = reservationInfo.valueAdds.toLowerCase();
+            if(valueaddstr.indexOf("breakfast") != -1)
+              $("#valueadds_1").addClass("activites-left");
+            if(valueaddstr.indexOf("internet") != -1)
+              $("#valueadds_1").addClass("activites-center"); 
+            if(valueaddstr.indexOf("airport") != -1)
+              $("#valueadds_1").addClass("activites-right");              
+            $("#valueadds_1").html(reservationInfo.valueAdds);
+          }
+
             //console.log(localStorage.getItem("reservationInfo"));
           //localStorage.setItem("reservationInfo", '');
         }else {
@@ -489,11 +519,139 @@ function priceFormat(priceval)
 function clearValues()
 {
     $("#appHidden").empty();
-     $("#numAdults").val(1);
+    $("#numAdults").val(1);
     $("#numChild").val(1);
-     $("#input1").val("");
-     $("#input2").val("");
-    $("#dateRange").html("");
+    
     $("#availableRoomsDiv").html('');
     $("#selectedRoomImage").val('');
+ 
+    resetDatePicker();
+}
+
+
+function resetDatePicker()
+{
+    $("#input1").val("");
+    $("#input2").val("");
+    $("#dateRange").html("");  
+    $("#chkIn").html('');
+    $("#chkOut").html('');
+    $("#bestnight_price").html("-");
+    $('.booking-widget_buttons').show();
+    $('.booking-widget_buttons-active').hide(); 
+    $('.booking-widget_flexible-dates').show();
+    $('.booking-widget_flexible-dates-active').hide(); 
+    $( ".datepicker" ).datepicker( "destroy" );
+    initializeUiDatePicker();
+
+}
+
+function initializeUiDatePicker()
+{
+      ///date picker
+
+       $(".datepicker").datepicker({
+        minDate: 0,
+        numberOfMonths: [12,1],
+        beforeShowDay: function(date) {
+          var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
+          var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
+          return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+        },
+        onSelect: function(dateText, inst) {
+          var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
+          var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
+           var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText, "DD, d MM, yy");
+           $('.booking-widget_buttons').hide();
+           $('.booking-widget_buttons-active').show();
+
+           $('.booking-widget_flexible-dates').hide();
+           $('.booking-widget_flexible-dates-active').show();
+
+
+         if (!date1 || date2) {
+            $("#input1").val(dateText);   //ui-state-default-checkin
+            $("#input2").val("");
+             $(this).datepicker();
+             $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
+             $("#chkOut").html('');
+
+         } else if( selectedDate < date1 ) {
+             $("#input2").val( $("#input1").val() ); //ui-state-default-checkout
+             $("#input1").val( dateText );
+             $(this).datepicker();
+             $("#chkIn").html(dateFormat(new Date($("#input1").val()), "ddd, mmm d"));
+             $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d"));
+         } else {
+              $("#input2").val(dateText);
+             $(this).datepicker();
+             $("#chkOut").html(" - "+dateFormat(new Date($("#input2").val()), "ddd, mmm d")); //ui-state-default-checkout
+
+          }
+
+          if($("#input2").val() != "")
+          {
+              getBestAvarageBasePrice();
+          }else{
+            $("#bestnight_price").html("");
+          }
+
+        }
+      });
+
+}
+
+
+function getBestAvarageBasePrice()
+{
+
+  var numAdults = $("#numAdults").val();
+  var numChilds = $("#numChild").val();
+  var arrivalDate = $("#input1").val();
+  var dispatchDate = $("#input2").val();
+  var countRooms = 0;
+  var hotelId = $("#hotel_id").val();
+  var avgBaseRates = [];
+
+  $.ajax({
+  url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
+  type: 'GET',
+  dataType: 'json',
+  headers: {
+      'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+  },
+  contentType: 'application/json; charset=utf-8',
+  
+  success: function (roomsResponse) {
+
+      //Fetch all the dynamic parameters from response
+      var hotelRoomAvailability = roomsResponse.HotelRoomAvailabilityResponse;
+      if(parseInt(hotelRoomAvailability['@size']) > 0 )
+      {
+          var roomsArr = roomsResponse.HotelRoomAvailabilityResponse.HotelRoomResponse;
+          countRooms = roomsArr.length;
+
+          var roomsWidget= '';
+         if(countRooms > 0)
+         {
+            $.each(roomsArr, function(name, roomObj) {
+              //Fetch all the dynamic parameters from response
+              var averageBaseRate = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@averageBaseRate']);
+              avgBaseRates.push(parseFloat(averageBaseRate));
+
+            });
+            var bestRate = Math.min.apply(Math, avgBaseRates);
+            //Append the Room Widgets to the main widget
+              $("#bestnight_price").html('$'+bestRate);
+
+          } //end if
+    }else{
+       $("#bestnight_price").html("");
+    }
+  },
+  error: function (error) {
+
+  }
+  });
+
 }
