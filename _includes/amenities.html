@@ -1,10 +1,17 @@
 <section id="Amenities" class="clearfix hotel-Amenites" >
     <div class="container">
         <div class="row">
-            <h6 class="text-center">HOTEL AMENITIES</h6>
+            <h6>{% region amenities_heading %}</h6>
+            <h2>{% region amenities_subheader %}</h2>
+            <div class='content-area content-area-intro'>
+               {% region amenities_intro %}
+            </div>
+            <ul class='row'>
              {% for item in site.data._models.amenities %}
-                <div class="col-sm-4"><div class="list"> <i class="fa fa-circle"></i> {{ item.name }}</div></div>
+                <li class="col-md-4 col-sm-6 col-xs-12"  data-live-edit-model='amenities'
+data-live-edit-model-instance='{{item.id}}.json' ><div class="list"> {{ item.name }}</div></li>
              {% endfor %}
+            </ul>
         </div>
 <!--         <div id="collapse1" style="display:none">
             <div class="row">
