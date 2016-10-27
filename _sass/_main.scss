@@ -766,7 +766,7 @@
 				}
 			}
 		}
-		
+
 		.list{
 
 		ul{
@@ -813,7 +813,7 @@
 					}
 		}
 
-	
+
 
 
 
@@ -1235,4 +1235,35 @@
 		width:90%;
 		margin:auto;
 		background: #FFF;
+	}
+
+
+
+	.terms{
+
+			background:#f6f5f5;
+			padding-top:90px;
+			font-family: 'NeueHaasGroteskDisp W01';
+			font-weight:400;
+			padding-bottom:50px;
+		p{
+		font-family: 'NeueHaasGroteskDisp W01';
+		font-size:16px;
+		line-height: 28px;
+	padding-bottom: 20px;
+		}
+		h5{
+		color:#000; font-weight:600;
+		padding:10px 0px;
+		font-size:16px;
+		}
+
+		ul li{
+		font-size:16px;
+		padding:10px;
+		line-height:26px;
+		color:#32333c;
+
+		}
+
 	}
