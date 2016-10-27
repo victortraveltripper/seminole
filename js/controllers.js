@@ -43,7 +43,6 @@ angular.module('ean')
         $scope.map = map
         var marker = new google.maps.Marker({
             position: latlng,
-            icon: '../images/map-icon.svg',
             map: map,
   		        title: $scope.hotelInfo.name
         });
