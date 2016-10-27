@@ -17,7 +17,7 @@
     <h3>Follow Us</h3>
     {% for social_icons in site.data._models.social_icons %}
       <a class= "{{ social_icons.icon_name }}"  data-live-edit-model='social_icons'
-data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.icon_href }}"></a> 
+data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.icon_href }}"></a>
     {% endfor %}
   </div>
 
@@ -36,5 +36,5 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
   </div>
 </footer>
 <section class="copyrights">
-{% region copyrights_info %}
+<div class="col-sm-6 text-right"><div class="row">{% region copyrights_info %}</div></div><div class="col-sm-6 text-left"><div class="row">  | <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a> | <a href="/privacypolicy" target="_blank">Privacy Policy</a></div></div>
 </section>

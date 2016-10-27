@@ -113,16 +113,19 @@
 		.navbar-brand {
 			width:300px;
 
+			@media (max-width:680px){
+				width:240px;
+			}
 			@media (max-width:320px){
-				width:170px;
+				width:160px;
 				margin-top:0px;
-
-
+				word-wrap: break-word;
+				margin-top: 10px;
 			}
 
 			h3{
 			margin: 0px;
-	    color: #009cbe;
+	    color: #04082f;
 	    text-align: left;
 	    padding: 3px 0px;
 			font-size: 18px;
@@ -137,6 +140,7 @@
 	    padding: 4px 0px;
 			}
 		}
+
 		.nav-social {
 			display:none;
 			@media( max-width:1025px){
@@ -1116,7 +1120,7 @@
 			border-right:1px solid #b7b7b7;
 			h3{
 			margin: 0px;
-	    color: #009cbe;
+	    color: #04082f;
 	    text-align: center;
 	    padding: 3px 0px;
 			font-size: 27px;
@@ -1156,6 +1160,7 @@
 			padding:20px 0px;
 			text-align:center;
 			 letter-spacing: 1px;
+			 a{color:#333333}
 			}
 
 		.gaps{
