@@ -584,9 +584,7 @@
 		h6{
 			color:$color-white;
 		}
-		.amini-list{
-			margin-top:20px;
-		}
+
 		.link {
 		width:80px;
 		margin:40px auto 20px auto;
@@ -771,7 +769,9 @@
 	/*hotel Amenites*/
 	.hotel-Amenites{
 
-
+		.amini-list{
+			margin-top:20px;
+		}
 		.list{
 			margin:auto;
 			font-size: 16px;
@@ -854,7 +854,7 @@
 	.Location-bg{
 		background:#f7f7f7;
 		text-align:center;
-		padding-bottom:0px;
+		padding-bottom:20px;
 	  padding-top: 36px;
 		}
 
