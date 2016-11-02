@@ -584,7 +584,9 @@
 		h6{
 			color:$color-white;
 		}
-
+		.amini-list{
+			margin-top:20px;
+		}
 		.link {
 		width:80px;
 		margin:40px auto 20px auto;
@@ -853,7 +855,7 @@
 		background:#f7f7f7;
 		text-align:center;
 		padding-bottom:0px;
-	  padding-top: 60px;
+	  padding-top: 36px;
 		}
 
 		.Location{
@@ -1183,9 +1185,7 @@
 			text-align:center;
 			 letter-spacing: 1px;
 			 a{color:#333333}
-			 @media(max-width:320px){
-				 text-align: center;
-			 }
+
 			}
 
 		.gaps{
@@ -1216,7 +1216,7 @@
 
 
 	#topSlider{
-	  margin-top: 90px;
+
 	  position: relative;
 	  min-height: 100px;
 

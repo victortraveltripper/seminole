@@ -2,11 +2,11 @@
     <div class="container">
         <div class="row">
             <h6>{% region amenities_heading %}</h6>
-            <h2>{% region amenities_subheader %}</h2>
+            <!--h2>{% region amenities_subheader %}</h2-->
             <div class='content-area content-area-intro'>
                {% region amenities_intro %}
             </div>
-            <ul >
+            <ul class="amini-list">
              {% for item in site.data._models.amenities %}
                 <li class="col-md-4 col-sm-6 col-xs-12"  data-live-edit-model='amenities'
 data-live-edit-model-instance='{{item.id}}.json' ><div class="list"> {{ item.name }}</div></li>
