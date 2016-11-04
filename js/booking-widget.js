@@ -270,13 +270,14 @@ function bookNow(roomTypeId)
                   var bookin_taxfees = respObj.RateInfos.RateInfo.ChargeableRateInfo['@surchargeTotal'];
                   var bookin_totalprice = respObj.RateInfos.RateInfo.ChargeableRateInfo['@total'];
                   var reservation_status = respObj.reservationStatusCode;
-                  var bookInId = respObj.itineraryId;
+                  //var bookInId = respObj.itineraryId;
+                  var bookInId = respObj.confirmationNumbers;
                   var bookedFor = cancelPolicy = valueAdds = '' ;
                   var roomSrc =  $("#"+roomTypeId+"_roomnimage").val();
                   var mobile = $("#mobile").val();
                   var email = $("#email").val();
-                  cancelPolicy = $("#"+roomTypeId+"_cancelpolicy").val(); 
-                  valueAdds = $("#"+roomTypeId+"_valuedd").val();  
+                  cancelPolicy = $("#"+roomTypeId+"_cancelpolicy").val();
+                  valueAdds = $("#"+roomTypeId+"_valuedd").val();
 
                    if(rname2 == ''){
                       roomNameDiv = '<div class="pull-left room-name">'+$.trim(rname1)+'</div>';
@@ -485,10 +486,10 @@ function showReservationInfo()
                   if(valueaddstr.indexOf("breakfast") != -1)
                     $("#valueadds_"+i).addClass("activites-left");
                   if(valueaddstr.indexOf("internet") != -1)
-                    $("#valueadds_"+i).addClass("activites-center"); 
+                    $("#valueadds_"+i).addClass("activites-center");
                   if(valueaddstr.indexOf("airport") != -1)
-                    $("#valueadds_"+i).addClass("activites-right");                                       
-                 
+                    $("#valueadds_"+i).addClass("activites-right");
+
                   $("#valueadds_"+i).html(valueAds[i]);
                 }
               }
@@ -500,9 +501,9 @@ function showReservationInfo()
                 if(valueaddstr.indexOf("breakfast") != -1)
                   $("#valueadds_1").addClass("activites-left");
                 if(valueaddstr.indexOf("internet") != -1)
-                  $("#valueadds_1").addClass("activites-center"); 
+                  $("#valueadds_1").addClass("activites-center");
                 if(valueaddstr.indexOf("airport") != -1)
-                  $("#valueadds_1").addClass("activites-right");              
+                  $("#valueadds_1").addClass("activites-right");
                 $("#valueadds_1").html(reservationInfo.valueAdds);
              }
           }
@@ -527,10 +528,10 @@ function clearValues()
     $("#appHidden").empty();
     $("#numAdults").val(1);
     $("#numChild").val(1);
-    
+
     $("#availableRoomsDiv").html('');
     $("#selectedRoomImage").val('');
- 
+
     resetDatePicker();
 }
 
@@ -539,14 +540,14 @@ function resetDatePicker()
 {
     $("#input1").val("");
     $("#input2").val("");
-    $("#dateRange").html("");  
+    $("#dateRange").html("");
     $("#chkIn").html('');
     $("#chkOut").html('');
     $("#bestnight_price").html("-");
     $('.booking-widget_buttons').show();
-    $('.booking-widget_buttons-active').hide(); 
+    $('.booking-widget_buttons-active').hide();
     $('.booking-widget_flexible-dates').show();
-    $('.booking-widget_flexible-dates-active').hide(); 
+    $('.booking-widget_flexible-dates-active').hide();
     $( ".datepicker" ).datepicker( "destroy" );
     initializeUiDatePicker();
 
@@ -562,10 +563,10 @@ function initializeUiDatePicker()
         beforeShowDay: function(date) {
           var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
           var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
-          
+
           return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
         },
-        onSelect: function(dateText, inst) { 
+        onSelect: function(dateText, inst) {
           var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
           var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
            var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText, "DD, d MM, yy");
@@ -576,7 +577,7 @@ function initializeUiDatePicker()
            $('.booking-widget_flexible-dates-active').show();
 
          if (!date1 || date2) {
-         
+
          /*   var arr = dateText.split('/');
             var m1 = parseInt(arr[0])-1;
             var d1 = parseInt(arr[1]);
@@ -586,10 +587,10 @@ function initializeUiDatePicker()
 
             /*if(chkin_td_obj.has("a:contains('"+d1+"')"))
               chkin_td_obj.addClass('ui-state-default-checkin');
-          
+
             if(chkinobj) alert("hey yes");
             else alert("oops");*/
-            //console.log($( "td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td')); 
+            //console.log($( "td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td'));
             //$("td[data-month='"+m1+"'][data-year='"+y1+"'] a:contains('"+d1+"')" ).parent('td').addClass('ui-state-default-checkin');
             //$(this).datepicker("refresh");*/
 
@@ -646,7 +647,7 @@ function getBestAvarageBasePrice()
       'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
   },
   contentType: 'application/json; charset=utf-8',
-  
+
   success: function (roomsResponse) {
 
       //Fetch all the dynamic parameters from response
