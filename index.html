@@ -108,23 +108,12 @@ data-live-edit-model-instance='{{item.id}}.json' >
   </div>
 
   <article class="facility-pics clearfix ">
+    {% for image_instance in site.data._models.facilities_images %}
     <div class="col-sm-6">
       <div class="">
-        {% region facilities_img1 %}
+        {{ image_instance.image.url }}
         <div class="facility-pics-info">
-          Quae quidem sapien<br>
-          sequuntur duce
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="">
-        {% region facilities_img3 %}
-
-        <div class="facility-pics-info">
-          Quae quidem sapien<br>
-          sequuntur duce
+           {{ image_instance.text }}
         </div>
       </div>
     </div>
