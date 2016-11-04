@@ -9,7 +9,9 @@
                     <span class="icon-bar bottom-bar"></span>
                 </button>
                                <a href="/" class="navbar-brand page-scroll" href="#page-top">
-                {% region hotel_logo_text %}
+                {% for text in hotel_logo_text %}
+		{{ text.name }}
+		{% endfor %}
                  </a>
 
                  <a show-booking-widget class="mobile" href="#">BOOK NOW</a>
