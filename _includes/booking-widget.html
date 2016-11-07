@@ -153,7 +153,7 @@
 
 
   <div class="bookin-widget_form">
-    <span id="errorMsg" class="error" style="display:none;"></span>
+
   <h3>GUEST details</h3>
 
 
@@ -203,7 +203,7 @@
       <label for="ccnum">Card Number</label>
       <input placeholder="Card number" type="tel" size="19" class="form-control"  name="ccnum" value="" id="ccnum">
     </span>
-    <div><small>type: <strong id="ccnum-type">invalid</strong></small></div>
+    <div><small>Type: <strong id="ccnum-type"></strong></small></div>
   </div>
 
 
@@ -278,19 +278,11 @@
   <p class="font-small">Unless otherwise noted, the rates shown here do not include (if applicable) extra person fees, child fees, resort fees, additional mandatory hotel charges or optional incidentals like parking, room service or movies.
 </p>
 </div>
-
-
+<div class="clearfix"></div>
+  <div id="errorMsg" class="error message-text" style="display:none;"></div>
 <div class="clearfix"></div>
   <div class="booking-widget_booknow">
-    <!--a href="#" class="bookin-widget_booknow">Booknow</a-->
-
-
-
-    <button class="booking-widget_booknow" id="submit" >BOOKNOW</button>
-    <!--<input type="button" name="booknow" id="booknow" value="BOOKNOW" class="booking-widget_booknow" onclick="bookNow(document.getElementById('selectedRoomTypeId').value);"/> -->
-    <!--input type="submit" name="submit" class="booking-widget_booknow" value="BOOKNOW" -->
-
-
+  <button class="booking-widget_booknow" id="submit" >BOOKNOW</button>
   </div>
 </form>
   </div>
