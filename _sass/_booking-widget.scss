@@ -429,7 +429,7 @@ img {
   position: absolute;
   bottom:0px;
   padding: 40px 20px 20px 20px ;
-  background: url('../images/background.png')repeat-x;
+  background: url('../images/background.png') repeat-x;
   text-transform: uppercase;
   color: #FFF;
   width:100%;
@@ -540,15 +540,11 @@ table{
 
   .select-control{
     border-radius: 0px !important;
-      margin: 0px 0px 5px;
-      font-size: 12px;
-      box-shadow: none;
-      /* height: 25px; */
-      width: 70%;
-      /* padding: 6px 12px; */
-      float: right;
-
-
+    margin: 0px 0px 5px;
+    font-size: 12px;
+    box-shadow: none;
+    width: 70%;
+    float: right;
       .select-control-inner{
 
         width:48%; float: left;
@@ -621,6 +617,11 @@ table{
 
   .error{display:black; color:#de3235;
 
+   }
+   .message-text{
+     padding: 10px;
+     margin-top: 10px;
+     background: rgba(255, 0, 0, 0.2);
    }
 
    input.error{display:black; color:#de3235;
