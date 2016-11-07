@@ -242,7 +242,7 @@ $(document).ready(function(){
                                 var roomCode = roomTypeId;
                                 var bedTypeId = roomObj.BedTypes.BedType['@id'];
                                 var smokingPref = roomObj.smokingPreferences;
-                               
+
                                 var valueAdds = [];
                                 var valueAdd_Hid = valueAddStr = '';
                                 var cancelPolicy = roomObj.RateInfos.RateInfo.cancellationPolicy;
@@ -255,11 +255,11 @@ $(document).ready(function(){
                                       $.each(valAdd, function(valObj) {
                                         valueAdds.push(valObj.description);
                                       });
-                                    }else 
+                                    }else
                                     {
                                       valueAdds.push(valAdd.description);
                                     }
-                                    valueAddStr = valueAdds.join(); 
+                                    valueAddStr = valueAdds.join();
                                 }
 
 
