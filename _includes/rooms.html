@@ -46,9 +46,7 @@
                   <div id="rooms-carousel" class="carousel slide" data-ride="carousel">
 
 
-                    <!--ol class="carousel-indicators">
-                      <li ng-repeat = "items in roomInfo" data-target="#rooms-carousel" data-slide-to="$index" ng-class="{active:!$index}" ></li>
-                    </ol-->
+
 
                     <div class="carousel-inner" role="listbox">
                       <div  ng-class="{active:!$index}" ng-repeat = "items in roomInfo" class="item "  >
@@ -58,7 +56,7 @@
                           <h5>{[items.roomHead]}</h5>
                           <h3>{[items.roomCaption]}</h3>
                           <p class="text-center">{[items.roomFeature]}</p>
-                          <p class="text-center" ng-bind-html="items.longdesp | trustAs"></p>
+                          <p  ng-bind-html="items.longdesp | trustAs"></p>
                           <div class=" btn-book">
                             <a show-booking-widget href="#" >BOOK NOW</a>
                           </div>
@@ -82,15 +80,18 @@
                       <span class="fa " aria-hidden="true"> <img src="images/arrow-right-gray.svg" alt=""/></span>
                       <span class="sr-only">Next</span>
                     </a>
+                    <!--ol class="carousel-indicators">
+                      <li ng-repeat = "items in roomInfo" data-target="#rooms-carousel" data-slide-to="$index" ng-class="{active:!$index}" ></li>
+                    </ol-->
                   </div>
 
               </div>
 
 
-
+              <div class="text-center">More Room Images</div>
             </div>
 
-            <!--div class="text-center">More Room Images</div-->
+
           </div>
         </div>
       </div>
