@@ -1,0 +1,4 @@
+{
+    "name": {"type": "string" },
+    "order": {"type": "integer" }
+}

@@ -105,7 +105,11 @@
         {% region room_amenities_heading %}
       </h6>
       <div class='content-area'>
-        {% region room_amenities %}
+        <ul>
+         {% for item in site.data._models.room_amenities %}
+          <li> {{ item.name }} </li>
+         {% endfor %}
+        </ul>
       </div>
     </div>
   </article>
