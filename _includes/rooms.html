@@ -16,12 +16,12 @@
     <div class="row">
       <div class="tabs text-center">
         <ul class="contTabs">
-          <li class="active"><a data-toggle="pill" href="#home">View All</a></li>
-          <li><a data-toggle="pill" href="#menu1">Room Name</a></li>
+          <li ><a data-toggle="pill" href="#home">View All</a></li>
+          <li class="active"><a data-toggle="pill" href="#menu1">Room Detail</a></li>
         </ul>
       </div>
       <div class="tab-content">
-        <div id="home" class="tab-pane fade in active text-center container-a1" >
+        <div id="home" class="tab-pane fade  text-center container-a1" >
           <div class="rooms-type">
             <ul>
               <li ng-repeat = "items in roomInfo track by $index">
@@ -39,7 +39,7 @@
             </ul>
           </div>
         </div>
-        <div id="menu1" class="tab-pane fade">
+        <div id="menu1" class="tab-pane fade in active">
           <div class="container">
             <div class="row">
 
@@ -53,7 +53,7 @@
                     <div class="carousel-inner" role="listbox">
                       <div  ng-class="{active:!$index}" ng-repeat = "items in roomInfo" class="item "  >
 
-                        <div class=" col-md-6 col-md-push-5">
+                        <div class=" col-md-6 col-md-push-6">
                          <div  class="room-info">
                           <h5>{[items.roomHead]}</h5>
                           <h3>{[items.roomCaption]}</h3>
@@ -64,9 +64,9 @@
                         </div>
                         </div>
 
-                        <div class="col-md-5 col-md-pull-6">
+                        <div class="col-md-6 col-md-pull-6">
                          <img ng-src="{[items.owlPic]}">
-                         <div class="rates">TONIGHT’S RATE $ 380</div>
+                         <!--div class="rates">TONIGHT’S RATE $ 380</div-->
                        </div>
 
                       </div>
