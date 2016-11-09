@@ -25,15 +25,19 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
     {% endfor %}
   </div>
 
-  <div class="col-sm-3">
-  <h3>{% region contact_heading %}</h3>
-  {% region contact_info %}
-  </div>
+   <div class="col-sm-3">
+   {% for contact in site.data._models.contact %}
+      <h3>{{ contact.heading }}</h3>
+      {{ contact.content }}
+   {% endfor %}
+   </div>
 
   <div class="col-sm-3">
-  <h3>{% region address_heading %}</h3>
-    {% region fullAddress %}
-  </div>
+   {% for address_details in site.data._models.full_address %}
+      <h3>{{ address_details.heading }}</h3>
+      {{ address_details.address }}
+   {% endfor %}
+   </div>
   <div class="clearfix"></div>
   </div>
   </div>
