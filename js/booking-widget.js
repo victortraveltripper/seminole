@@ -423,7 +423,8 @@ function getRoomImage(roomTypeId){
                   //Fetch all the dynamic parameters from response
                 //  if( i == 0){
                     //alert(responseObj.images[0].smallUrl);
-                    roomSrc = responseObj.images[0].thumbUrl;
+                    //roomSrc = responseObj.images[0].thumbUrl;
+                    roomSrc = responseObj.images[0].smallUrl;
                     $("#selectedRoomImage").val(roomSrc);
                     //alert("core :"+roomSrc);
               //$("."+roomTypeId+"_show_image_room_dtls").attr('src',roomSrc);
