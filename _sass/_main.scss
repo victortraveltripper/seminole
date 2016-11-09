@@ -393,6 +393,35 @@ section{
 }
 
 
+
+#rooms-carousel .carousel-indicators {
+    margin: 10px 0 0;
+    overflow: auto;
+    position: static;
+   	width:100%;
+    white-space: nowrap;
+		left:50%;
+		font-family:'NeueHaasGroteskDisp W01';
+
+}
+#rooms-carousel .carousel-indicators li {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    height: auto;
+    margin: 0 !important;
+    text-indent:1px!important;
+    width: 30px;
+    color:#b7b7b7;
+    border: none;
+
+}
+
+#rooms-carousel .carousel-indicators li.active, .carousel-indicators li:hover {
+  color:#000;
+}
+
 .rooms-type{
 	ul{
 		margin:auto;
@@ -983,7 +1012,7 @@ section{
 
 	img{
 		width:100%;
-		height: 450px;
+		height: 500px;
 	}
 
 	.rates{

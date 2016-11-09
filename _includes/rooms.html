@@ -80,15 +80,18 @@
                       <span class="fa " aria-hidden="true"> <img src="images/arrow-right-gray.svg" alt=""/></span>
                       <span class="sr-only">Next</span>
                     </a>
-                    <!--ol class="carousel-indicators">
-                      <li ng-repeat = "items in roomInfo" data-target="#rooms-carousel" data-slide-to="$index" ng-class="{active:!$index}" ></li>
-                    </ol-->
+                    <div class="text-center"><br>More Room Images</div>
+                    <ol class="carousel-indicators">
+                      <li ng-repeat = "items in roomInfo" data-target="#rooms-carousel" data-slide-to="{[$index]}" ng-class="{active:!$index}" >
+                        {[$index+1]}
+                      </li>
+                    </ol>
                   </div>
 
               </div>
 
 
-              <!--div class="text-center">More Room Images</div-->
+
             </div>
 
 
