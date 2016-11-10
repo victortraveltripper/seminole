@@ -1061,6 +1061,7 @@ section{
 		padding:20px 0px 20px 0px;
 		text-align:center;
 		text-transform:uppercase;
+		margin: 0px;
 
 		@media (max-width:648px){
 			padding:20px 0px 40px 0px;
@@ -1068,7 +1069,7 @@ section{
 	}
 
 	p{
-		width:70%;
+		width:80%;
 		margin:auto;
 		@media (max-width:980px){
 			width:80%;
