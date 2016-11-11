@@ -9,7 +9,7 @@ angular.module('ean')
         $scope.hotelInfo=createHotelInfo(d.data.hotels,$rootScope.locationHash);
         $scope.latitude=$scope.hotelInfo.latitude;
         $scope.longitude=$scope.hotelInfo.longitude;
-
+	$scope.title = $scope.hotelInfo.name + $scope.hotelInfo.address1 + $scope.hotelInfo.city
         // init the map here
         var latlng = new google.maps.LatLng($scope.latitude,$scope.longitude);
 		var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
