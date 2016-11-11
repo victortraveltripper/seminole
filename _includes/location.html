@@ -16,15 +16,14 @@
 
 <div class="col-sm-6">
 <div class="first">
-  {% for address_details in site.data._models.full_address %}
-      <h3>{{ address_details.heading }}</h3>
-      <div  class='content-area'> {{ address_details.address }} </div>
-   {% endfor %}
+   <div  class='content-area'>{% region location_desc %}</div>
 </div>
 
 <div class="middle">
-  <h5>{% region address_heading %}</h5>
-  <div class="gap">{% region fullAddress %}</div>
+   {% for address_details in site.data._models.full_address %}
+      <h5>{{ address_details.heading }}</h5>
+      <div  class="gap"> {{ address_details.address }} </div>
+   {% endfor %}
 </div>
 
 </div>
