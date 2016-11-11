@@ -43,6 +43,7 @@ angular.module('ean')
         $scope.map = map
         var marker = new google.maps.Marker({
             position: latlng,
+            icon: '/images/location-icon.svg',
             map: map,
   		        title: $scope.hotelInfo.name
         });
@@ -212,7 +213,7 @@ angular.module('ean')
                             $scope.gallery = galleryImgArr(d.data.roomImages,'big');
                             $scope.galleryThumb = galleryImgArr(d.data.roomImages,'small');
                         }
-                    } 
+                    }
                 }
                 if(d.data.roomAmenities.length!=0 && $scope.loop==false) {
                     var len=d.data.roomAmenities.length;

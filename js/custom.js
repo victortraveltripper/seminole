@@ -6,6 +6,8 @@ $(document).ready(function(){
   });
 
 
+
+
   $("#Slider").owlCarousel({
       navigation : true,
       navigationText: ["<img src='/images/arrow-left.svg'> ","<img src='/images/arrow-right.svg'>"],
@@ -52,26 +54,6 @@ $(document).ready(function(){
 
 
   });
-
-
-
-
-
-  $("#rooms").owlCarousel({
-
-      navigation : true, // Show next and prev buttons
-      navigationText: ["<img src='assets/images/arrow-left-gray.svg'> ","<img src='assets/images/arrow-right-gray.svg'>"],
-      autoPlay: false,
-      slideSpeed : 100,
-      paginationSpeed : 200,
-      paginationNumbers:  true,
-      singleItem : true,
-      loop:true,
-      URLhashListener:true
-
-  });
-
-
 
  //Show Hide Aminites
 
