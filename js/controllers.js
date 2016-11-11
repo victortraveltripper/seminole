@@ -31,7 +31,7 @@ angular.module('ean')
                 "stylers": [{ "visibility": "off" }]
         }];
 		var myOptions = {
-			zoom: 12,
+			zoom: 15,
   			center: latlng,
   			mapTypeId: google.maps.MapTypeId.ROADMAP,
   			disableDefaultUI: true,
