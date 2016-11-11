@@ -29,7 +29,7 @@ excerpt:
       <div class="col-sm-12 text-center social-icons">
         <h5>Follow Us</h5>
         {% for social_icons in site.data._models.social_icons %}
-        <a class= "{{ social_icons.icon_name }}"  data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.icon_href }}"></a>
+        <a class= "{{ social_icons.icon_name }}" target="_blank"  data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.icon_href }}"></a>
         {% endfor %}
       </div>
   </div>
@@ -100,12 +100,10 @@ data-live-edit-model-instance='{{item.id}}.json' >
   <article class="facility-pics clearfix ">
     {% for image_instance in site.data._models.facilities_images %}
     <div class="col-sm-6">
-      <div class="">
         <img src = {{ image_instance.image.url }} >
         <div class="facility-pics-info">
            {{ image_instance.text }}
         </div>
-      </div>
     </div>
     {% endfor %}
   </article>

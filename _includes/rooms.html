@@ -3,7 +3,6 @@
   <div class="container narrow-container">
     <div class="row">
     <h6>{% region room_suites_heading %}</h6>
-    <h2>{% region room_suites_subheader %}</h2>
     <div class='content-area content-area-intro'>
        <div class="col-sm-12">{% region room_suites_intro %}</div>
     </div>
@@ -43,19 +42,15 @@
           <div class="container">
             <div class="row">
 
-                  <div id="rooms-carousel" class="carousel slide" data-ride="carousel">
-
-
-
-
+                <div id="rooms-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
-                      <div  ng-class="{active:!$index}" ng-repeat = "items in roomInfo" class="item "  >
+                      <div ng-class="{active:!$index}" ng-repeat = "items in roomInfo" class="item "  >
 
                         <div class=" col-md-6 col-md-push-6">
                          <div  class="room-info">
                           <h5>{[items.roomHead]}</h5>
-                          <h3>{[items.roomCaption]}</h3>
-                          <h6 class="text-center">{[items.roomFeature]}</h6>
+                          <h3 ng-if = "items.roomCaption.length>0">{[items.roomCaption]}</h3>
+                          <h6 ng-if = "items.roomFeature.length>0" class="text-center">{[items.roomFeature]}</h6>
                           <p  ng-bind-html="items.longdesp | trustAs"></p>
                           <div class=" btn-book">
                             <a show-booking-widget href="#" >BOOK NOW</a>
@@ -65,7 +60,6 @@
 
                         <div class="col-md-6 col-md-pull-6">
                          <img ng-src="{[items.owlPic]}">
-                         <!--div class="rates">TONIGHT’S RATE $ 380</div-->
                        </div>
 
                       </div>
