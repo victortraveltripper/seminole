@@ -28,20 +28,10 @@ excerpt:
       </div>
       <div class="col-sm-12 text-center social-icons">
         <h5>Follow Us</h5>
-        <ul>
-          <li><a class="fa fa-facebook" aria-hidden="true"></a></li>
-
-          <li><a class="fa fa-twitter" aria-hidden="true"></a></li>
-
-          <li><a class="fa fa-google-plus" aria-hidden="true"></a></li>
-
-          <li><a class="fa fa-instagram" aria-hidden="true"></a></li>
-
-          <li><a class="fa fa-pinterest-p" aria-hidden="true"></a></li>
-        </ul>
+        {% for social_icons in site.data._models.social_icons %}
+        <a class= "{{ social_icons.icon_name }}"  data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.icon_href }}"></a>
+        {% endfor %}
       </div>
-
-
   </div>
 
   <article  class="about-pics ">

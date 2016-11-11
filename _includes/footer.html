@@ -25,20 +25,24 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
     {% endfor %}
   </div>
 
-  <div class="col-sm-3">
-  <h3>{% region contact_heading %}</h3>
-  {% region contact_info %}
-  </div>
+   <div class="col-sm-3">
+   {% for contact in site.data._models.contact %}
+      <h3>{{ contact.heading }}</h3>
+      {{ contact.content }}
+   {% endfor %}
+   </div>
 
   <div class="col-sm-3">
-  <h3>{% region address_heading %}</h3>
-    {% region fullAddress %}
-  </div>
+   {% for address_details in site.data._models.full_address %}
+      <h3>{{ address_details.heading }}</h3>
+      {{ address_details.address }}
+   {% endfor %}
+   </div>
   <div class="clearfix"></div>
   </div>
   </div>
   </div>
 </footer>
 <section class="copyrights">
-<div class="col-sm-6 text-right"><div class="row">{% region copyrights_info %}</div></div><div class="col-sm-6 text-left"><div class="row">  | <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a> | <a href="/privacypolicy" target="_blank">Privacy Policy</a></div></div>
+<div class="col-sm-6 text-right"><div class="row">{% for copy_rights in site.data._models.copy_rights %}{{ copy_rights.content }}{% endfor %}</div></div><div class="col-sm-6 text-left"><div class="row">  | <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a> | <a href="/privacypolicy" target="_blank">Privacy Policy</a></div></div>
 </section>
