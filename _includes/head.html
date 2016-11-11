@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <title ng-bind="title"></title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
  	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/c0250242-d100-4a61-a7be-2b470434d9e3.css"/>
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
