@@ -1,5 +1,7 @@
 
 <section id="Rooms" class="Rooms-suits clearfix">
+
+
   <div class="container narrow-container">
     <div class="row">
     <h6>{% region room_suites_heading %}</h6>
@@ -52,9 +54,7 @@
                           <h3 ng-if = "items.roomCaption.length>0">{[items.roomCaption]}</h3>
                           <h6 ng-if = "items.roomFeature.length>0" class="text-center">{[items.roomFeature]}</h6>
                           <p  ng-bind-html="items.longdesp | trustAs"></p>
-                          <div class=" btn-book">
-                            <a show-booking-widget href="#" >BOOK NOW</a>
-                          </div>
+
                         </div>
                         </div>
 
@@ -62,6 +62,9 @@
                          <img ng-src="{[items.owlPic]}">
                        </div>
 
+                      </div>
+                      <div class=" btn-book">
+                        <a show-booking-widget href="">BOOK NOW</a>
                       </div>
 
                     </div>
