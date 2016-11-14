@@ -1,6 +1,7 @@
 {
-    "icon_name": { "required": true },
-    "icon_href": {"type": "image" },
+    "icon": { "required": true },
+    "alt_tag": { "type": "image" },
+    "link_url": {"type": "image" },
     "order": {"type": "integer" }
 }
 
