@@ -177,6 +177,7 @@ $(document).ready(function(){
           $("#dateRange").html(formattedArrDate+" - "+formattedDispDate);
           $("#availableRoomsDiv").html('');
           $("#selectedRoomImage").val('');
+          $('.loader').show();
           $.ajax({
                     url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
                     type: 'GET',
@@ -186,8 +187,9 @@ $(document).ready(function(){
                     },
                     contentType: 'application/json; charset=utf-8',
                     /*beforeSend: function(){
-                    $('.loader').show();
+                    $('.loader').hide();
                     },*/
+
                     success: function (roomsResponse) {
 
                         //Fetch all the dynamic parameters from response
@@ -229,7 +231,7 @@ $(document).ready(function(){
                                 var valueAdd_Hid = valueAddStr = '';
                                 var cancelPolicy = roomObj.RateInfos.RateInfo.cancellationPolicy;
 
-                                if(roomObj.ValueAdds['@size'] >= 1)
+                                if(typeof roomObj.ValueAdds != "undefined" && roomObj.ValueAdds['@size'] >= 1)
                                 {
                                   var valAdd = roomObj.ValueAdds.ValueAdd;
                                     if($.isArray(valAdd))
@@ -243,7 +245,6 @@ $(document).ready(function(){
                                     }
                                     valueAddStr = valueAdds.join();
                                 }
-
 
                                 //get room image
                                 getRoomImage(roomTypeId);
@@ -277,14 +278,16 @@ $(document).ready(function(){
                                  roomsWidget += '<div class="bookin-widget_avalible-rooms"><div class="bookin-widget_avalible-room-details" id="avalible-room-details" data-roomTypeId="'+roomTypeId+'"><a href="javascript:void(0);">'+roomImg+'<div class="room-name_price">'+roomNameDiv+'<div class="clearfix"></div><div class=" room-price"><span class="checkout-details-regular-price"><span  class="checkout-details-lightfont-dash">$'+Math.round(nightPrice)+'</span>/night</span></div></a> <input type="submit" value="Select" class="select-room"/></div></div>'+roomSrc_Hid+roomName_1Hid+roomName_2Hid+totalPriceHid+nightPriceHid+nightlyRateTotalHid+taxfeesHid+rateKey_Hid+rateCode_Hid+roomCode_Hid+bedTypeId_Hid+smokingPref_Hid+valueAdds_Hid+cancelPolicy_Hid+'</div>';
 
                               });
-
+                              $('.loader').hide();
                               //Append the Room Widgets to the main widget
                                 $("#availableRoomsDiv").html(roomsWidget);
 
                             } //end if
                       }else{
+                        $('.loader').hide();
                           $("#availableRoomsDiv").html(countRooms);
                           $("#availableRoomsDiv").html('<div class="no-rooms">No Rooms Available</div>');
+
                       }
                     },
                     error: function (error) {
