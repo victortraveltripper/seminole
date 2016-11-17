@@ -229,12 +229,12 @@ function bookNow(roomTypeId)
   };
 
   $.ajax({
-            url: "https://qapi.reztrip.com/eanbook",
+            url: "https://api.reztrip.com/eanbook",
             type: 'POST',
             dataType: 'json',
             data: JSON.stringify(booknow_postdata),
             headers: {
-              "x-api-key": "too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1", "Content-Type": "application/json; charset=utf-8",
+              "x-api-key": "ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8", "Content-Type": "application/json; charset=utf-8",
               "Accept": "application/json", "Connection": "keep-alive"
             },
             contentType: "application/json",
@@ -351,11 +351,11 @@ function bookNow(roomTypeId)
 function getRoomDetails(roomTypeId)
 {
     $.ajax({
-            url: "https://qapi.reztrip.com/eanroom/"+roomTypeId,
+            url: "https://api.reztrip.com/eanroom/"+roomTypeId,
             type: 'GET',
             dataType: 'json',
             headers: {
-                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+                'x-api-key': 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
             },
             contentType: 'application/json; charset=utf-8',
             success: function (response) {
@@ -409,12 +409,12 @@ function getRoomImage(roomTypeId){
   var roomSrc = '';
   $("#selectedRoomImage").val('');
   $.ajax({
-            url: "https://qapi.reztrip.com/eanroomimages/"+roomTypeId,
+            url: "https://api.reztrip.com/eanroomimages/"+roomTypeId,
             dataType: 'json',
             type: 'GET',
             async: false,
             headers: {
-                'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+                'x-api-key': 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
             },
             success: function (responseObj) {
               if(responseObj.success === true){
@@ -641,11 +641,11 @@ function getBestAvarageBasePrice()
   var avgBaseRates = [];
 
   $.ajax({
-  url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
+  url: "https://api.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
   type: 'GET',
   dataType: 'json',
   headers: {
-      'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+      'x-api-key': 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
   },
   contentType: 'application/json; charset=utf-8',
 
