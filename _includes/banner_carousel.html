@@ -1,14 +1,13 @@
 <section class="clearfix" >
   <div id="topSlider">
   <div class="banner-heading">
-  <h1 class="owl-heading  text-center"><span class="shadow">THE <br class="hiddenbrk">{[hotelInfo.name]}</span></h1>
-      <!--div class="owl-social-icons">
+  <h1 class="owl-heading  text-center"> <span class="shadow"> THE <br class="hiddenbrk"> {[hotelInfo.name]} </span></h1>
+      <div class="owl-social-icons">
         {% for social_icons in site.data._models.social_icons %}
-          <a class= "{{ social_icons.icon_name }}" aria-hidden="true" href = "{{ social_icons.icon_href }}" target = "_blank"  data-live-edit-model='social_icons'
-data-live-edit-model-instance='{{social_icons.id}}.json' ></a>
-        <!--img src="" alt=""/-->
-        <!--{% endfor %}
-      </div-->
+           <a class= "{{ social_icons.icon }}" target="_blank" data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.link_url }}"></a>
+           <img src="" alt=""/-->
+        {% endfor %}
+      </div>
     </div>
   <div class="owl-carousel" id="Slider">
 
