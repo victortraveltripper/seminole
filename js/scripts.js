@@ -1,7 +1,7 @@
 // JavaScript Document
 window.apiConfig = {
-    host: 'https://qapi.reztrip.com',
-    key: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+    host: 'https://api.reztrip.com',
+    key: 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
 }
 
 //Rooms
