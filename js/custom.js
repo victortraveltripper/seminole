@@ -179,11 +179,11 @@ $(document).ready(function(){
           $("#selectedRoomImage").val('');
           $('.loader').show();
           $.ajax({
-                    url: "https://qapi.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
+                    url: "https://api.reztrip.com/eansearch?eanHotelId="+hotelId+"&arrivalDate="+arrivalDate+"&departureDate="+dispatchDate+"&numberOfAdults="+numAdults+'&numberOfChildren='+numChilds,
                     type: 'GET',
                     dataType: 'json',
                     headers: {
-                        'x-api-key': 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+                        'x-api-key': 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
                     },
                     contentType: 'application/json; charset=utf-8',
                     /*beforeSend: function(){
