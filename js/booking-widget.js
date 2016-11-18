@@ -101,7 +101,7 @@ $('.bookin-widget_booknow').click(function(){
 $('.back').click(function(){
    $('#step1').fadeIn(500);
    $('#step2').fadeOut(500);
-
+   $('.loader').hide();
 });
 
 $('.back1').click(function(){
@@ -117,6 +117,9 @@ $('.back2').click(function(){
    $('#step4').fadeOut(500);
 });
 
+  $('.booking-widget_close').click(function(){
+    $('.loader').hide();
+  });
 
 
 });
@@ -417,6 +420,7 @@ function getRoomImage(roomTypeId){
                 'x-api-key': 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
             },
             success: function (responseObj) {
+              //alert("hello");
               if(responseObj.success === true){
                   //var i = 0;
                 //$.each(responseObj.images, function(name, imgObj) {
@@ -424,7 +428,12 @@ function getRoomImage(roomTypeId){
                 //  if( i == 0){
                     //alert(responseObj.images[0].smallUrl);
                     //roomSrc = responseObj.images[0].thumbUrl;
-                    roomSrc = responseObj.images[0].smallUrl;
+
+                    if(typeof responseObj.images == "undefined" || typeof responseObj.images[0] == "undefined" || responseObj.images == "null")
+                        roomSrc = '/images/location.jpg';
+                    else
+                        roomSrc = responseObj.images[0].smallUrl;
+
                     $("#selectedRoomImage").val(roomSrc);
                     //alert("core :"+roomSrc);
               //$("."+roomTypeId+"_show_image_room_dtls").attr('src',roomSrc);
@@ -659,22 +668,32 @@ function getBestAvarageBasePrice()
           countRooms = roomsArr.length;
 
           var roomsWidget= '';
-         if(countRooms > 0)
+         if(Array.isArray(roomsArr))
          {
-            $.each(roomsArr, function(name, roomObj) {
-              //Fetch all the dynamic parameters from response
-              var averageBaseRate = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@averageBaseRate']);
-              avgBaseRates.push(parseFloat(averageBaseRate));
+            if(countRooms > 0)
+            {
+                $.each(roomsArr, function(name, roomObj) {
+                  //Fetch all the dynamic parameters from response
+                  var averageBaseRate = priceFormat(roomObj.RateInfos.RateInfo.ChargeableRateInfo['@averageBaseRate']);
+                  avgBaseRates.push(parseFloat(averageBaseRate));
 
-            });
+                });
+                  var bestRate = Math.min.apply(Math, avgBaseRates);
+                  //Append the Room Widgets to the main widget
+                  $("#bestnight_price").html('$'+bestRate);
+            }
+          } //end if
+          else {
+            var averageBaseRate = priceFormat(roomsArr.RateInfos.RateInfo.ChargeableRateInfo['@averageBaseRate']);
+            avgBaseRates.push(parseFloat(averageBaseRate));
             var bestRate = Math.min.apply(Math, avgBaseRates);
             //Append the Room Widgets to the main widget
-              $("#bestnight_price").html('$'+bestRate);
-
-          } //end if
+            $("#bestnight_price").html('$'+bestRate);
+          }
     }else{
        $("#bestnight_price").html("");
     }
+    console.log("hello"+avgBaseRates);
   },
   error: function (error) {
 
