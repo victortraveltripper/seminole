@@ -1069,9 +1069,12 @@ section{
 		}
 	}
 
+
 	p{
 		width:80%;
 		margin:auto;
+		overflow: hidden;
+    	height: 274px;
 		@media (max-width:980px){
 			width:80%;
 		}
@@ -1083,6 +1086,13 @@ section{
 		}
 		br{display: none;}
 	}
+	b, strong {
+    font-weight: bold;
+    display: block;
+    padding-top: 22px;
+    padding-bottom: 12px;
+    overflow: hidden;
+    }
 
 }
 
