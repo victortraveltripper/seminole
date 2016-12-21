@@ -232,12 +232,12 @@ function bookNow(roomTypeId)
   };
 
   $.ajax({
-            url: "https://api.reztrip.com/eanbook",
+            url: "",
             type: 'POST',
             dataType: 'json',
             data: JSON.stringify(booknow_postdata),
             headers: {
-              "x-api-key": "ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8", "Content-Type": "application/json; charset=utf-8",
+              "x-api-key": "", "Content-Type": "application/json; charset=utf-8",
               "Accept": "application/json", "Connection": "keep-alive"
             },
             contentType: "application/json",
