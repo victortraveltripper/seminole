@@ -45,45 +45,16 @@ layout: default
 					<li>
 						<a class="page-scroll" href="/#Location">Location</a>
 					</li>
-					<li>
-						<a class="page-scroll" href="/#Gallery">Gallery</a>
-					</li>
-                    <li>
-                        <a class="page-scroll" href="/#Contact">Contact</a>
-                    </li>
-
-                    <ul class="nav-social pull-right">
-
-						<a class="fa fa-facebook" aria-hidden="true"></a>
-
-						<a class="fa fa-twitter" aria-hidden="true"></a>
-
-						<a class="fa fa-google-plus" aria-hidden="true"></a>
-
-						<a class="fa fa-instagram" aria-hidden="true"></a>
-
-						<a class="fa fa-pinterest-p" aria-hidden="true"></a>
-					</ul>
-
-          <div class="booking">
-                 <a show-booking-widget href="#">BOOK NOW</a>
-                 </div>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- /.navbar-collapse -->
-        </div>
-
-    </nav>
+ <a show-booking-widget class="mobile" href="#">
+			{% regionblock bookNowText type=header %}
+			 BOOK NOW
+			{% endregionblock %}
+		     </a>
 
 
 <article class="terms clearfix">
 <div class="container">
-
+{% regionblock content %}
 <h3>Privacy Policy</h3>
 	<p><b>{[hotelInfo.name]}</b> (“Hotel,” “we,” “us,” or “our”) is committed to protecting your privacy when you visit and/or interact with our website located at www.{[hotelInfo.name]}.com . As such, our privacy practices for the Site are explained in this Privacy Policy (this “Policy”). This Policy contains details about how we collect, use, and share information from you when you use the Site.</p>
 	<p>
@@ -206,7 +177,7 @@ While we take the issue of protecting your PII seriously, you should exercise di
 <h5>CONTACT</h5>
 <p>If you have any questions regarding this Policy, please contact us at: _______________
 </p>
-
+{% endregionblock %}
 </div>
 </article>
 
