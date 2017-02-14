@@ -16,7 +16,11 @@
 
                  </a>
 
-                 <a show-booking-widget class="mobile" href="#">BOOK NOW</a>
+                 <a show-booking-widget class="mobile" href="#">
+			{% regionblock bookNowText type=header %}
+			 BOOK NOW
+			{% endregionblock %}
+		     </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,22 +31,22 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#About">About</a>
+                        <a class="page-scroll" href="#About">{% regionblock nav1 type=header%}About{% endregionblock %}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#Rooms">Rooms</a>
+                        <a class="page-scroll" href="#Rooms">{% regionblock nav2 %}Rooms{% endregionblock %}</a>
                     </li>
 					<li>
-						<a class="page-scroll" href="#Facilities">Facilities</a>
+						<a class="page-scroll" href="#Facilities">{% regionblock nav3 %}Facilities{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Amenities">Amenities</a>
+						<a class="page-scroll" href="#Amenities">{% regionblock nav4 %}Amenities{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Location">Location</a>
+						<a class="page-scroll" href="#Location">{% regionblock nav5 %}Location{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Gallery">Gallery</a>
+						<a class="page-scroll" href="#Gallery">{% regionblock nav6 %}Gallery{% endregionblock %}</a>
 					</li>
                     <li>
                         <a class="page-scroll" href="#Contact">Contact</a>
@@ -62,7 +66,9 @@
 					</ul>
 
           <div class="booking">
-                 <a show-booking-widget href="#">BOOK NOW</a>
+                 <a show-booking-widget href="#">{% regionblock bookNowText2 type=header %}
+			 BOOK NOW
+			{% endregionblock %}</a>
                  </div>
 
                 </ul>
