@@ -20,10 +20,7 @@
 </div>
 
 <div class="middle">
-   {% for address_details in site.data._models.full_address %}
-      <h5>{{ address_details.heading }}</h5>
-      <div  class="gap"> {{ address_details.address }} </div>
-   {% endfor %}
+  {% region full_address %}
 </div>
 
 </div>
