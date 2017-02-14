@@ -107,7 +107,7 @@
       <div class='content-area'>
         <ul>
          {% for item in site.data._models.room_amenities %}
-          <li> {{ item.name }} </li>
+          <li data-live-edit-model='room_amenities' data-live-edit-model-instance='{{item.id}}.json' > {{ item.name }} </li>
          {% endfor %}
         </ul>
       </div>
