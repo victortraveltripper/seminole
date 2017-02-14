@@ -8,14 +8,14 @@
   <div class="footer-logo">
 
 
-	<h3>{%regionblock hotel_logo_text type=header %}HOTEL NAME{%endregionblock%}</h3>
+	<h3>{%regionblock hotel_logo_text, type:header %}HOTEL NAME{%endregionblock%}</h3>
     <!--span class="logo-tag">{% region logo_text %} </span-->
 
   </div>
   </div>
 
   <div class="col-sm-3 f-social-links">
-    <h3>{%regionblock social_header type=header %}Follow Us{%endregionblock%}</h3>
+    <h3>{%regionblock social_header, type:header %}Follow Us{%endregionblock%}</h3>
     {% for social_icons in site.data._models.social_icons %}
       <a class= "{{ social_icons.icon }}" target="_blank" data-live-edit-model='social_icons'
 data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.link_url }}"></a>
