@@ -37,5 +37,5 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
   </div>
 </footer>
 <section class="copyrights">
-<div class="col-sm-12 text-center">{% for copy_rights in site.data._models.copy_rights %}{{ copy_rights.content }}{% endfor %}  | <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a> | <a href="/privacypolicy" target="_blank">Privacy Policy</a></div>
+<div class="col-sm-12 text-center">{%regionblock copy_right type=header %} © 2016 | All Rights Reserved {% endregionblock %} | <a href="/terms-and-conditions" target="_blank">Terms & Conditions</a> | <a href="/privacypolicy" target="_blank">Privacy Policy</a></div>
 </section>
