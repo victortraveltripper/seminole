@@ -98,7 +98,7 @@ data-live-edit-model-instance='{{item.id}}.json' >
 
   <article class="facility-pics clearfix ">
     {% for image_instance in site.data._models.facilities_images %}
-    <div class="col-sm-6">
+    <div class="col-sm-6" data-live-edit-model='facilities_images' data-live-edit-model-instance='{{image_instance.id}}.json' >
         <img src = {{ image_instance.image.url }} >
         <div class="facility-pics-info">
            {{ image_instance.text }}
