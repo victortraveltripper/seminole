@@ -8,17 +8,14 @@
   <div class="footer-logo">
 
 
-    {% for item in site.data._models.hotel_logo_text %}
-		  {{ item.name}}
-	  {% endfor %}
-
+	<h3>{%regionblock hotel_logo_text type=header %}HOTEL NAME{%endregionblock%}</h3>
     <!--span class="logo-tag">{% region logo_text %} </span-->
 
   </div>
   </div>
 
   <div class="col-sm-3 f-social-links">
-    <h3>Follow Us</h3>
+    <h3>{%regionblock social_header type=header %}Follow Us{%endregionblock%}</h3>
     {% for social_icons in site.data._models.social_icons %}
       <a class= "{{ social_icons.icon }}" target="_blank" data-live-edit-model='social_icons'
 data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.link_url }}"></a>
@@ -27,16 +24,15 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
 
    <div class="col-sm-3">
    {% for contact in site.data._models.contact %}
+	<div  data-live-edit-model='contact' data-live-edit-model-instance='{{contact.id}}.json'>
       <h3>{{ contact.heading }}</h3>
       {{ contact.content }}
+	   </div>
    {% endfor %}
    </div>
 
   <div class="col-sm-3">
-   {% for address_details in site.data._models.full_address %}
-      <h3>{{ address_details.heading }}</h3>
-      {{ address_details.address }}
-   {% endfor %}
+  	 {% region full_address %}
    </div>
   <div class="clearfix"></div>
   </div>
