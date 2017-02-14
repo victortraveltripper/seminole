@@ -23,12 +23,9 @@ data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" hre
   </div>
 
    <div class="col-sm-3">
-   {% for contact in site.data._models.contact %}
-	<div  data-live-edit-model='contact' data-live-edit-model-instance='{{contact.id}}.json'>
-      <h3>{{ contact.heading }}</h3>
-      {{ contact.content }}
-	   </div>
-   {% endfor %}
+   {% regionblock social_header %}
+      <h3>Contact</h3>
+      <p><a href="callto:(###)###-####">(###)###-####</a><br>  <a href="mailto:email@host.com">email@host.com</a></p>
    </div>
 
   <div class="col-sm-3">
