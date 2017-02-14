@@ -9,11 +9,11 @@
                     <span class="icon-bar bottom-bar"></span>
                 </button>
                 <a href="/" class="navbar-brand page-scroll" href="#page-top">
-		    <h3>{%regionblock hotel_logo_text type=header %}HOTEL NAME{%endregionblock%}</h3>
+		    <h3>{%regionblock hotel_logo_text, type:header %}HOTEL NAME{%endregionblock%}</h3>
                 </a>
 
                  <a show-booking-widget class="mobile" href="#">
-			{% regionblock bookNowText type=header %}
+			{% regionblock bookNowText, type:header %}
 			 BOOK NOW
 			{% endregionblock %}
 		     </a>
@@ -27,25 +27,25 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#About">{% regionblock nav1 type=header%}About{% endregionblock %}</a>
+                        <a class="page-scroll" href="#About">{% regionblock nav1, type:header%}About{% endregionblock %}</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#Rooms">{% regionblock nav2 %}Rooms{% endregionblock %}</a>
+                        <a class="page-scroll" href="#Rooms">{% regionblock nav2, type:header %}Rooms{% endregionblock %}</a>
                     </li>
 					<li>
-						<a class="page-scroll" href="#Facilities">{% regionblock nav3 %}Facilities{% endregionblock %}</a>
+						<a class="page-scroll" href="#Facilities">{% regionblock nav3, type:header %}Facilities{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Amenities">{% regionblock nav4 %}Amenities{% endregionblock %}</a>
+						<a class="page-scroll" href="#Amenities">{% regionblock nav4, type:header %}Amenities{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Location">{% regionblock nav5 %}Location{% endregionblock %}</a>
+						<a class="page-scroll" href="#Location">{% regionblock nav5, type:header %}Location{% endregionblock %}</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#Gallery">{% regionblock nav6 %}Gallery{% endregionblock %}</a>
+						<a class="page-scroll" href="#Gallery">{% regionblock nav6, type:header %}Gallery{% endregionblock %}</a>
 					</li>
                     <li>
-                        <a class="page-scroll" href="#Contact">Contact</a>
+                        <a class="page-scroll" href="#Contact">{% regionblock nav7, type:header %}Contact{%endregionblock%}</a>
                     </li>
 
                     <ul class="nav-social pull-right">
@@ -62,7 +62,7 @@
 					</ul>
 
           <div class="booking">
-                 <a show-booking-widget href="#">{% regionblock bookNowText2 type=header %}
+                 <a show-booking-widget href="#">{% regionblock bookNowText2, type:header %}
 			 BOOK NOW
 			{% endregionblock %}</a>
                  </div>
