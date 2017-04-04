@@ -1,3 +1,7 @@
+plugins_dir:
+  - _plugins_core
+  - _plugins
+
 api_header_key: 'x-api-key'
 api_headerkey_value: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
 

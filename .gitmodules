@@ -1,0 +1,4 @@
+[submodule "_plugins-core"]
+	path = _plugins-core
+	url = https://github.com/traveltripperweb/cms-jekyll-plugins
+	branch = sub
