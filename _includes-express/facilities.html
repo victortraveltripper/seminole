@@ -1,0 +1,39 @@
+<section id="Facilities" class="Facilities clearfix">
+
+  <div class="container">
+    <div class="row">
+      <h6>{% region facilities_heading %}</h6>
+      <!--h2>{% region facilities_subheader %}</h2-->
+      <div class='content-area content-area-intro'>
+        {% region facilities_intro %}
+      </div>
+    </div>
+    <div class="row">
+    {% for item in site.data._models.facilities | sort: "order" %}
+      {% assign mod_idx = forloop.index0 | modulo:2 %}
+      {% if mod_idx == 0 %}
+        </div>
+        <div class="row">
+      {% endif %}
+        <div class='col-sm-6 col-xs-12 {{ item.name }}' data-live-edit-model='facilities'
+data-live-edit-model-instance='{{item.id}}.json' >
+          <h4> {{ item.name }} </h4>
+          <div class='content-area'>
+            <p> {{ item.content }} </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <article class="facility-pics clearfix ">
+    {% for image_instance in site.data._models.facilities_images %}
+    <div class="col-sm-6" data-live-edit-model='facilities_images' data-live-edit-model-instance='{{image_instance.id}}.json' >
+        <img src = {{ image_instance.image.url }} >
+        <div class="facility-pics-info">
+           {{ image_instance.text }}
+        </div>
+    </div>
+    {% endfor %}
+  </article>
+</section>

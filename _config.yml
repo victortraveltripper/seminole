@@ -1,3 +1,6 @@
+hotel_id: KEY24N
+portal_id: 24northhotel
+
 plugins_dir:
   - _plugins-core
   - _plugins
@@ -5,6 +8,14 @@ plugins_dir:
 layouts_dir:
   - _layouts-express
   - _layouts
+  
+data_dir: 
+  - _data-express
+  - _data
+  
+includes_dir:
+  - _includes-express
+  - _includes
 
 api_header_key: 'x-api-key'
 api_headerkey_value: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
@@ -22,6 +33,10 @@ markdown: kramdown
 
 exclude:
   - 'sitemap.json'
+  - 'models.json'
+  - 'media.json'
+  - 'old_media.json'
+  - 'assets'
 
 keep_files: ['assets']
 rsync_copy: ['_assets']

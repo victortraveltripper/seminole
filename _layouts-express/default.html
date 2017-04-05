@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   {% include head.html %}
+
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" >
+    {% include nav.html %}
+    {{ content }}
+    {% include footer.html %}    
+    {% include booking-widget.html %}
+    <input type="hidden" id="selectedRoomTypeId" name="selectedRoomTypeId" value="" />
+    <input type="hidden" id="selectedRoomImage" name="selectedRoomImage" value="" />
+
+    {% include scripts.html %}
+  </body>
+</html>
