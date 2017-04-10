@@ -21,18 +21,19 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
-//** Background color for '<body>'.
+//** Background color for `<body>`.
 $body-bg:               #fff !default;
-//** Global text color on '<body>'.
+//** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
-//** Link hover color set via 'darken()' function.
+//** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
 $link-hover-decoration: underline !default;
@@ -79,7 +80,7 @@ $headings-color:          inherit !default;
 
 // [converter] If $bootstrap-sass-asset-helper if used, provide path relative to the assets load path.
 // [converter] This is because some asset helpers, such as Sprockets, do not work with file-relative paths.
-$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "/fonts/") !default;
+$icon-font-path: if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/bootstrap/") !default;
 
 //** File name for all font files.
 $icon-font-name:          "glyphicons-halflings-regular" !default;
@@ -115,7 +116,7 @@ $component-active-color:    #fff !default;
 //** Global background color for active items (e.g., navs or dropdowns).
 $component-active-bg:       $brand-primary !default;
 
-//** Width of the `border` for generating carets that indicator dropdowns.
+//** Width of the `border` for generating carets that indicate dropdowns.
 $caret-width-base:          4px !default;
 //** Carets increase slightly in size for larger components.
 $caret-width-large:         5px !default;
@@ -296,14 +297,14 @@ $screen-phone:               $screen-xs-min !default;
 
 // Small screen / tablet
 //** Deprecated `$screen-sm` as of v3.0.1
-$screen-sm:                  1024px !default;
+$screen-sm:                  768px !default;
 $screen-sm-min:              $screen-sm !default;
 //** Deprecated `$screen-tablet` as of v3.0.1
 $screen-tablet:              $screen-sm-min !default;
 
 // Medium screen / desktop
 //** Deprecated `$screen-md` as of v3.0.1
-$screen-md:                  1025px !default;
+$screen-md:                  992px !default;
 $screen-md-min:              $screen-md !default;
 //** Deprecated `$screen-desktop` as of v3.0.1
 $screen-desktop:             $screen-md-min !default;
@@ -343,7 +344,7 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 // Small screen / tablet
 $container-tablet:             (720px + $grid-gutter-width) !default;
 //** For `$screen-sm-min` and up.
-$container-sm:                 100%;
+$container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
 $container-desktop:            (940px + $grid-gutter-width) !default;
@@ -867,5 +868,7 @@ $blockquote-border-color:     $gray-lighter !default;
 $page-header-border-color:    $gray-lighter !default;
 //** Width of horizontal description list titles
 $dl-horizontal-offset:        $component-offset-horizontal !default;
+//** Point at which .dl-horizontal becomes horizontal
+$dl-horizontal-breakpoint:    $grid-float-breakpoint !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;

@@ -1,0 +1,35 @@
+$banner-height: 600px;
+
+#banner-carousel {
+	position: relative;
+	min-height: 400px;
+  background: $background-dark;
+	.banner-heading{
+		padding-top: $banner-height / 4;
+    height: $banner-height;
+    position: absolute;
+		z-index: 1;
+		text-align: center;
+		left: 15%;
+    right: 15%;
+    margin: 0px auto;    
+	}
+}
+
+#banner-carousel-slides{
+	.item{
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		height: $banner-height;
+  	img{
+  		display: none;
+  	}
+	}
+  .carousel-control {
+    opacity: 1.0;
+    margin: 0 5%;
+  }
+}
+
+

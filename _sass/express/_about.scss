@@ -1,0 +1,33 @@
+#About {
+	.col-sm-6 p {
+		@media (max-width:767px){
+			padding-top:26px;
+		}
+		@media (max-width:980px){
+			padding-right:0px;
+		}
+		padding-top:30px;
+		padding-right:16px;
+		line-height:28px;
+		letter-spacing: 1px;
+	  }
+
+	.social-icons{
+		margin: 30px auto;
+		a {
+			padding:10px;
+			color:#000;
+		}
+	}
+  
+
+	.about-pics	{
+    p {
+      margin: 0;
+    }
+		img{
+			width:100%;
+			height:100%;
+		}
+	 }
+ }

@@ -1,0 +1,153 @@
+$booking-button-width: 140px;
+$nav-item-vertical-padding: 15px;
+
+
+nav.navbar-default {
+  background:$nav-background;
+  border:none;
+  
+  .container-fluid {
+    max-width: 1200px;
+  } 
+  
+  padding: 20px 0;
+  -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
+  
+  &.top-nav-collapse {
+    padding: 0px 0px;
+  }    
+  
+  
+  .navbar-header {
+    
+  	.navbar-brand {
+  		margin: 0;
+  		width:200px;
+  		margin-left: 10px!important;
+      padding:0px;
+      height: auto;
+      
+  		h3{
+  			margin: 0px;
+  			color: #04082f;
+  			text-align: left;
+  			padding: 12px 0px 3px;
+  			font-size: 18px;
+        line-height: 1.4em;
+        
+        height: $nav-item-vertical-padding * 2 + 1 + $nav-item-font-size;
+        
+        overflow: hidden;
+  			text-transform: uppercase;
+  			font-family:$primary-font-med;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+  	}
+    
+    
+    .navbar-toggle {
+      border: none;
+      background: transparent !important;
+      &:hover {
+        background: transparent !important;
+      }
+      
+      // For making hamburger=>X menu icon
+      .icon-bar {
+      	width: 22px;
+      	transition: all 0.2s;
+      	transform-origin: 10% 10%;
+      }
+      .top-bar {
+      	transform: rotate(45deg);
+      }
+      .middle-bar {
+      	opacity: 0;
+      }
+      .bottom-bar {
+      	transform: rotate(-45deg);
+      	transform-origin: 10% 90%;
+      }
+      &.collapsed {
+      	.top-bar {
+      		transform: rotate(0);
+      	}
+      	.middle-bar {
+      		opacity: 1;
+      	}
+      	.bottom-bar {
+      		transform: rotate(0);
+      	}
+      }
+  
+    }
+  }
+  
+  
+  .navbar-collapse {
+  	background:$nav-background;
+		width:194px;
+		right:30px;
+		max-height:470px;
+		position: absolute;
+    .navbar-nav {      
+      width: $booking-button-width; //So it lines up with the book-now edge
+      a {
+        @include nav-styles;  
+        padding:6px 20px 6px 0px;
+      }  
+    }
+  	@media (min-width: $nav_breakpoint) {
+  		width:auto;
+  		max-height: none;
+  		position: static;
+      .navbar-nav {
+        width:auto;
+        li {
+          a {
+            line-height: 1em;
+            padding: ($nav-item-vertical-padding + 1) 10px $nav-item-vertical-padding;
+          }
+          &:last-child {
+            a {
+              padding-right: 0px;
+            }
+          }
+        }
+      }     
+  	}
+  }
+  
+  .booking {
+    letter-spacing: 1.5px;
+    margin-left: 20px;
+  	a.book-now-button { 
+      padding:($nav-item-vertical-padding + 1) 15px $nav-item-vertical-padding; 
+      line-height: 1em;
+      font-size: $nav-item-font-size;
+      font-family: $primary-font-med;
+      
+      width: $booking-button-width;
+      text-align: center;
+      display:block;
+      background: $book-now-background;
+      color: $book-now-color;
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }  
+}
+
+
+
+
+
+
+
+

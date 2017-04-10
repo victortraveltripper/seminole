@@ -1,7 +1,7 @@
 {
-    "id": { "type": "integer" },
+    "name": {"required": true},
     "image": { "type": "image" },
-    "image_href": { "type": "image" },
-    "order": {"type": "integer" }
+    "order": {"type": "integer" },
+    "hidden": {"type": "boolean"}
 }
 

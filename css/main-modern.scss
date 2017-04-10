@@ -5,13 +5,6 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "bootstrap",
+        "bootstrap-core",
         "modern-variables",
-    		"main",
-    		"gallery",
-    		"owl.carousel",
-    		"lightbox",
-    		"owl.theme",
-    		"scrolling-nav",
-    		"booking-widget",
-        "print";
+    		"main"
