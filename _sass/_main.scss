@@ -1,4 +1,5 @@
 $nav_breakpoint: $screen_sm;
+$booking-button-width: 140px;
 
 
 html {
@@ -63,19 +64,22 @@ h3, h4 {
   color: $header-dark;
   letter-spacing: 1.5px;
 }
-h5 {
+.h5 {
   font-family: $primary-font-med;
   color: $header-dark;
   font-size: 16px;  
-  letter-spacing: 1.5px;
+  letter-spacing: 1.5px;  
+}
+h5 {
+  @extend .h5;
+}
+h6 {
+	letter-spacing: 2px;
 }
 
 /*section*/
-section{
+section, footer {
 	padding: 30px 0;
-	h6{
-		letter-spacing: 2px;
-	}
 }
 
 p {
@@ -86,8 +90,8 @@ p {
 
 .content-area, .content-area-intro {
   width: 80%;
-  max-width: 900px;
-  min-width: 300px;
+  max-width: 750px;
+  min-width: 290px;
   margin: auto;
   display: block;
 }
@@ -119,7 +123,7 @@ p {
 			margin:20px  6px;
 			padding:10px 0px;
 			a {
-        font-family: $primary-font-med;
+        @extend .h5;
 				color: $tab-inactive;
 			}
 			a:hover {
@@ -136,6 +140,32 @@ p {
 	}
 }
 
+
+a.book-now-button { 
+  letter-spacing: 1.5px;
+  line-height: 1em;
+  font-family: $primary-font-med;
+  
+  width: $booking-button-width;
+  text-align: center;
+  display:block;
+  background: $book-now-background;
+  color: $book-now-color;
+  &:hover, &:active {
+    text-decoration: none;
+  }
+}
+
+figcaption {
+  font-family: $primary-font;
+  color: $text-dark-soft;
+  margin: 3em 0;
+  width: 120px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
 @import 'express/nav';
 
 @import 'express/banner-carousel';
@@ -146,20 +176,18 @@ p {
 
 @import 'express/rooms';
 
-//@import 'express/general-amenities';
 
+@import 'express/facilities';
 
-//@import 'express/facilities';
+@import 'express/hotel-amenities';
 
-//@import 'express/hotel-amenities';
-
-//@import 'express/location';
+@import 'express/location';
 
 //@import 'express/gallery';
 
-//@import 'express/footer';
+@import 'express/footer';
 
-//@import 'express/booking-widget';
+@import 'express/booking-widget';
 
 
 

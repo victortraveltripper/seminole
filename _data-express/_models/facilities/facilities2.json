@@ -1,0 +1,6 @@
+{
+    "name": "The Restaurant",
+    "description":  "Sample local specialties at our restaurant. Dining room opens from 6am to 11pm and with 24 hour room service available.",
+    "order": 1,
+    "hidden": false
+}

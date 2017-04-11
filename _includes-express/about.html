@@ -14,11 +14,10 @@
           {% region about_us_col_2 %}
         </div>
       </div>
-      {% assign social_icons = site.data._models.social_icons | sort: "order" %}
       {% if social_icons.size > 0 %}
         <div class="col-sm-12 text-center social-icons">
           <h5>{% regionblock follow_us_heading, type:header %}Follow Us{% endregionblock %}</h5>
-          {% for social_icon in site.data._models.social_icons %}
+          {% for social_icon in social_icons %}
             <a class= "{{ social_icon.icon }}" target="_blank"  data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icon.id}}.json'  aria-hidden="true" href = "{{ social_icon.link_url }}"></a>
           {% endfor %}
         </div>

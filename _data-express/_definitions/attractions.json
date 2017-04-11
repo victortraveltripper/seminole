@@ -1,5 +1,13 @@
 {
-    "id": { "type": "integer" },
     "name": {"type": "string" },
+    "description": {"type": "text"},
+    "category": {"type": "string" },
+    "image": {"type": "image"},
+    "address1": { "type": "string"},
+    "address2": { "type": "string"},
+    "city": { "type": "string"},
+    "state": { "type": "string"},
+    "country": { "type": "string"},
+    "zip": { "type": "string"},
     "order": {"type": "integer" }
 }

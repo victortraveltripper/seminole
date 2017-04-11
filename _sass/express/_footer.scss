@@ -1,5 +1,5 @@
 footer{
-	background:$color;
+	background:$background-dark;
 	padding:56px 50px;
 	font-family:'NeueHaasGroteskDisp W01';
 	font-size:14px;
@@ -20,32 +20,23 @@ footer{
 	}
 }
 
-.inner-content{
+.inner-content {
 
-
-	background:$white;
+	background:$body-background;
 	padding:40px 0px;
 
-	.inner-content:before,
-	.inner-content:after
-	{
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-	a{
+	a { 
 		//color:$color;
 		line-height:24px;
 		letter-spacing:1px;
 	}
 
-	.footer-logo{
+	.footer-logo {
 		vertical-align:middle;
 		text-align:center;
 		padding:30px 0px 30px 0px;
 		border-right:1px solid #b7b7b7;
-		h3{
+		h3 {
 			margin: 0px;
 			color: #04082f;
 			text-align: center;
@@ -55,40 +46,25 @@ footer{
 			font-family:'NHaasGroteskDSW01-65Md';
 			font-weight:500;
 		}
-		.logo-tag{
-			font-size: 11px;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-			border-top: 1px solid #000;
-			border-bottom: 1px solid #000;
-			padding: 4px 0px;
-		}
-		@media (max-width:648px){
-			display:none;
-		}
-		@media screen and(max-width:786px){
-			img{ width:100%;}
-		}
 	}
 
-	p{
-		font-size:14px;
-		line-height:24px;
+	p {
+		line-height:1.9em;
 	}
 
 
 	.f-social-links{
-		a{
+		a {
 			padding:5px 20px 10px 0px;
 		}
 	}
 }
-.copyrights{
-	font-family:'NeueHaasGroteskDisp W01';
+
+.copyrights {
 	font-size:12px;
 	padding:20px 0px;
 	text-align:center;
 	letter-spacing: 1px;
-	a{color:#333333}
+	a { color: $text-dark }
 
 }

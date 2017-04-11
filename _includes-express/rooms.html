@@ -1,8 +1,9 @@
+
 <section id="Rooms" class="rooms-suites clearfix">
   <script type="text/javascript">
     //Rooms
     jQuery(document).ready(function(){
-
+      
       rt3.getAllRooms().then(function(resp) {
         console.log(resp);
         var $list = $("#rooms-list");
@@ -10,10 +11,12 @@
         var $carouselIndicators = $("#carousel-indicators")
         for(var i=0, ii=resp.rooms.length; i<ii; i++) {
           var room = resp.rooms[i];
+          var roomNames = (room.name || '').split('|');
+          var roomName = roomNames[roomNames.length - 1]
           var roomImage = room.image_info[0] && room.image_info[0].urls ? room.image_info[0].urls.large : '';
           var $listItem = $(document.createElement("li"));
-          $listItem.html("<div class=\"view view-first\">" +
-                       "<h3>"+room.name+"</h3>" +
+          $listItem.html("<div class=\"view view-first\" style=\"background-image:url('"+roomImage+"');\">" +
+                       "<h3><span>"+roomName+"</span></h3>" +
                        "<img src=\""+roomImage+"\" alt=\"\">" +
                        "<a class=\"readon\" data-id=\""+i+"\" data-toggle=\"pill\" href=\"#room-detail\">" +
                        "   <div class=\"mask\">" +
@@ -28,14 +31,13 @@
             $carouselItem.addClass("active");
           }
           $carouselItem.html(
-            '<div class=" col-xs-6 col-xs-push-6">'+
+            '<div class=" col-sm-6 col-sm-push-6">'+
               '<div class="room-info">'+
-                (room.category ? ('<h5>'+room.category+'</h5>') : '') +
-                (room.name ? ('<h3>'+room.name+'</h3>') : '') +
-                (room.short_description ? ('<h6 class="text-center">'+ room.short_description+ '</h6>') : '') +
-                (room.description ? ('<p>'+room.description+'</p>') : '') +
+                (room.category ? ('<h3>'+room.category+'</h3>') : '') +
+                (roomName ? ('<h4>'+roomName+'</h4>') : '') +
+                (room.short_description ? ('<p>'+room.short_description+'</p>') : '') +
               '<div class="btn-book">'+
-                '<a href="'+
+                '<a class="book-now-button" href="'+
                       '{{site.reztrip_url}}search?selected_room_category=' +
                         room.category +
                         '&selected_room='+
@@ -44,10 +46,12 @@
               '</div>' +
               '</div>'+
               
-            '</div>'+
-            '<div class="image col-xs-6 col-xs-pull-6" style="background-image:url('+roomImage+')">'+
+            '</div>' +
+            '<div class="image col-sm-6 col-sm-pull-6" style="background-image:url('+roomImage+')">'+
               '<img src="'+roomImage+'">'+
             '</div>'
+
+            
           );
                         
           var $carouselIndicatorItem = $(document.createElement("li"));
@@ -61,10 +65,18 @@
           $list.append($listItem);
           $carouselList.append($carouselItem);
           $carouselIndicators.append($carouselIndicatorItem);
+          
+          $(document).on("click", ".readon", function() {
+             var slideId = $(this).attr('data-id');
+             $('.contTabs li:last').tab('show');
+             $('#rooms-carousel').carousel(parseInt(slideId));
+          });
+          
         }
         
       })
 
+      
     });
   </script>
   
@@ -90,7 +102,7 @@
         </ul>
       </div>
       <div class="tab-content">
-        <div id="all-rooms" class="tab-pane fade  text-center container-a1" >
+        <div id="all-rooms" class="tab-pane fade  text-center container-a1 content-area" >
           <div class="rooms-list">
             <ul id="rooms-list">
             </ul>
@@ -129,18 +141,33 @@
 
 
 
-  <article class="general-amenities">
-    <div class="container ">
-      <h6>
-        {% region room_amenities_heading %}
-      </h6>
-      <div class='content-area'>
-        <ul>
-         {% for item in site.data._models.room_amenities %}
-          <li data-live-edit-model='room_amenities' data-live-edit-model-instance='{{item.id}}.json' > {{ item.name }} </li>
-         {% endfor %}
-        </ul>
+  
+</section>
+<section class="all-room-amenities">
+  <div class="container ">
+    <h3>{% regionblock room_amenities_heading, type:header %}All Room Amenities{% endregionblock %}</h3>
+    <h4>{% regionblock room_amenities_subheading, type:header %}Room Amenities Sub-Header{% endregionblock %}</h4>
+    
+    <div class='content-area'>
+      <div class='row'>
+        {% assign room_amenities = site.data._models.room_amenities | sort: "order"  %}
+        {% assign loopIdx = 0 %}
+        {% for item in room_amenities %}
+          {% if item.hidden != true %}
+            
+            {% assign mod = loopIdx | modulo:2 %}
+            {% if mod == 0 and loopIdx != 0 %}
+              </div>
+              <div class='row'>
+            {% endif %}
+            <div data-live-edit-model='room_amenities' data-live-edit-model-instance='{{item.id}}.json' class='col-sm-6 col-xs-12'> 
+              <h5>{{ item.name }}</h5>
+              <p>{{ item.description }}</p>
+            </div>
+            {% assign loopIdx = loopIdx | plus: 1 %}
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
-  </article>
+  </div>
 </section>

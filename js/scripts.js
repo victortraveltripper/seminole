@@ -1,15 +1,5 @@
-// JavaScript Document
-window.apiConfig = {
-    host: 'https://api.reztrip.com',
-    key: 'ioYJHSv6GN2XrVMnpC44D35dHgniuu6i9YqNzIS8'
-}
-
-
-
-
 // Gallery
-
- $(document).ready(function() {
+$(document).ready(function() {
    $('#lightgallery').lightGallery({
       selector: '.item',
       thumbnail: true,
@@ -37,35 +27,8 @@ window.apiConfig = {
 	$('.anchorlink').on('click', function(event){
     event.preventDefault();
     $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+  });
 });
 
- });
-
-
- //View more
-
- //$('#about-link').addClass('current');
-$('.viewmore').on('click', function (e) {
-	//alert("test");
-    e.preventDefault();
-    $('.location ul').toggleClass('location-hight', 1000);
-    //$(this).addClass('current');
-});
-
-
-// // onclick scroll
-// $(document).ready(function(){
-//     $('.navbar-nav li a[href^="#"]').click(function(e) {
-//   var offset = 102;
-//          e.preventDefault();
-//           $('html,body').animate({ scrollTop: $(this.hash).offset().top - offset}, 750);
-//         //Close the nav
-//           console.log('hi')
-//         $('#navbar').collapse('hide')
-//         return false;
-//
-//     });
-//
-// });
 
 

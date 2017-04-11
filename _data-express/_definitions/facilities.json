@@ -1,5 +1,6 @@
 {
     "name": { "required": true },
-    "content": { "type": "string" },
-    "order": { "required": true, "type": "integer" }
+    "description": { "type": "text" },
+    "order": { "required": true, "type": "integer" },
+    "hidden": { "type": "boolean" }
 }

@@ -1,96 +1,62 @@
-.loading-image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 10;
-}
-.loader
+.booking-widget {
+  position: fixed;
+  z-index: 1000000000;
+  top: 0;
+  right: -370px;
+  width: 370px;
+  height: 100%;
+  -webkit-transition: right 0.4s;
+  transition: right 0.4s;
+  @extend .clearfix;
 
-{
-	display: none;
-	width:415px;
-	height: 84.5vh;
-	position:fixed;
-	text-align:center;
-	background:rgba(105, 105, 105, 0.46);
-	z-index:2;
-	overflow: auto;
-	top:105px;
-	span{
-	top:45%;
-	position: relative;
+  &.-show {
+    right: 0;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background: url('/images/loading.gif') white center center no-repeat;
+  }
+  .booking-widget_header {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 52px;
+    background: $background-dark;
+    @extend .clearfix;
+    
 
-}
+    .booking-widget_close {
+      float: right;
+      font-size: 36px;
+      font-weight: lighter;
+      text-align: center;
+      width: 58px;
+      height: 58px;
+      line-height: 58px;
+      color: $header-light;
+      cursor: pointer;
+    }
 
-}
-
-
-/* Animation keyframes - you need to add prefixes */
-@keyframes spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
-}
-
-/* Loading animation container */
-.loading {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 28px;
-	height: 28px;
-	margin: -14px 0 0 -14px;
-}
-
-/* Spinning circle (inner circle) */
-.loading .maskedCircle {
-	width: 20px;
-	height: 20px;
-	border-radius: 12px;
-	border: 3px solid white;
-}
-
-/* Spinning circle mask */
-.loading .mask {
-	width: 12px;
-	height: 12px;
-	overflow: hidden;
-}
-
-/* Spinner */
-.loading .spinner {
-	position: absolute;
-	left: 1px;
-	top: 1px;
-	width: 26px;
-	height: 26px;
-	animation: spin 1s infinite linear;
+    .booking-widget_title {
+      font-family: $primary-font;
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 58px;
+      margin: 0 58px 0 0;
+      line-height: 58px;
+      color: $header-light;
+    }
+    
+  }
 }
 
-.terms{
-
-	background:#f6f5f5;
-	padding-top:90px;
-	font-family: 'NeueHaasGroteskDisp W01';
-	font-weight:400;
-	padding-bottom:50px;
-	p{
-		font-family: 'NeueHaasGroteskDisp W01';
-		font-size:16px;
-		line-height: 28px;
-		padding-bottom: 20px;
-	}
-	h5{
-		color:#000; font-weight:600;
-		padding:10px 0px;
-		font-size:16px;
-	}
-
-	ul li{
-		font-size:16px;
-		padding:10px;
-		line-height:26px;
-		color:#32333c;
-
-	}
-
-}

@@ -46,9 +46,11 @@
 			  <li>
 				  <a class="page-scroll" href="#Location">{% regionblock nav5, type:header %}Location{% endregionblock %}</a>
 			  </li>
-			  <li>
-				  <a class="page-scroll" href="#Gallery">{% regionblock nav6, type:header %}Gallery{% endregionblock %}</a>
-			  </li>
+        {% if gallery_images.size > 0 %}
+  			  <li>
+  				  <a class="page-scroll" href="#Gallery">{% regionblock nav6, type:header %}Gallery{% endregionblock %}</a>
+  			  </li>
+        {% endif %}
         <li>
           <a class="page-scroll" href="#Contact">{% regionblock nav7, type:header %}Contact{%endregionblock%}</a>
         </li>
