@@ -1,8 +1,10 @@
 <script type="text/javascript">
   $(document).ready(function() {
     rt3.getHotelInfo().then(function(resp) {
+
       if (resp.latitude &  resp.longitude) {
-        var mapsIframeUrl = "https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center="+resp.latitude+","+resp.longitude+"&zoom=15";
+        var mapsIframeUrl = "https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center={{site.data.hotel_settings.latitude}},{{site.data.hotel_settings.longitude}}&zoom=15";
+        //var mapsIframeUrl = "https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center="+resp.latitude+","+resp.longitude+"&zoom=15";
         $("#map iframe").attr('src', mapsIframeUrl)
         var placeUrl = "https://www.google.com/maps/place/"+resp.name+"/@"+resp.latitude+","+resp.longitude+",17z";
         $("#map a").attr('href', placeUrl);
