@@ -150,23 +150,25 @@
     
     <div class='content-area'>
       <div class='row'>
-        {% assign room_amenities = site.data._models.room_amenities | sort: "order"  %}
-        {% assign loopIdx = 0 %}
-        {% for item in room_amenities %}
-          {% if item.hidden != true %}
+        {% if site.data._models.room_amenities %}
+          {% assign room_amenities = site.data._models.room_amenities | sort: "order"  %}
+          {% assign loopIdx = 0 %}
+          {% for item in room_amenities %}
+            {% if item.hidden != true %}
             
-            {% assign mod = loopIdx | modulo:2 %}
-            {% if mod == 0 and loopIdx != 0 %}
+              {% assign mod = loopIdx | modulo:2 %}
+              {% if mod == 0 and loopIdx != 0 %}
+                </div>
+                <div class='row'>
+              {% endif %}
+              <div data-live-edit-model='room_amenities' data-live-edit-model-instance='{{item.id}}.json' class='col-sm-6 col-xs-12'> 
+                <h5>{{ item.name }}</h5>
+                <p>{{ item.description }}</p>
               </div>
-              <div class='row'>
+              {% assign loopIdx = loopIdx | plus: 1 %}
             {% endif %}
-            <div data-live-edit-model='room_amenities' data-live-edit-model-instance='{{item.id}}.json' class='col-sm-6 col-xs-12'> 
-              <h5>{{ item.name }}</h5>
-              <p>{{ item.description }}</p>
-            </div>
-            {% assign loopIdx = loopIdx | plus: 1 %}
-          {% endif %}
-        {% endfor %}
+          {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>

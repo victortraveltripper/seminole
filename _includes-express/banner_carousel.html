@@ -12,9 +12,8 @@
         {% endregionblock %}
       </h2>
       <div class="owl-social-icons">
-        {% assign icons = site.data._models.social_icons | sort: "order" %}
-        {% for social_icons in icons %}
-          <a class= "{{ social_icons.icon }}" target="_blank" data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icons.id}}.json'  aria-hidden="true" href = "{{ social_icons.link_url }}"></a>
+        {% for social_icon in social_icons %}
+          <a class= "{{ social_icon.icon }}" target="_blank" data-live-edit-model='social_icons' data-live-edit-model-instance='{{social_icon.id}}.json'  aria-hidden="true" href = "{{ social_icon.link_url }}"></a>
         {% endfor %}
       </div>
     </div>

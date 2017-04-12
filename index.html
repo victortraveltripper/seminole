@@ -1,9 +1,12 @@
 ---
 layout: modern
 ---
-
-{% assign gallery_images = site.data._models.gallery | sort: "order" %}
-{% assign social_icons = site.data._models.social_icons | sort: "order" %}
+{% if site.data._models.gallery %}
+  {% assign gallery_images = site.data._models.gallery | sort: "order" %}
+{% endif %}
+{% if site.data._models.social_icons %}
+  {% assign social_icons = site.data._models.social_icons | sort: "order" %}
+{% endif %}
       
       
 {% include banner_carousel.html %}

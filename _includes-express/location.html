@@ -64,10 +64,12 @@
       {% region attractions_heading %}
       <div class="list">
         <ul>
-          {% assign attractions = site.data._models.attractions | sort: "order" %}
-          {% for item in attractions %}
-            <li  data-live-edit-model='attractions' data-live-edit-model-instance='{{item.id}}.json' > {{ item.name }}</li>
-          {% endfor %}
+          {% if site.data._models.attractions %}
+            {% assign attractions = site.data._models.attractions | sort: "order" %}
+            {% for item in attractions %}
+              <li  data-live-edit-model='attractions' data-live-edit-model-instance='{{item.id}}.json' > {{ item.name }}</li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
     </div>
