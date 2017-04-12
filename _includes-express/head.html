@@ -17,8 +17,8 @@
   <script src="http://plugins.traveltripper.io/v2.0.1-alpha/rt3api-2.0.1-alpha.min.js"></script>
   <script>
     TTWeb.Rt3Api.configure({
-      hotelId: '{{site.hotel_id}}',
-      portalId: '{{site.portal_id}}',
+      hotelId: '{{site.data.hotel_settings._hotel_id}}',
+      portalId: '{{site.data.hotel_settings._portal_id}}',
       defaultLocale: 'en',
       defaultCurrency: 'USD',
       defaultTimezone: 'America/New_York'
