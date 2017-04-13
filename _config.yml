@@ -40,5 +40,5 @@ exclude:
   - 'old_media.json'
   - 'assets'
 
-keep_files: ['assets']
-rsync_copy: ['_assets']
+keep_files: ['assets', 'ttio_templates/js']
+rsync_copy: ['_assets', '_ttio_templates/js']

@@ -3,10 +3,8 @@
 ---
 @charset "utf-8";
 
-@import "test";
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "../_ttio_templates/sass/bootstrap-core",
-        "../_ttio_templates/sass/classic-variables",
-    		"../_ttio_templates/sass/main"
+        "../_ttio_templates/express/sass/bootstrap-core",
+        "../_ttio_templates/express/sass/classic-variables",
+    		"../_ttio_templates/express/sass/main"
