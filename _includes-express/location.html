@@ -1,22 +1,3 @@
-<script type="text/javascript">
-  $(document).ready(function() {
-    rt3.getHotelInfo().then(function(resp) {
-
-      if (resp.latitude &  resp.longitude) {
-        var mapsIframeUrl = "https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center={{site.data.hotel_settings.latitude}},{{site.data.hotel_settings.longitude}}&zoom=15";
-        //var mapsIframeUrl = "https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center="+resp.latitude+","+resp.longitude+"&zoom=15";
-        $("#map iframe").attr('src', mapsIframeUrl)
-        var placeUrl = "https://www.google.com/maps/place/"+resp.name+"/@"+resp.latitude+","+resp.longitude+",17z";
-        $("#map a").attr('href', placeUrl);
-        
-        $("#placeholder_map").hide();
-        $("#map").show();       
-      }
-    })
-      
-    
-  })
-</script>
 <section id="Location" class="location clearfix" >
   <div class="container">
     <div class="row">
@@ -47,9 +28,18 @@
           <div class="address">
             {% regionblock styled_address %}
               <p>
-                One Twenty One Main Street<br/>
-                Your City or Town<br/>
-                POSTALCODE<br/>
+                {{site.data.hotel_settings.address.street1}}</br>
+                {% if site.data.hotel_settings.address.street2 %}
+                  {{site.data.hotel_settings.address.street2}}</br>
+                {% endif %}
+                {{site.data.hotel_settings.address.city}},
+                {% if site.data.hotel_settings.address.state %}
+                  {{site.data.hotel_settings.address.state}},
+                {% else %}
+                  {{site.data.hotel_settings.address.country }}
+                {% endif %}
+                <br/>
+                {{site.data.hotel_settings.address.zip_code }}                
               <p>
             {% endregionblock %}
           </div>
@@ -77,17 +67,13 @@
     </div>
     <div class="col-sm-6">
       <div class="maps">
-        <div id="placeholder_map">
-          <img src="/images/location.svg" />
-        </div>
         <div id="map">
           <iframe
             width="100%"
             height="100%"
-            frameborder="0" style="border:0; with: 100%; height: 100%"
-            src="" allowfullscreen>
+            frameborder="0" style="border:0; with: 100%; height: 100%"            src="https://www.google.com/maps/embed/v1/view?key={{site.google_maps_api_key}}&center={{site.data.hotel_settings.latitude}},{{site.data.hotel_settings.longitude}}&zoom=15" allowfullscreen>
           </iframe>            
-          <a id="map_marker" target="_NEW">
+          <a id="map_marker" target="_NEW" href="https://www.google.com/maps/place/{{site.data.hotel_settings.name}}/@{{site.data.hotel_settings.latitude}},{{site.data.hotel_settings.longitude}},17z">
             <img src="/images/map-icon.svg" />              
           </a>
         </div>
