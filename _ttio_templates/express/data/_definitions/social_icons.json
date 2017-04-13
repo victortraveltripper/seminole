@@ -1,6 +1,0 @@
-{ 
-"icon": { "type": "image" , "required": true },
-"alt_tag": {"required": true },
-"link_url": {"required": true },
-"order": {"type": "integer" }
-}

@@ -1,8 +1,0 @@
-{
-    "name": { "required": true },
-    "image": { "type": "image", "required": true },
-    "description": {"type": "string", "required": true },
-    "order": {"type": "integer", "required": true  }
-}
-
-

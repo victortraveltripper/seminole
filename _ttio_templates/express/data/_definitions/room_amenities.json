@@ -1,6 +1,0 @@
-{
-    "name": {"type": "string" },
-    "description": {"type": "text" },
-    "hidden": {"type": "boolean"},
-    "order": {"type": "integer" }
-}
