@@ -5,15 +5,15 @@ plugins_dir:
   - _plugins
 
 layouts_dir:
-  - _layouts-express
+  - _ttio_templates/express/layouts
   - _layouts
   
 data_dir: 
-  - _data-express
+  - _ttio_templates/express/data
   - _data
   
 includes_dir:
-  - _includes-express
+  - _ttio_templates/express/includes
   - _includes
 
 api_header_key: 'x-api-key'
