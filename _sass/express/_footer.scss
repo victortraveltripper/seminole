@@ -1,63 +1,79 @@
-footer{
+footer {
 	background:$background-dark;
-	padding:56px 50px;
-	font-family:'NeueHaasGroteskDisp W01';
 	font-size:14px;
-
-	h3{
-		font-size:18px;
-		font-family:'NHaasGroteskDSW01-65Md';
-		font-weight:500;
-
+  text-align: center;
+	@media (min-width: $screen-sm) {
+		text-align: left;
 	}
-	@media (max-width:1025px){
-		padding: 30px 10px;
-	}
+  .inner-content-wrap {
+    margin: 0;
+  }
+  .inner-content {
+  	background:$body-background;
+  	padding-top:40px;
+    padding-bottom: 40px;
+    [class*="col-"] {
+      margin-top: 2em;
+    }
+    @media (min-width: $screen-sm) {
+      .row {
+        margin: 0;
+        width: 100%;
+        display: table;
+        [class*="col-"] {
+          margin-top: 0;
+          float: none;
+          display: table-cell;
+        }
+        
+      	.footer-logo {
+      		text-align:center;
+      		border-right:1px solid $gray;
+        }
+      }
+    }
+  	h3{
+  		font-family: $primary-font-med;
+      text-transform: none;
+      margin: .5em 0;
+      @media (min-width: $screen-sm) {
+        text-align: left;
+      }
+  	}
+  	
+    a { 
+  		color:$text-dark;
+  		line-height:24px;
+  		letter-spacing:1px;
+  	}
 
-	@media (max-width:648px){
-		text-align:center;
-		padding: 30px 0px;
-	}
-}
+  	.footer-logo {
+  		text-align:center;
+  		padding:30px 0px 30px 0px;
+  		h3 {
+  			margin: 0px;
+  			color: $header-dark;
+  			text-align: center;
+  			text-transform: uppercase;
+  			font-size:18px;  			
+  		}
+  	}
 
-.inner-content {
-
-	background:$body-background;
-	padding:40px 0px;
-
-	a { 
-		//color:$color;
-		line-height:24px;
-		letter-spacing:1px;
-	}
-
-	.footer-logo {
-		vertical-align:middle;
-		text-align:center;
-		padding:30px 0px 30px 0px;
-		border-right:1px solid #b7b7b7;
-		h3 {
-			margin: 0px;
-			color: #04082f;
-			text-align: center;
-			padding: 3px 0px;
-			text-transform: uppercase;
-			font-size:18px;
-			font-family:'NHaasGroteskDSW01-65Md';
-			font-weight:500;
-		}
-	}
-
-	p {
-		line-height:1.9em;
-	}
+  	p {
+  		line-height:1.9em;
+  	}
 
 
-	.f-social-links{
-		a {
-			padding:5px 20px 10px 0px;
-		}
-	}
+  	.f-social-links{
+  		a {
+        padding:5px 10px;
+        @media (min-width: $screen-sm) {
+          padding-left: 0;
+          padding-right: 20px;
+        }
+  		}
+  	}
+  }  
 }
 
 .copyrights {
@@ -65,6 +81,10 @@ footer{
 	padding:20px 0px;
 	text-align:center;
 	letter-spacing: 1px;
+  .tt-region, .tt-region_ped {
+    display: inline;
+  }
 	a { color: $text-dark }
-
 }
+
+

@@ -183,7 +183,7 @@ figcaption {
 
 @import 'express/location';
 
-//@import 'express/gallery';
+@import 'express/gallery';
 
 @import 'express/footer';
 
@@ -194,8 +194,6 @@ figcaption {
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import	"owl.carousel",
-    		"lightbox",
-    		"owl.theme",
+@import	"lightbox",
     		"scrolling-nav",
         "print";

@@ -1,7 +1,7 @@
 .location {
   background: $background-light;
 	
-  img{
+  img {
 		width:100%;
 	}
 
@@ -49,9 +49,12 @@
   	}
   	.maps{
   		width: 100%;
-  		margin: 0 auto;
   		height: 400px;
-
+  		margin: 0 auto;
+      @media (min-width: $screen-sm) {
+        margin-left: -$grid-gutter-width / 2;
+        margin-right: -$grid-gutter-width / 2;
+      }
   	}
     #placeholder_map {
       text-align: center;

@@ -1,8 +1,18 @@
 {% if gallery_images.size > 0 %}            
+  <script type="text/javascript">
+    $(document).ready(function() {
+       $('#lightgallery').lightGallery({
+          selector: '.item',
+          thumbnail: true,
+          download: false,
+          zoom: true
+        })
+    });
+  </script>
   <section  id="Gallery" class="gallery">
     <!-- gallery wrap -->
-    <h6>{% region gallery_heading %}</h6>
-    <!--h2>{% region gallery_subheader %}</h2-->
+    <h3>{% regionblock gallery_heading, type:header %}Gallery{% endregionblock %}</h3>
+    <h4>{% regionblock gallery_subheading, type:header %}Gallery Sub-Header{% endregionblock %}</h4>
     <div class='content-area content-area-intro'>
        {% region gallery_intro %}
     </div>
@@ -14,7 +24,7 @@
           <div class="container gallery-wrap "  id="lightgallery">
             <ul class=" row">
               {% for item in gallery_images %}
-                <li class="col-md-4 col-sm-4 col-xs-12 portfolio hotel"  data-cat="hotel"  data-live-edit-model='gallery'
+                <li class="col-xs-6 col-sm-4 portfolio hotel"  data-cat="hotel"  data-live-edit-model='gallery'
       data-live-edit-model-instance='{{item.id}}.json' >
                   <div class="item"  data-src= {{ item.image.url }}> <img src= {{ item.image.url }} class="img-responsive"/> </div>
                 </li>

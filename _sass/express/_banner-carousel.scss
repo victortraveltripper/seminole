@@ -14,6 +14,22 @@ $banner-height: 600px;
     right: 15%;
     margin: 0px auto;    
 	}
+  .banner-social-icons {
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    color: $header-light;
+    width: 100%; 
+    a {
+      color: $header-light;
+      border: 2px solid $header-light;
+      padding: 11px;
+      margin: 6px;
+      font-size: 17px;
+      border-radius: 54%;
+      width: 45px;
+    }
+  }
 }
 
 #banner-carousel-slides{

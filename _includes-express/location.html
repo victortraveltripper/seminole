@@ -20,8 +20,10 @@
 <section id="Location" class="location clearfix" >
   <div class="container">
     <div class="row">
-      <h3>{% regionblock location_heading, type:header %}Location{% endregionblock %}</h3>
-      <h4>{% regionblock location_subheading, type:header %}Location Sub-Header{% endregionblock %}</h4>
+      <div class='content-area'>
+        <h3>{% regionblock location_heading, type:header %}Location{% endregionblock %}</h3>
+        <h4>{% regionblock location_subheading, type:header %}Location Sub-Header{% endregionblock %}</h4>
+      </div>
       <div class='content-area content-area-intro'>
         {% region location_intro %}
       </div>
@@ -74,27 +76,25 @@
       </div>
     </div>
     <div class="col-sm-6">
-      <div class="row">
-        <div class="maps">
-          <div id="placeholder_map">
-            <img src="/images/location.svg" />
-          </div>
-          <div id="map">
-            <iframe
-              width="100%"
-              height="100%"
-              frameborder="0" style="border:0; with: 100%; height: 100%"
-              src="" allowfullscreen>
-            </iframe>            
-            <a id="map_marker" target="_NEW">
-              <img src="/images/map-icon.svg" />              
-            </a>
-          </div>
-
-          
-          
-          
+      <div class="maps">
+        <div id="placeholder_map">
+          <img src="/images/location.svg" />
         </div>
+        <div id="map">
+          <iframe
+            width="100%"
+            height="100%"
+            frameborder="0" style="border:0; with: 100%; height: 100%"
+            src="" allowfullscreen>
+          </iframe>            
+          <a id="map_marker" target="_NEW">
+            <img src="/images/map-icon.svg" />              
+          </a>
+        </div>
+
+        
+        
+        
       </div>
     </div>
   </div>
