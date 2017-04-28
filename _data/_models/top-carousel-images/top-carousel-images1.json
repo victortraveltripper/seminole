@@ -1,0 +1,8 @@
+{
+  "name": "2nd Image",
+  "image": { 
+    "url": "/assets/images/facility.jpg"
+  },
+  "order": 1,
+  "hidden": false
+}

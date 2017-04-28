@@ -1,0 +1,6 @@
+[submodule "_plugins-core"]
+	path = _plugins-core
+	url = https://github.com/traveltripperweb/cms-jekyll-plugins
+[submodule "_ttio_templates/express"]
+	path = _ttio_templates/express
+	url = https://github.com/TravelTripperWeb-Sites/_ttio_templates-express.git

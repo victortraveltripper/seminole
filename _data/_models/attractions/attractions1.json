@@ -1,0 +1,11 @@
+{
+    "name": "Monument",
+    "description": "This great sculpture was built in 1224 to dedicate the great event.",
+    "category": "",
+    "address1": "123 Main St",
+    "city": "Boston",
+    "state": "MA",
+    "country": "US",
+    "zip": "021120",
+    "order": 1
+}

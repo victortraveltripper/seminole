@@ -1,6 +1,23 @@
-api_header_key: 'x-api-key'
-api_headerkey_value: 'too0nxJhq43nESW5cWdH13ZB2ZIsEuG1EXcpZeL1'
+google_maps_api_key: AIzaSyBm2DXwUKvbnRTgoBHaJ3LKuNJi_atHfKc
 
+plugins_dir:
+  - _plugins-core
+  - _plugins
+
+layouts_dir:
+  - _ttio_templates/express/layouts
+  - _layouts
+  
+data_dir: 
+  - _ttio_templates/express/data
+  - _data
+  
+includes_dir:
+  - _ttio_templates/express/includes
+  - _includes
+  
+sass:
+  compress: true
 
 # Site settings
 baseurl: ""
@@ -14,6 +31,11 @@ markdown: kramdown
 
 exclude:
   - 'sitemap.json'
+  - 'models.json'
+  - 'media.json'
+  - 'old_media.json'
+  - 'assets'
+  - 'ttio_templates'
 
-keep_files: ['assets']
-rsync_copy: ['_assets']
+keep_files: ['assets', 'ttio_templates/express/assets']
+rsync_copy: ['_assets', '_ttio_templates/express/assets']

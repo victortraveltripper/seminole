@@ -1,0 +1,8 @@
+{
+    "name": "Image 2",
+    "image": { "url": "/assets/images/gallery2.jpg" },
+    "description": "Gallery Image 2",
+    "order": 2
+}
+
+
