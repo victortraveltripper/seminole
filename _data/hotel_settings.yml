@@ -1,0 +1,16 @@
+---
+_hotel_id: SEM288
+_portal_id: required-but-empty
+_root_path: https://qa5.ttaws.com/rt
+latitude: 26.05128
+longitude: -80.21166
+name: Seminole Hard Rock Hotel and Casino
+email: victor@traveltripper.com
+phone_number: 001-111-1111
+address:
+  street1: 1 Seminole Way
+  street2: ''
+  state: Florida
+  city: Hollywood
+  country: United States
+  zip_code: '33314'

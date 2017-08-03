@@ -1,2 +1,5 @@
-{"name":"Amenity 3",
-  "order": 3}
+{
+  "name": "Accessible bathroom",
+  "order": 3,
+  "hidden": false
+}
