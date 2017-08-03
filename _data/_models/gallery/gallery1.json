@@ -1,23 +1,23 @@
 {
-  "name": "The Hotel",
+  "name": "Casino",
   "image": {
-    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/WEBSITE-Amenities-Pool-11.jpg",
-    "alt": "Hotel",
-    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/WEBSITE-Amenities-Pool-11.jpg",
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/slot-machines-casino.jpg",
+    "alt": "Casino",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/slot-machines-casino.jpg",
     "file_type": "image/jpeg",
-    "name": "WEBSITE-Amenities-Pool-11",
+    "name": "slot-machines-casino",
     "tags": "",
-    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/large_WEBSITE-Amenities-Pool-11.jpg",
-    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/thumb_WEBSITE-Amenities-Pool-11.jpg",
-    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/medium_WEBSITE-Amenities-Pool-11.jpg",
-    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/small_WEBSITE-Amenities-Pool-11.jpg",
-    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/xsmall_WEBSITE-Amenities-Pool-11.jpg",
-    "width": 1280,
-    "height": 853,
-    "file_size": 244887,
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/large_slot-machines-casino.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/thumb_slot-machines-casino.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/medium_slot-machines-casino.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/small_slot-machines-casino.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/xsmall_slot-machines-casino.jpg",
+    "width": 4209,
+    "height": 2806,
+    "file_size": 2621062,
     "caption": "",
     "description": ""
   },
-  "description": "Gallery Image 1",
-  "order": 1
+  "description": "Gallery Image 2",
+  "order": 2
 }
