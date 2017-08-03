@@ -1,8 +1,23 @@
 {
-    "name": "Image 3",
-    "image": { "url": "/assets/images/gallery3.jpg" },
-    "description": "Gallery Image 3",
-    "order": 3
+  "name": "Casino & Mini Games",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/Casino-View.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/Casino-View.jpg",
+    "file_type": "image/jpeg",
+    "name": "Casino_View",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/large_Casino_View.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/thumb_Casino_View.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/medium_Casino_View.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/small_Casino_View.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/xsmall_Casino_View.jpg",
+    "width": 1500,
+    "height": 1125,
+    "file_size": 486840,
+    "alt": "Mini Games",
+    "caption": "",
+    "description": ""
+  },
+  "description": "Gallery Image 3",
+  "order": 3
 }
-
-
