@@ -1,8 +1,23 @@
 {
-    "name": "Image 1",
-    "image": { "url": "/assets/images/gallery1.jpg" },
-    "description": "Gallery Image 1",
-    "order": 1
+  "name": "The Hotel",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/WEBSITE-Amenities-Pool-11.jpg",
+    "alt": "Hotel",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/WEBSITE-Amenities-Pool-11.jpg",
+    "file_type": "image/jpeg",
+    "name": "WEBSITE-Amenities-Pool-11",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/large_WEBSITE-Amenities-Pool-11.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/thumb_WEBSITE-Amenities-Pool-11.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/medium_WEBSITE-Amenities-Pool-11.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/small_WEBSITE-Amenities-Pool-11.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063831/xsmall_WEBSITE-Amenities-Pool-11.jpg",
+    "width": 1280,
+    "height": 853,
+    "file_size": 244887,
+    "caption": "",
+    "description": ""
+  },
+  "description": "Gallery Image 1",
+  "order": 1
 }
-
-
