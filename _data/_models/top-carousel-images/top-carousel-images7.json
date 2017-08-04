@@ -1,0 +1,23 @@
+{
+  "name": "View",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/3.jpg",
+    "name": "3",
+    "file_name": "3.jpg",
+    "file_type": "image/jpeg",
+    "date_added": "2017-08-04-062516",
+    "tags": "",
+    "file_size": 182551,
+    "width": 1250,
+    "height": 450,
+    "description": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/large_3.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/medium_3.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/small_3.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/xsmall_3.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/thumb_3.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062514/3.jpg",
+    "alt": "view"
+  },
+  "order": 8
+}
