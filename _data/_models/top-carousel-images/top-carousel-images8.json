@@ -1,0 +1,23 @@
+{
+  "name": "air view pool",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/4.jpg",
+    "name": "4",
+    "file_name": "4.jpg",
+    "file_type": "image/jpeg",
+    "date_added": "2017-08-04-062721",
+    "tags": "",
+    "file_size": 1591579,
+    "width": 1500,
+    "height": 926,
+    "description": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/large_4.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/medium_4.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/small_4.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/xsmall_4.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/thumb_4.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-062719/4.jpg",
+    "alt": "airview"
+  },
+  "order": 9
+}

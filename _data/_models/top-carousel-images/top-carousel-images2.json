@@ -1,8 +1,7 @@
 {
-  "name": "Casino",
+  "name": "The Casino",
   "image": {
     "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/slot-machines-casino.jpg",
-    "alt": "Casino",
     "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063822/slot-machines-casino.jpg",
     "file_type": "image/jpeg",
     "name": "slot-machines-casino",
@@ -15,9 +14,9 @@
     "width": 4209,
     "height": 2806,
     "file_size": 2621062,
+    "alt": "Casino",
     "caption": "",
     "description": ""
   },
-  "description": "Gallery Image 2",
-  "order": 2
+  "order": 3
 }

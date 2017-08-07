@@ -1,8 +1,23 @@
 {
-  "name": "Room Photo",
+  "name": "The Hotel",
   "image": {
-    "url": "http://d2r4g49zv9n1lp.cloudfront.net/1172/41033_1_master.jpg"
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/SHRHC-Hollywood-Night-Purple-1500x550.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/SHRHC-Hollywood-Night-Purple-1500x550.jpg",
+    "file_type": "image/jpeg",
+    "name": "SHRHC_Hollywood_Night_Purple_1500x550",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/large_SHRHC_Hollywood_Night_Purple_1500x550.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/thumb_SHRHC_Hollywood_Night_Purple_1500x550.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/medium_SHRHC_Hollywood_Night_Purple_1500x550.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/small_SHRHC_Hollywood_Night_Purple_1500x550.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063813/xsmall_SHRHC_Hollywood_Night_Purple_1500x550.jpg",
+    "width": 1500,
+    "height": 550,
+    "file_size": 260358,
+    "alt": "Hotel",
+    "caption": "",
+    "description": ""
   },
-  "order": 2,
+  "order": 1,
   "hidden": false
 }

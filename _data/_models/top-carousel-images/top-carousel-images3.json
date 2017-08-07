@@ -1,0 +1,22 @@
+{
+  "name": "Room",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/Rooms-Fillmore.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/Rooms-Fillmore.jpg",
+    "file_type": "image/jpeg",
+    "name": "Rooms-Fillmore",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/large_Rooms-Fillmore.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/thumb_Rooms-Fillmore.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/medium_Rooms-Fillmore.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/small_Rooms-Fillmore.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063811/xsmall_Rooms-Fillmore.jpg",
+    "width": 1280,
+    "height": 846,
+    "file_size": 231764,
+    "alt": "Suite",
+    "caption": "",
+    "description": ""
+  },
+  "order": 4
+}

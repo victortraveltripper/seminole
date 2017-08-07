@@ -1,5 +1,5 @@
 {
-  "name": "Casino & Mini Games",
+  "name": "Casino Mini Games",
   "image": {
     "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/Casino-View.jpg",
     "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063234/Casino-View.jpg",
@@ -18,6 +18,5 @@
     "caption": "",
     "description": ""
   },
-  "description": "Gallery Image 3",
-  "order": 3
+  "order": 5
 }

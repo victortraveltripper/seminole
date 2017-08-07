@@ -1,7 +1,22 @@
 {
   "name": "First Image",
-  "image": { 
-    "url": "/assets/images/about-1.jpg"
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/Tampa-Guitar-Marquee---Web.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/Tampa-Guitar-Marquee---Web.jpg",
+    "file_type": "image/jpeg",
+    "name": "Tampa-Guitar-Marquee_-_Web",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/large_Tampa-Guitar-Marquee_-_Web.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/thumb_Tampa-Guitar-Marquee_-_Web.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/medium_Tampa-Guitar-Marquee_-_Web.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/small_Tampa-Guitar-Marquee_-_Web.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-03-063829/xsmall_Tampa-Guitar-Marquee_-_Web.jpg",
+    "width": 1250,
+    "height": 750,
+    "file_size": 315155,
+    "alt": "The Signature",
+    "caption": "",
+    "description": ""
   },
   "order": 2,
   "hidden": false

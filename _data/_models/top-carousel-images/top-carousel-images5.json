@@ -1,0 +1,24 @@
+{
+  "name": "Pool",
+  "image": {
+    "url": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/seminole-pool.jpg",
+    "path": "https://cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/seminole-pool.jpg",
+    "file_type": "image/jpeg",
+    "name": "seminole_pool",
+    "tags": "",
+    "url_large": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/large_seminole_pool.jpg",
+    "url_thumb": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/thumb_seminole_pool.jpg",
+    "url_medium": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/medium_seminole_pool.jpg",
+    "url_small": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/small_seminole_pool.jpg",
+    "url_xsmall": "//cdn.staging-traveltripper.info/site-assets/1_538_646/media/2017-08-04-061953/xsmall_seminole_pool.jpg",
+    "width": 1280,
+    "height": 853,
+    "file_size": 323885,
+    "alt": "Pool",
+    "caption": null,
+    "description": "",
+    "file_name": "seminole_pool.jpg",
+    "date_added": "2017-08-04-061955"
+  },
+  "order": 6
+}
